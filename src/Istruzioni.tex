@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage[italian]{babel}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=cyan]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 \title{Setup Github e VSCode per \LaTeX} 
@@ -9,15 +9,22 @@
 
 \begin{document}
 \maketitle
-\section{Passaggi}
+\section{Primi passaggi}
 \begin{enumerate}[1.]
     \item Creare un account su \href{https://github.com/signup}{\textbf{Github}};
     \item Aggiungere ai preferiti la \href{https://github.com/Basicnickname/Progetto-Lab-3.git}{repository} e farsi aggiungere come collaboratore;
-    \item Creare un nuovo repository (pubblico o privato a seconda delle esigenze);
-    \item Clonare il repository in locale (usando VSCode o git bash);
-    \item Creare un nuovo file \texttt{.tex} all'interno della cartella clonata;
-    \item Scrivere il codice \LaTeX all'interno del file;
-    \item Salvare il file e fare il commit delle modifiche;
-    \item Pushare le modifiche sul repository remoto.
+\end{enumerate}
+\section{Installazione software}
+\begin{enumerate}[1.]
+    \item Scaricare \href{https://code.visualstudio.com/}{\textbf{VSCode}} e installarlo;
+    \item Aprire VSCode e installare le estensioni (icona nella barra a sinistra oppure ctrl+shift+x) \textbf{LaTeX Workshop}, \textbf{GitHub Pull Requests}, \textbf{GitHub Copilot} e \textbf{Colab};
+    \item Scaricare e installare \href{https://www.tug.org/texlive/windows.html#install}{texlive} (consiglio dopo aver aperto l'installer di andare nelle impostazioni avanzate e selezionare l'installazione media);
+    \item Installare \href{https://git-scm.com/download/win}{Git} (consiglio di lasciare tutte le impostazioni di default);
+    \item Riavviare il computer;
+\end{enumerate}
+
+\section{Configurazione}    
+\begin{enumerate}[1.]
+    \item Aprire VSCode e nella barra di ricerca in alto al centro digitare ">Preferences: Open User Settings (JSON)", aprire il file e copiarci all'interno il contenuto del file \href{URL}{text}
 \end{enumerate}
 \end{document}
