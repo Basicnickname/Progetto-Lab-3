@@ -116,6 +116,12 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT out/Istruzioni.aux
@@ -124,3 +130,4 @@ INPUT out/Istruzioni.out
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
