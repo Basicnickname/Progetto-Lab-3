@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.7)  12 NOV 2025 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.7)  12 NOV 2025 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -77,6 +77,8 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks20
+) (c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
 ) (c:/texlive/2025/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
  (c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -536,10 +538,10 @@ Package rerunfilecheck Info: File `Template.out' has not changed.
 (rerunfilecheck)             Checksum: A9D80C1F310E072266885EB6713D9B9C;1048.
  ) 
 Here is how much of TeX's memory you used:
- 18942 strings out of 467538
- 362217 string characters out of 5423725
- 789709 words of memory out of 5000000
- 47576 multiletter control sequences out of 15000+600000
+ 18984 strings out of 467538
+ 363090 string characters out of 5423725
+ 790074 words of memory out of 5000000
+ 47614 multiletter control sequences out of 15000+600000
  641789 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,80p,1088b,1086s stack positions out of 10000i,1000n,20000p,200000b,200000s

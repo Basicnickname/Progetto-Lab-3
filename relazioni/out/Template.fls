@@ -34,6 +34,8 @@ INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
