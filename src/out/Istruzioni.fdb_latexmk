@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1762986666.81082 "c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex" "out/Istruzioni.pdf" "Istruzioni" 1762986667.76948 0
-  "Istruzioni.tex" 1762986666 1630 4ea6b7aa4db002f66f599412cdb6408b ""
-  "c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex" 1762986666 1630 4ea6b7aa4db002f66f599412cdb6408b ""
+["pdflatex"] 1762987845.43285 "c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex" "out/Istruzioni.pdf" "Istruzioni" 1762987846.33715 0
+  "Istruzioni.tex" 1762987844 2051 a1c5adbc86479256df41b249c3050ed0 ""
+  "c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex" 1762987844 2051 a1c5adbc86479256df41b249c3050ed0 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1762469578 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1762468494 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1762468494 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -55,8 +55,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1762506372 5574345 9e0538e80e24c9ae9ee679f6f1bbacd7 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1762506634 3635475 9ff7914e68e208c6b0ca031fa844e2c1 ""
   "c:/texlive/2025/texmf.cnf" 1762506348 713 e69b156964470283e0530f5060668171 ""
-  "out/Istruzioni.aux" 1762986667 643 0fc6c006bb10598481aaece0f2251a70 "pdflatex"
-  "out/Istruzioni.out" 1762986667 385 a1ee7a697370accd999b479fbf146c9c "pdflatex"
+  "out/Istruzioni.aux" 1762987846 643 5be508a3f716e3b5cf68d8dc578b205a "pdflatex"
+  "out/Istruzioni.out" 1762987846 385 a1ee7a697370accd999b479fbf146c9c "pdflatex"
   (generated)
   "out/Istruzioni.aux"
   "out/Istruzioni.log"
