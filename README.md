@@ -11,3 +11,6 @@ Questo repository contiene il materiale del progetto di laboratorio di gruppo.
 ## Dati
 I dati vengono importati direttamente da Google Sheets.  
 Per aggiornare i dati, modificare il foglio condiviso e rieseguire il notebook.
+
+#Prova
+Ciao
