@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.7)  12 NOV 2025 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.11)  22 NOV 2025 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex
-(c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex
+**c:/Users/Telem/Desktop/Progetto-Lab-3/src/Istruzioni.tex
+(c:/Users/Telem/Desktop/Progetto-Lab-3/src/Istruzioni.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -24,7 +24,7 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
 ) (c:/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2025/10/22 v25.14 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count283
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2050.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2052.
@@ -34,13 +34,13 @@ LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) o
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2058.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2083.
 \U@D=\dimen149
-\l@unhyphenated=\language90
+\l@unhyphenated=\language49
  (c:/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count284
  (c:/texlive/2025/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
 Package babel Info: Importing font and identification data for italian
-(babel)             from babel-it.ini. Reported on input line 4295.
+(babel)             from babel-it.ini. Reported on input line 4298.
  (c:/texlive/2025/texmf-dist/tex/generic/babel-italian/italian.ldf
 Language: italian 2024/10/10 v.1.5.01 Italian support for the babel system
 \it@lettering=\count285
@@ -242,15 +242,15 @@ Package rerunfilecheck Info: File `Istruzioni.out' has not changed.
 (rerunfilecheck)             Checksum: D63F0AA7027AB29C264DD4434DD6B19A;541.
  ) 
 Here is how much of TeX's memory you used:
- 9347 strings out of 467538
- 147057 string characters out of 5423725
- 578019 words of memory out of 5000000
- 38163 multiletter control sequences out of 15000+600000
+ 9346 strings out of 468662
+ 146944 string characters out of 5444563
+ 575276 words of memory out of 5000000
+ 37987 multiletter control sequences out of 15000+600000
  633197 words of font info for 58 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 75i,6n,79p,373b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 430 hyphenation exceptions out of 8191
+ 75i,6n,79p,338b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on out/Istruzioni.pdf (2 pages, 59826 bytes).
+Output written on out/Istruzioni.pdf (2 pages, 59807 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream

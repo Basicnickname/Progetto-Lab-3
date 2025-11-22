@@ -1,8 +1,8 @@
-PWD c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src
+PWD c:/Users/Telem/Desktop/Progetto-Lab-3/src
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Telem/OneDrive/Desktop/Università/Laboratorio/3/Progetto-Lab-3/src/Istruzioni.tex
+INPUT c:/Users/Telem/Desktop/Progetto-Lab-3/src/Istruzioni.tex
 OUTPUT out/Istruzioni.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
