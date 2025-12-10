@@ -83,13 +83,13 @@
    "xelatex"
   ]
  }
-],
+],              
 
 "latex-workshop.latex.recipe.default": "latexmk 🔃",
 "latex-workshop.latex.outDir": "out",
-"latex-workshop.view.pdf.viewer": "tab",               // visualizza PDF in un tab
-"latex-workshop.synctex.afterBuild.enabled": true,     // sincronizza sorgente <-> PDF
-"latex-workshop.view.pdf.invert": 0,                   // nessuna inversione colori
+"latex-workshop.view.pdf.viewer": "tab",               
+"latex-workshop.synctex.afterBuild.enabled": true,     
+"latex-workshop.view.pdf.invert": 0,                   
 
 "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
