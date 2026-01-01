@@ -4,10 +4,8 @@
 Questo repository contiene il materiale del progetto di laboratorio di gruppo.
 
 ## Struttura
-- `colab_notebooks/` – Analisi dati in Python (eseguite su Google Colab)
-- `relazioni/` – Relazioni in LaTeX e immagini dei risultati
+- `relazioni/` – Relazioni in LaTeX 
 - `src/` – Script comuni e templates
 
 ## Dati
-I dati vengono importati direttamente da Google Sheets.  
-Per aggiornare i dati, modificare il foglio condiviso e rieseguire il notebook.
+Per l'analisi dati si utilizza esclusivamente la cartella di Google Colab
