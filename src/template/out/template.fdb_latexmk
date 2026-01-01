@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1767307341.95768 "c:/Users/Telem/Desktop/Progetto-Lab-3/src/template/template.tex" "out/template.pdf" "template" 1767307343.52988 0
+["pdflatex"] 1767307657.82501 "c:/Users/Telem/Desktop/Progetto-Lab-3/src/template/template.tex" "out/template.pdf" "template" 1767307660.63274 0
   "Dati_1_Foglio1.png" 1767304895 134393 8622f2179894ec1fda3b8324b33ebe1d ""
-  "Fit_1_Foglio1.png" 1767304895 159884 fcaad34c90ecebed64203817aff4f88a ""
-  "c:/Users/Telem/Desktop/Progetto-Lab-3/src/template/template.tex" 1767307339 4333 9b1ecf456785766ad4a47659fa8d0a4d ""
+  "Fit_1_Foglio1.png" 1767307637 143103 f0cad0eae61d93a3b85b6316c2cffa06 ""
+  "c:/Users/Telem/Desktop/Progetto-Lab-3/src/template/template.tex" 1767307350 4333 9b1ecf456785766ad4a47659fa8d0a4d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1762892377 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1762892377 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1762892653 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -86,8 +86,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1762893647 371233 0f6aca6addd6800b190706172e78fdc2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1762893711 3436882 59b7ffa6f29f8fbf015ec88b75bafdd5 ""
   "c:/texlive/2025/texmf.cnf" 1762893639 713 e69b156964470283e0530f5060668171 ""
-  "out/template.aux" 1767307343 1872 22cd551603549a55d511212a9d3fcf7e "pdflatex"
-  "template.tex" 1767307339 4333 9b1ecf456785766ad4a47659fa8d0a4d ""
+  "out/template.aux" 1767307660 1872 22cd551603549a55d511212a9d3fcf7e "pdflatex"
+  "template.tex" 1767307350 4333 9b1ecf456785766ad4a47659fa8d0a4d ""
   (generated)
   "out/template.aux"
   "out/template.log"
