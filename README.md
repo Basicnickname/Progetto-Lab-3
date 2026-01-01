@@ -7,5 +7,8 @@ Questo repository contiene il materiale del progetto di laboratorio di gruppo.
 - `relazioni/` – Relazioni in LaTeX 
 - `src/` – Script comuni e templates
 
-## Dati
-Per l'analisi dati si utilizza esclusivamente la cartella di Google Colab
+## Workflow
+Per l'analisi dati si utilizza esclusivamente la cartella di Google Colab, lì si generano poi i grafici (in .pdf o .pgf) e le tabelle coi risultati (in .tex) che vanno spostati nelle apposite sottocartelle della repo.
+
+Per ogni dubbio consultare i templates
+
