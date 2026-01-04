@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.13)  4 JAN 2026 22:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.13)  4 JAN 2026 22:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,71 +350,71 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <LED Giallo.png, id=17, 412.6617pt x 293.898pt>
 File: LED Giallo.png Graphic file (type png)
 <use LED Giallo.png>
-Package pdftex.def Info: LED Giallo.png  used on input line 92.
+Package pdftex.def Info: LED Giallo.png  used on input line 91.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
 <LED Rosso.png, id=19, 412.6617pt x 293.898pt>
 File: LED Rosso.png Graphic file (type png)
 <use LED Rosso.png>
-Package pdftex.def Info: LED Rosso.png  used on input line 97.
+Package pdftex.def Info: LED Rosso.png  used on input line 96.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
  [2]
 <LED Blu.png, id=23, 412.6617pt x 293.898pt>
 File: LED Blu.png Graphic file (type png)
 <use LED Blu.png>
-Package pdftex.def Info: LED Blu.png  used on input line 102.
+Package pdftex.def Info: LED Blu.png  used on input line 101.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
 <LED Verde.png, id=24, 412.6617pt x 293.898pt>
 File: LED Verde.png Graphic file (type png)
 <use LED Verde.png>
-Package pdftex.def Info: LED Verde.png  used on input line 107.
+Package pdftex.def Info: LED Verde.png  used on input line 106.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
 <LED Bianco.png, id=25, 412.6617pt x 293.898pt>
 File: LED Bianco.png Graphic file (type png)
 <use LED Bianco.png>
-Package pdftex.def Info: LED Bianco.png  used on input line 112.
+Package pdftex.def Info: LED Bianco.png  used on input line 111.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
  [3 <./LED Giallo.png> <./LED Rosso.png> <./LED Blu.png>]
 <LED Infrarosso.png, id=32, 412.6617pt x 293.898pt>
 File: LED Infrarosso.png Graphic file (type png)
 <use LED Infrarosso.png>
-Package pdftex.def Info: LED Infrarosso.png  used on input line 117.
+Package pdftex.def Info: LED Infrarosso.png  used on input line 116.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
 <Fotodiodo.png, id=33, 412.6617pt x 293.898pt>
 File: Fotodiodo.png Graphic file (type png)
 <use Fotodiodo.png>
-Package pdftex.def Info: Fotodiodo.png  used on input line 122.
+Package pdftex.def Info: Fotodiodo.png  used on input line 121.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
  [4 <./LED Verde.png> <./LED Bianco.png> <./LED Infrarosso.png>]
 <LED Giallo ottica.png, id=40, 391.7034pt x 293.898pt>
 File: LED Giallo ottica.png Graphic file (type png)
 <use LED Giallo ottica.png>
-Package pdftex.def Info: LED Giallo ottica.png  used on input line 129.
+Package pdftex.def Info: LED Giallo ottica.png  used on input line 128.
 (pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
 <LED Rosso ottica.png, id=41, 391.7034pt x 293.898pt>
 File: LED Rosso ottica.png Graphic file (type png)
 <use LED Rosso ottica.png>
-Package pdftex.def Info: LED Rosso ottica.png  used on input line 134.
+Package pdftex.def Info: LED Rosso ottica.png  used on input line 133.
 (pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
 <LED Blu ottica.png, id=42, 391.7034pt x 293.898pt>
 File: LED Blu ottica.png Graphic file (type png)
 <use LED Blu ottica.png>
-Package pdftex.def Info: LED Blu ottica.png  used on input line 139.
+Package pdftex.def Info: LED Blu ottica.png  used on input line 138.
 (pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
 <LED Verde ottica.png, id=43, 400.1349pt x 293.898pt>
 File: LED Verde ottica.png Graphic file (type png)
 <use LED Verde ottica.png>
-Package pdftex.def Info: LED Verde ottica.png  used on input line 144.
+Package pdftex.def Info: LED Verde ottica.png  used on input line 143.
 (pdftex.def)             Requested size: 250.38564pt x 183.91pt.
  [5 <./Fotodiodo.png> <./LED Giallo ottica.png> <./LED Rosso ottica.png>]
 <LED Bianco ottica.png, id=50, 391.7034pt x 293.898pt>
 File: LED Bianco ottica.png Graphic file (type png)
 <use LED Bianco ottica.png>
-Package pdftex.def Info: LED Bianco ottica.png  used on input line 149.
+Package pdftex.def Info: LED Bianco ottica.png  used on input line 148.
 (pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
 <LED Infrarosso ottica.png, id=51, 391.7034pt x 293.898pt>
 File: LED Infrarosso ottica.png Graphic file (type png)
 <use LED Infrarosso ottica.png>
-Package pdftex.def Info: LED Infrarosso ottica.png  used on input line 154.
+Package pdftex.def Info: LED Infrarosso ottica.png  used on input line 153.
 (pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
  [6 <./LED Blu ottica.png> <./LED Verde ottica.png> <./LED Bianco ottica.png>]
 
@@ -423,62 +423,62 @@ Package siunitx Info: Option "scientific-notation = true" has been deprecated
 (siunitx)             
 (siunitx)             Use "exponent-mode = scientific" as a replacement.
 
-<Plot LED Giallo.png, id=58, 412.6617pt x 293.898pt>
+ [7 <./LED Infrarosso ottica.png>]
+<Plot LED Giallo.png, id=64, 412.6617pt x 293.898pt>
 File: Plot LED Giallo.png Graphic file (type png)
 <use Plot LED Giallo.png>
-Package pdftex.def Info: Plot LED Giallo.png  used on input line 190.
+Package pdftex.def Info: Plot LED Giallo.png  used on input line 214.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Rosso.png, id=59, 412.6617pt x 293.898pt>
+<Plot LED Rosso.png, id=65, 412.6617pt x 293.898pt>
 File: Plot LED Rosso.png Graphic file (type png)
 <use Plot LED Rosso.png>
-Package pdftex.def Info: Plot LED Rosso.png  used on input line 195.
+Package pdftex.def Info: Plot LED Rosso.png  used on input line 219.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Blu.png, id=60, 412.6617pt x 293.898pt>
+<Plot LED Blu.png, id=66, 412.6617pt x 293.898pt>
 File: Plot LED Blu.png Graphic file (type png)
 <use Plot LED Blu.png>
-Package pdftex.def Info: Plot LED Blu.png  used on input line 200.
+Package pdftex.def Info: Plot LED Blu.png  used on input line 224.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [7 <./LED Infrarosso ottica.png> <./Plot LED Giallo.png>]
-<Plot LED Verde.png, id=68, 412.6617pt x 293.898pt>
+<Plot LED Verde.png, id=67, 412.6617pt x 293.898pt>
 File: Plot LED Verde.png Graphic file (type png)
 <use Plot LED Verde.png>
-Package pdftex.def Info: Plot LED Verde.png  used on input line 205.
+Package pdftex.def Info: Plot LED Verde.png  used on input line 229.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Bianco.png, id=69, 412.6617pt x 293.898pt>
+<Plot LED Bianco.png, id=68, 412.6617pt x 293.898pt>
 File: Plot LED Bianco.png Graphic file (type png)
 <use Plot LED Bianco.png>
-Package pdftex.def Info: Plot LED Bianco.png  used on input line 210.
+Package pdftex.def Info: Plot LED Bianco.png  used on input line 234.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Infrarosso.png, id=70, 412.6617pt x 293.898pt>
+ [8 <./Plot LED Giallo.png> <./Plot LED Rosso.png> <./Plot LED Blu.png>]
+<Plot LED Infrarosso.png, id=75, 412.6617pt x 293.898pt>
 File: Plot LED Infrarosso.png Graphic file (type png)
 <use Plot LED Infrarosso.png>
-Package pdftex.def Info: Plot LED Infrarosso.png  used on input line 215.
+Package pdftex.def Info: Plot LED Infrarosso.png  used on input line 239.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [8 <./Plot LED Rosso.png> <./Plot LED Blu.png> <./Plot LED Verde.png>]
-<Plot Fotodiodo.png, id=77, 412.6617pt x 293.898pt>
+<Plot Fotodiodo.png, id=76, 412.6617pt x 293.898pt>
 File: Plot Fotodiodo.png Graphic file (type png)
 <use Plot Fotodiodo.png>
-Package pdftex.def Info: Plot Fotodiodo.png  used on input line 220.
+Package pdftex.def Info: Plot Fotodiodo.png  used on input line 244.
 (pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [9 <./Plot LED Bianco.png> <./Plot LED Infrarosso.png> <./Plot Fotodiodo.png>] (out/esperienza5.aux)
+ [9 <./Plot LED Verde.png> <./Plot LED Bianco.png> <./Plot LED Infrarosso.png>] [10 <./Plot Fotodiodo.png>] (out/esperienza5.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9480 strings out of 468662
- 196683 string characters out of 5444563
- 595326 words of memory out of 5000000
- 38137 multiletter control sequences out of 15000+600000
+ 9481 strings out of 468662
+ 196699 string characters out of 5444563
+ 600393 words of memory out of 5000000
+ 38138 multiletter control sequences out of 15000+600000
  641480 words of font info for 78 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  57i,12n,65p,353b,793s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on out/esperienza5.pdf (9 pages, 1895195 bytes).
+Output written on out/esperienza5.pdf (10 pages, 1897594 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 143 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

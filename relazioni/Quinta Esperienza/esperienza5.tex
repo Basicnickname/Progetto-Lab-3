@@ -42,7 +42,6 @@ L'obiettivo dell'esperienza è studiare la caratterizzazione elettrica e ottica 
 % -------------------------------------------------------------------
 \section{Materiali e Metodi}
 
-\subsection{Strumentazione utilizzata}
 \subsection{Strumentazione caratterizzazione elettrica}
 \begin{itemize}
     \item LED colore bianco, blu, giallo, rosso, verde e infrarosso
@@ -155,7 +154,8 @@ Far scorrere l'asta rotante e prendere nota dei valori in tensione in corrispond
     \label{grafico_ott_infrarosso}
 \end{figure}
 
-\subsection{Tabelle Risultati Fit}
+\subsection{Tabelle}
+\subsection{Tabelle Risultati Fit caratterizzazione elettrica}
 Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come valori di $I_0$:
 \begin{table}[H]
     \centering
@@ -179,6 +179,30 @@ Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come 
         \bottomrule
     \end{tabular}
     \caption{Valori di $I_0$ per i diversi LED e per il fotodiodo}
+\end{table}
+
+\subsection{Tabelle massimi caratterizzazione ottica}
+I dati riportati in seguito sono la lunghezza d'onda e la relativa intensità massima per i LED di diverso colore: 
+\begin{table}[H]
+    \centering
+    \label{tab:lambda_LED}
+    \begin{tabular}{
+        l 
+        S[table-format=3.0]   % Formato per lambda
+        S[table-format=3.1]   % Formato per V
+    }
+        \toprule
+        {LED} & {Valore $\lambda$ [\unit{nm}]} & {Valore $V$ [\unit{mV}]} \\
+        \midrule
+        Giallo & 610 & 25.7 \\
+        Rosso & 650 & 16.5 \\
+        Blu & 470 & 132.1 \\
+        Verde & 520 & 41.8 \\
+        Bianco & 560 & 98.7 \\
+        Infrarosso & 850 & 42.1 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Valori del massimo per i diversi LED}
 \end{table}
 
 \subsection{Plot}
@@ -224,8 +248,9 @@ Di seguito è riportato il grafico dei dati sperimentali con la curva di fit.
 % -------------------------------------------------------------------
 \section{Conclusioni}
 \textbf{Esiti fisici:}
-Nella caratterizzazione elettrica si può osservare che i dati sperimentali seguono una curva esponenziale.
+Dai grafici della caratterizzazione elettrica si può osservare che i dati sperimentali seguono una curva esponenziale.
 \\
 \textbf{Commenti:}
+Nei fit dei parametri l'errore relativo di $I_0$ è grande (perchè?)
 
 \end{document}

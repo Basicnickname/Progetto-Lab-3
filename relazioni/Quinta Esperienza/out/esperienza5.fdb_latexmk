@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1767561319.37079 "c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex" "out/esperienza5.pdf" "esperienza5" 1767561327.75925 0
+["pdflatex"] 1767562447.22887 "c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex" "out/esperienza5.pdf" "esperienza5" 1767562455.50567 0
   "Fotodiodo.png" 1767558884 121804 6935cda4a661f6106ebc7a2cba68a5e8 ""
   "LED Bianco ottica.png" 1767561235 104359 7d959f0344f5ae2652bee039d6e91086 ""
   "LED Bianco.png" 1767558884 122805 945161503c6791dfc06a17d69346a1fd ""
@@ -20,7 +20,7 @@
   "Plot LED Infrarosso.png" 1767558975 110909 c6e735412510b7cf6899c2022f16b3e0 ""
   "Plot LED Rosso.png" 1767558974 107308 dcbf4ccdd3c6412837f383f2e4b58f42 ""
   "Plot LED Verde.png" 1767558975 113195 914b1a23ee2ebc2f097951e52f60d2f1 ""
-  "c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex" 1767561318 8756 c3840bb6671c295bf07f827abfe23f4a ""
+  "c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex" 1767562446 9636 131dd85f95a599ea275476bdc47e80b9 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1763058054 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1763058054 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1763058741 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -106,8 +106,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1763061465 371233 0f6aca6addd6800b190706172e78fdc2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1763061531 3436873 3c53747a3aa82d32c1d1fe208a835ccf ""
   "c:/texlive/2025/texmf.cnf" 1763061457 713 e69b156964470283e0530f5060668171 ""
-  "esperienza5.tex" 1767561318 8756 c3840bb6671c295bf07f827abfe23f4a ""
-  "out/esperienza5.aux" 1767561327 4482 6b0be246b02bd755e4a98b5f06e42998 "pdflatex"
+  "esperienza5.tex" 1767562446 9636 131dd85f95a599ea275476bdc47e80b9 ""
+  "out/esperienza5.aux" 1767562455 4869 63e6326254d95b58f004bbc417bfc704 "pdflatex"
   (generated)
   "out/esperienza5.aux"
   "out/esperienza5.log"
