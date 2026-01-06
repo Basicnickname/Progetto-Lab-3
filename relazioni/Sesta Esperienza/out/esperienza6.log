@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.13)  5 JAN 2026 22:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.13)  6 JAN 2026 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex"
-(c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Quinta Esperienza/esperienza5.tex
+**"c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Sesta Esperienza/esperienza6.tex"
+(c:/Users/HP/Desktop/Progetto-Lab-3/relazioni/Sesta Esperienza/esperienza6.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -262,8 +262,8 @@ Package color Info: Driver file: pdftex.def on input line 149.
  (c:/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
-) (out/esperienza5.aux)
-\openout1 = `esperienza5.aux'.
+) (out/esperienza6.aux)
+\openout1 = `esperienza6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
@@ -346,145 +346,25 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<LED Giallo.png, id=17, 412.6617pt x 293.898pt>
-File: LED Giallo.png Graphic file (type png)
-<use LED Giallo.png>
-Package pdftex.def Info: LED Giallo.png  used on input line 90.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<LED Rosso.png, id=19, 412.6617pt x 293.898pt>
-File: LED Rosso.png Graphic file (type png)
-<use LED Rosso.png>
-Package pdftex.def Info: LED Rosso.png  used on input line 95.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [2]
-<LED Blu.png, id=23, 412.6617pt x 293.898pt>
-File: LED Blu.png Graphic file (type png)
-<use LED Blu.png>
-Package pdftex.def Info: LED Blu.png  used on input line 100.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<LED Verde.png, id=24, 412.6617pt x 293.898pt>
-File: LED Verde.png Graphic file (type png)
-<use LED Verde.png>
-Package pdftex.def Info: LED Verde.png  used on input line 105.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<LED Bianco.png, id=25, 412.6617pt x 293.898pt>
-File: LED Bianco.png Graphic file (type png)
-<use LED Bianco.png>
-Package pdftex.def Info: LED Bianco.png  used on input line 110.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [3 <./LED Giallo.png> <./LED Rosso.png> <./LED Blu.png>]
-<LED Infrarosso.png, id=32, 412.6617pt x 293.898pt>
-File: LED Infrarosso.png Graphic file (type png)
-<use LED Infrarosso.png>
-Package pdftex.def Info: LED Infrarosso.png  used on input line 115.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Fotodiodo.png, id=33, 412.6617pt x 293.898pt>
-File: Fotodiodo.png Graphic file (type png)
-<use Fotodiodo.png>
-Package pdftex.def Info: Fotodiodo.png  used on input line 120.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [4 <./LED Verde.png> <./LED Bianco.png> <./LED Infrarosso.png>]
-<LED Giallo ottica.png, id=40, 391.7034pt x 293.898pt>
-File: LED Giallo ottica.png Graphic file (type png)
-<use LED Giallo ottica.png>
-Package pdftex.def Info: LED Giallo ottica.png  used on input line 127.
-(pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
-<LED Rosso ottica.png, id=41, 391.7034pt x 293.898pt>
-File: LED Rosso ottica.png Graphic file (type png)
-<use LED Rosso ottica.png>
-Package pdftex.def Info: LED Rosso ottica.png  used on input line 132.
-(pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
-<LED Blu ottica.png, id=42, 391.7034pt x 293.898pt>
-File: LED Blu ottica.png Graphic file (type png)
-<use LED Blu ottica.png>
-Package pdftex.def Info: LED Blu ottica.png  used on input line 137.
-(pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
-<LED Verde ottica.png, id=43, 400.1349pt x 293.898pt>
-File: LED Verde ottica.png Graphic file (type png)
-<use LED Verde ottica.png>
-Package pdftex.def Info: LED Verde ottica.png  used on input line 142.
-(pdftex.def)             Requested size: 250.38564pt x 183.91pt.
- [5 <./Fotodiodo.png> <./LED Giallo ottica.png> <./LED Rosso ottica.png>]
-<LED Bianco ottica.png, id=50, 391.7034pt x 293.898pt>
-File: LED Bianco ottica.png Graphic file (type png)
-<use LED Bianco ottica.png>
-Package pdftex.def Info: LED Bianco ottica.png  used on input line 147.
-(pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
-<LED Infrarosso ottica.png, id=51, 391.7034pt x 293.898pt>
-File: LED Infrarosso ottica.png Graphic file (type png)
-<use LED Infrarosso ottica.png>
-Package pdftex.def Info: LED Infrarosso ottica.png  used on input line 152.
-(pdftex.def)             Requested size: 250.38564pt x 187.86984pt.
- [6 <./LED Blu ottica.png> <./LED Verde ottica.png> <./LED Bianco ottica.png>]
-
-Package siunitx Info: Option "scientific-notation = true" has been deprecated
-(siunitx)             in this release.
-(siunitx)             
-(siunitx)             Use "exponent-mode = scientific" as a replacement.
-
- [7 <./LED Infrarosso ottica.png>]
-<Plot LED Giallo.png, id=64, 412.6617pt x 293.898pt>
-File: Plot LED Giallo.png Graphic file (type png)
-<use Plot LED Giallo.png>
-Package pdftex.def Info: Plot LED Giallo.png  used on input line 236.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Rosso.png, id=65, 412.6617pt x 293.898pt>
-File: Plot LED Rosso.png Graphic file (type png)
-<use Plot LED Rosso.png>
-Package pdftex.def Info: Plot LED Rosso.png  used on input line 241.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Blu.png, id=66, 412.6617pt x 293.898pt>
-File: Plot LED Blu.png Graphic file (type png)
-<use Plot LED Blu.png>
-Package pdftex.def Info: Plot LED Blu.png  used on input line 246.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Verde.png, id=67, 412.6617pt x 293.898pt>
-File: Plot LED Verde.png Graphic file (type png)
-<use Plot LED Verde.png>
-Package pdftex.def Info: Plot LED Verde.png  used on input line 251.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [8 <./Plot LED Giallo.png> <./Plot LED Rosso.png>]
-<Plot LED Bianco.png, id=74, 412.6617pt x 293.898pt>
-File: Plot LED Bianco.png Graphic file (type png)
-<use Plot LED Bianco.png>
-Package pdftex.def Info: Plot LED Bianco.png  used on input line 256.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot LED Infrarosso.png, id=75, 412.6617pt x 293.898pt>
-File: Plot LED Infrarosso.png Graphic file (type png)
-<use Plot LED Infrarosso.png>
-Package pdftex.def Info: Plot LED Infrarosso.png  used on input line 261.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
-<Plot Fotodiodo.png, id=76, 412.6617pt x 293.898pt>
-File: Plot Fotodiodo.png Graphic file (type png)
-<use Plot Fotodiodo.png>
-Package pdftex.def Info: Plot Fotodiodo.png  used on input line 266.
-(pdftex.def)             Requested size: 250.38564pt x 178.3223pt.
- [9 <./Plot LED Blu.png> <./Plot LED Verde.png> <./Plot LED Bianco.png>]
-<E_gap-V_soglia.png, id=83, 416.5161pt x 294.3798pt>
-File: E_gap-V_soglia.png Graphic file (type png)
-<use E_gap-V_soglia.png>
-Package pdftex.def Info: E_gap-V_soglia.png  used on input line 273.
-(pdftex.def)             Requested size: 250.38564pt x 176.97061pt.
- [10 <./Plot LED Infrarosso.png> <./Plot Fotodiodo.png> <./E_gap-V_soglia.png>] (out/esperienza5.aux)
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] (out/esperienza6.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9488 strings out of 468662
- 196898 string characters out of 5444563
- 603408 words of memory out of 5000000
- 38146 multiletter control sequences out of 15000+600000
- 640704 words of font info for 77 fonts, out of 8000000 for 9000
+ 9318 strings out of 468662
+ 192795 string characters out of 5444563
+ 589903 words of memory out of 5000000
+ 37974 multiletter control sequences out of 15000+600000
+ 642164 words of font info for 79 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 57i,12n,65p,389b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on out/esperienza5.pdf (10 pages, 1994154 bytes).
+ 57i,11n,65p,359b,787s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on out/esperienza6.pdf (2 pages, 147014 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

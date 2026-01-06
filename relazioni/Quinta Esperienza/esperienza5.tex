@@ -23,7 +23,7 @@
 \usepackage{caption}  % Per personalizzare le didascalie
 
 % --- Dati Intestazione ---
-\title{\textbf{Caratterizzazione elettrica e ottica LED}}
+\title{\textbf{Caratterizzazione elettrica e ottica dei LED}}
 \author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
 \date{\today}
 
@@ -61,8 +61,7 @@ L'obiettivo dell'esperienza è studiare la caratterizzazione elettrica e ottica 
     \item Alimentatore in continua
     \item Reticolo (1000 linee/mm)
     \item Scatola condizionamento segnale
-    \item Binario
-    \item Braccio rotante
+    \item Binario e braccio rotante
     \item Tre supporti
     \item Due lenti
     \item Foglio con scala angolare
@@ -155,11 +154,10 @@ Far scorrere l'asta rotante e prendere nota dei valori in tensione in corrispond
 \end{figure}
 
 \subsection{Tabelle}
-\subsection{Tabelle Risultati Fit caratterizzazione elettrica}
-Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come valori di $I_0$:
+\subsection{Tabellza risultati fit caratterizzazione elettrica}
+Usando come funzione di fit $I = I_0(e^\frac{qV}{kT}-1)$ abbiamo ottenuto come valori di $I_0$:
 \begin{table}[H]
     \centering
-    \label{tab:I0_LED}
     \begin{tabular}{
         l 
         S[scientific-notation = true, table-format=1.2e2]   % Formato per il valore
@@ -169,23 +167,23 @@ Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come 
         \toprule
         {LED} & {Valore $I_0$ [\unit{A}]} & {Errore Assoluto $I_0$ [\unit{A}]} & {Errore Relativo $I_0$ [\%]} \\
         \midrule
-        Giallo & 3.28e-12 & 8.44e-12 & 257 \\
-        Rosso & 2.80e-07 & 6.03e-07 & 215 \\
-        Blu & 5.02e-06 & 9.04e-06 & 180 \\
-        Verde & 1.43e-05 & 2.29e-05 & 161 \\
-        Bianco & 4.13e-09 & 1.37e-08 & 331 \\
-        Infrarosso & 2.45e-12 & 8.96e-12 & 365 \\
-        Fotodiodo & 1.45e-04 & 7.93e-05 & 55 \\
+        Giallo & 2.27e-33 & 9.61e-34 & 42.25 \\
+        Rosso & 5.51e-30 & 3.64e-30 & 66.09 \\
+        Blu & 2.85e-53 & 3.12e-53 & 109.53 \\
+        Verde & 6.78e-54 & 8.05e-54 & 118.85 \\
+        Bianco & 2.54e-49 & 2.10e-49 & 82.57 \\
+        Infrarosso & 7.29e-23 & 1.93e-23 & 26.51 \\
+        Fotodiodo & 1.98e-11 & 6.90e-12 & 34.91 \\
         \bottomrule
     \end{tabular}
     \caption{Valori di $I_0$ per i diversi LED e per il fotodiodo}
+    \label{tab:I0_LED}
 \end{table}
 
-\subsection{Tabelle massimi caratterizzazione ottica}
+\subsection{Tabella massimi caratterizzazione ottica}
 I dati riportati in seguito sono la lunghezza d'onda e la relativa intensità massima per i LED di diverso colore: 
 \begin{table}[H]
     \centering
-    \label{tab:lambda_LED}
     \begin{tabular}{
         l 
         S[table-format=3.0]   % Formato per lambda
@@ -203,6 +201,30 @@ I dati riportati in seguito sono la lunghezza d'onda e la relativa intensità ma
         \bottomrule
     \end{tabular}
     \caption{Valori del massimo per i diversi LED}
+    \label{tab:lambda_LED}
+\end{table}
+
+\subsection{Tabella della tensione di soglia dei LED e energia di gap}
+Nei dati seguenti $V_{soglia}$ rappresenta la tensione a cui abbiamo osservato una prima emissione luminosa da parte del LED, mentre $E_{gap}$ è l'energia di picco di un fotone, calcolata a partire dai massimi trovati nella Tabella \ref{tab:lambda_LED}: $E_{gap} = \frac{h c}{\lambda}$.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l 
+        S[table-format=1.3]   % Formato per V
+        S[table-format=1.3]   % Formato per Egap
+    }
+        \toprule
+        {LED} & {Valore $V_{soglia}$ [\unit{V}]} & {Valore $E_{gap}$ [\unit{eV}]}\\
+        \midrule
+        Giallo & 1.773 & 2.034 \\
+        Rosso & 1.503 & 1.909 \\
+        Blu & 2.323 & 2.640 \\
+        Verde & 2.291 & 2.386 \\
+        Bianco & 2.439 & 2.216 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Valori di $V_{soglia}$ e di $E_{gap}$}
+    \label{tab:prima_emissione_LED}
 \end{table}
 
 \subsection{Plot}
@@ -245,12 +267,14 @@ Di seguito è riportato il grafico dei dati sperimentali con la curva di fit.
     \label{grafico_plot_fotodiodo}
 \end{figure}
 
+\subsection{Grafico $E_{gap}$ - $V_{soglia}$}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{E_gap-V_soglia.png}
+    \label{grafico_Egap_Vsoglia}
+\end{figure}
 % -------------------------------------------------------------------
 \section{Conclusioni}
-\textbf{Esiti fisici:}
-Dai grafici della caratterizzazione elettrica si può osservare che i dati sperimentali seguono una curva esponenziale.
-\\
-\textbf{Commenti:}
-Nei fit dei parametri l'errore relativo di $I_0$ è grande (perchè?)
+
 
 \end{document}
