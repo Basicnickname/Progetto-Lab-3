@@ -1,0 +1,99 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = symbol            % Usa / per le unità (m/s)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+
+% --- Dati Intestazione ---
+\title{\textbf{Esperienza sull'attività ottica}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+L'obiettivo dell'esperienza è studiare il fenomeno dell'attività ottica per luce di diverse lunghezze d'onda attraverso varie soluzioni acquose. In particolare si vuole:
+\begin{itemize}
+    \item Verificare la legge di Biot: $\alpha = k c L$. 
+    \item Misurare il potere rotatorio specifico di varie soluzioni, verificandone la dipendenza dalla lunghezza d'onda della luce incidente.
+    \item Osservare e studiare il fenomeno di mutarotazione in soluzione di glucosio.
+    \item Osservare e studiare il fenomeno di inversione della soluzione di saccarosio.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+
+\subsection{Dotazione sperimentale}
+\begin{itemize}
+    \item Polarimetro con LED di lunghezza d'onda $\lambda$ variabile tra $468 \unit{nm}$ (blu), $525 \unit{nm}$ (verde), $580 \unit{nm}$ (giallo), $630 \unit{nm}$ (rosso).
+    \item Cilindro graduato per polarimetro.
+    \item Becher e cilindro graduato con base.
+    \item Saccarosio, fruttosio e glucosio in polvere.
+    \item Acqua.
+    \item Piastra riscaldante.
+    \item Soluzione HCl al $25\%$.
+    \item Materiali di consumo.
+\end{itemize}
+
+\subsection{Procedura sperimentale}
+\subsubsection{Verifica della legge di Biot}
+\subsubsection{Misura del potere rotatorio specifico}
+\subsubsection{Studio della mutarotazione del glucosio}
+\subsubsection{Studio dell'inversione del saccarosio}
+% -------------------------------------------------------------------
+\section{Dati sperimentali e Analisi}
+
+\subsection{Grafici dati sperimentali}
+\begin{figure}[H]
+\end{figure}
+
+\subsection{Tabelle risultati}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l 
+        S[scientific-notation = true, table-format=1.2e2]   % Formato per il valore
+        S[scientific-notation = true, table-format=1.2e2]   % Formato per l'errore
+        S[table-format=3.2] % Formato per l'errore relativo
+    }
+        \toprule
+        \midrule
+        \bottomrule
+    \end{tabular}
+    \caption{}
+    \label{tab}
+\end{table}
+
+\subsection{Plot}
+Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le curve teoriche.
+
+\begin{figure}[H]
+    \centering
+\end{figure}
+
+
+% -------------------------------------------------------------------
+
+\section{Conclusioni}
+\end{document}
