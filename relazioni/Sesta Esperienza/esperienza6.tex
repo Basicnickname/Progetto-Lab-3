@@ -1,34 +1,34 @@
 \documentclass[a4paper,12pt]{article}
 
 % --- Pacchetti Fondamentali ---
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[italian]{babel}
-\usepackage{geometry}
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
 \geometry{a4paper, margin=2.5cm}
 
 % --- Pacchetti Matematica e Fisica ---
-\usepackage{amsmath, amssymb}
-\usepackage{siunitx}
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
 \sisetup{
-    output-decimal-marker = {.},
-    separate-uncertainty = true,
-    per-mode = symbol
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = symbol            % Usa / per le unità (m/s)
 }
-\usepackage{textgreek}
 
 % --- Pacchetti Immagini e Tabelle ---
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{caption}
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
 
 % --- Dati Intestazione ---
-\title{\textbf{Diffrazione da fenditure}}
+\title{\textbf{Caratterizzazione elettrica e ottica dei LED}}
 \author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
 \date{\today}
 
 \begin{document}
+
 \maketitle
 
 % -------------------------------------------------------------------
@@ -44,14 +44,20 @@ Strumenti e materiali utilizzati:
 \begin{itemize}
     \item Fenditure singole o doppie di diverse misure
     \item Laser verde e rosso
-    \item Metro (Sensibilità: \SI{0.01}{m})
+    \item Metro (Sensibilità: \SI{0.01}{\meter})
     \item Generatore di funzione ? (o il generatore in continua)
     \item Carta millimetrata
-    \item Binari e supporti ottici
+    \item Binario e supporti ottici
 \end{itemize}
 
 \subsection{Procedura sperimentale}
-
+Inserire il laser e una fenditura (singola o doppia) nei supporti e collegare il laser al generatore in continua (?) (generatore di funzione).
+Attaccare la carta millimetrata su una parete e porre il binario a una distanza L maggiore di 1 m da questa.
+Accendere il laser e illuminare la fenditura.
+Misurare la distanza x dei minimi di diffrazione, anche di interferenza nel caso della doppia fenditura, dal centro della figura luminosa che compare sulla carta millimetrata.
+\\
+L'equazione che descrive la diffrazione è $\sin(\theta) = \frac{\lambda}{b}p$ con p l'ordine del minimo di diffrazione ($\sin(\theta) = \frac{\lambda}{b}(m+\frac{1}{2})$ per l'interferenza): si ha quindi una dipendenza lineare di $\sin(\theta)$ da p.
+La fenditura trovandosi a una distanza molto maggiore rispetto alla lunghezza d'onda della luce incidente sulla fenditura, si può approssimare $\sin(\theta) \simeq \tan(\theta) = \frac{x}{L}$.
 
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
@@ -114,6 +120,7 @@ Usando la formula $\sin(\theta) = \frac{\lambda}{b}p$ per fare il fit dei dati s
 \begin{table}[H]
     \centering
     \caption{Misure di b con il laser verde}
+    \label{tab:dati_b_singola_verde}
     \begin{tabular}{
         S[table-format=1.3]  % Formato per il reale valore di b
         S[table-format=1.3]  % Formato per il valore b (2 cifre intere, 1 decimale)
@@ -121,19 +128,19 @@ Usando la formula $\sin(\theta) = \frac{\lambda}{b}p$ per fare il fit dei dati s
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale b [\unit{mm}]} & {Valore fit b [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale b [\unit{\milli\meter}]} & {Valore fit b [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.1 & 0.109 & 0.004 & 3.61 \\
         0.4 & 0.449 & 0.024 & 5.36 \\
         0.8 & 0.901 & 0.058 & 6.46 \\
         \bottomrule
     \end{tabular}
-    \label{tab:dati_b_singola_verde}
 \end{table}
 
 \begin{table}[H]
     \centering
     \caption{Misure di b con il laser rosso}
+    \label{tab:dati_b_singola_rosso}
     \begin{tabular}{
         S[table-format=1.3]  % Formato per il reale valore di b
         S[table-format=1.3]  % Formato per il valore b (2 cifre intere, 1 decimale)
@@ -141,14 +148,13 @@ Usando la formula $\sin(\theta) = \frac{\lambda}{b}p$ per fare il fit dei dati s
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale b [\unit{mm}]} & {Valore fit b [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale b [\unit{\milli\meter}]} & {Valore fit b [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.1 & 0.104 & 0.018 & 17.05 \\
         0.4 & 0.479 & 0.027 & 5.59 \\
         0.8 & 0.800 & 0.298 & 3.72 \\
         \bottomrule
     \end{tabular}
-    \label{tab:dati_b_singola_rosso}
 \end{table}
 
 \subsection{Tabelle doppia fenditura}
@@ -158,6 +164,7 @@ Usando $\sin(\theta) = \frac{\lambda}{d}(m+\frac{1}{2})$ si ha una stima del val
 \begin{table}[H]
     \centering
     \caption{Misure di b e d con il laser verde}
+    \label{tab:dati_b_d_doppia_verde}
     \begin{tabular}{
         S[table-format=1.3]  % Formato per il reale valore di b
         S[table-format=1.3]  % Formato per il valore b (2 cifre intere, 1 decimale)
@@ -165,7 +172,7 @@ Usando $\sin(\theta) = \frac{\lambda}{d}(m+\frac{1}{2})$ si ha una stima del val
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale b [\unit{mm}]} & {Valore fit b [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale b [\unit{\milli\meter}]} & {Valore fit b [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.1 & 0.081 & 0.002 & 2.78 \\
         0.15 & 0.112 & 0.012 & 10.67 \\
@@ -179,19 +186,19 @@ Usando $\sin(\theta) = \frac{\lambda}{d}(m+\frac{1}{2})$ si ha una stima del val
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale d [\unit{mm}]} & {Valore fit d [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale d [\unit{\milli\meter}]} & {Valore fit d [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.3 & 0.295 & 0.011 & 3.84 \\
         0.25 & 0.244 & 0.004 & 1.51 \\
         0.5 & 0.414 & 0.036 & 8.58 \\
         \bottomrule
     \end{tabular}
-    \label{tab:dati_b_d_doppia_verde}
 \end{table}
 
 \begin{table}[H]
     \centering
     \caption{Misure di b e d con il laser rosso}
+    \label{tab:dati_b_d_doppia_rosso}
     \begin{tabular}{
         S[table-format=1.3]  % Formato per il reale valore di b
         S[table-format=1.3]  % Formato per il valore b (2 cifre intere, 1 decimale)
@@ -199,7 +206,7 @@ Usando $\sin(\theta) = \frac{\lambda}{d}(m+\frac{1}{2})$ si ha una stima del val
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale b [\unit{mm}]} & {Valore fit b [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale b [\unit{\milli\meter}]} & {Valore fit b [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.1 & 0.088 & 0.005 & 6.04 \\
         0.15 & 0.082 & 0.010 & 12.12 \\
@@ -213,14 +220,13 @@ Usando $\sin(\theta) = \frac{\lambda}{d}(m+\frac{1}{2})$ si ha una stima del val
         S[table-format=2.2]  % Formato per l'errore relativo
     }
         \toprule
-        {Valore reale d [\unit{mm}]} & {Valore fit d [\unit{mm}]} & {Errore Assoluto [\unit{mm}]} & {Errore Relativo [\%]} \\
+        {Valore reale d [\unit{\milli\meter}]} & {Valore fit d [\unit{\milli\meter}]} & {Errore Assoluto [\unit{\milli\meter}]} & {Errore Relativo [\%]} \\
         \midrule
         0.3 & 0.297 & 0.007 & 2.43 \\
         0.3 & 0.317 & 0.010 & 3.09 \\
         0.25 & 0.272 & 0.010 & 3.63 \\
         \bottomrule
     \end{tabular}
-    \label{tab:dati_b_d_doppia_rosso}
 \end{table}
 
 
@@ -273,7 +279,7 @@ Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le cu
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.49\textwidth]{Plot_2.b=0,15.Rosso.d=0,3 .png}
+    \includegraphics[width=0.49\textwidth]{Plot_2.b=0,15.Rosso.d=0,3.png}
     \includegraphics[width=0.49\textwidth]{Plot_2.Rosso.d=0,25.png}
 \end{figure}
 
@@ -287,10 +293,11 @@ La procedura sperimentale è identica a quella precedente: collegare il laser al
 Anche in questo caso si approssima la misura di x alla misura del seno dell'angolo a cui si trova il minimo.
 \\
 \subsection{Grafici e tabelle}
-Sapendo che il laser utilizzato è quello verde si può fare il fit della funzione $\sin(\theta) = \frac{\lambda}{b}p$ e ottenere un valore per b, spessore del capello:
+Sapendo che il laser utilizzato è quello verde ($\lambda = 531.9$ nm) si può fare il fit della funzione $\sin(\theta) = \frac{\lambda}{b}p$ e ottenere un valore per il parametro b, spessore del capello:
 \begin{table}[H]
     \centering
-    \caption{Diffrazione da un capello (Laser verde)}
+    \caption{Diffrazione da un capello}
+    \label{tab:dati_capello}
     \begin{tabular}{
         S[table-format=2.2]  % Formato per il valore b
         S[table-format=1.2]  % Formato per l'errore
@@ -302,11 +309,15 @@ Sapendo che il laser utilizzato è quello verde si può fare il fit della funzio
         67.84 & 2.63 & 3.88 \\
         \bottomrule
     \end{tabular}
-    \label{tab:dati_capello}
 \end{table}
-
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.49\textwidth]{Plot_Capello.png}
+\end{figure}
 % -------------------------------------------------------------------
 \section{Conclusioni}
-
- 
+Dai grafici si osserva la dipendenza lineare di $\sin(\theta)$ da p, ordine del minimo di diffrazione o interferenza.
+I dati per b e d ottenuti dai fit sono quasi tutti coerenti con quelli reali, a eccezione di uno, in cui il b dal fit viene $(0.082\pm0.010)$ mm mentre quello reale è di $0.15$ mm, ma questo potrebbe essere dovuto al fatto che in quel caso siamo riusciti a prendere solo 3 dati per quella misura.
+Per il fit del capello lo spessore viene di $(67.84\pm2.63)\mu$m che è una misura sensata; infatti normalmente lo spessore dei capelli si aggira tra i 60 e i 100 $\mu$m
 \end{document}
