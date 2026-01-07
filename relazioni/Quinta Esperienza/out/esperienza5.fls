@@ -176,36 +176,16 @@ INPUT ./Fotodiodo.png
 INPUT ./Fotodiodo.png
 INPUT ./Fotodiodo.png
 INPUT ./Fotodiodo.png
-INPUT ./LED Giallo ottica.png
-INPUT ./LED Giallo ottica.png
-INPUT ./LED Giallo ottica.png
-INPUT ./LED Giallo ottica.png
-INPUT ./LED Giallo ottica.png
-INPUT ./LED Rosso ottica.png
-INPUT ./LED Rosso ottica.png
-INPUT ./LED Rosso ottica.png
-INPUT ./LED Rosso ottica.png
-INPUT ./LED Rosso ottica.png
-INPUT ./LED Blu ottica.png
-INPUT ./LED Blu ottica.png
-INPUT ./LED Blu ottica.png
-INPUT ./LED Blu ottica.png
-INPUT ./LED Blu ottica.png
-INPUT ./LED Verde ottica.png
-INPUT ./LED Verde ottica.png
-INPUT ./LED Verde ottica.png
-INPUT ./LED Verde ottica.png
-INPUT ./LED Verde ottica.png
-INPUT ./LED Bianco ottica.png
-INPUT ./LED Bianco ottica.png
-INPUT ./LED Bianco ottica.png
-INPUT ./LED Bianco ottica.png
-INPUT ./LED Bianco ottica.png
-INPUT ./LED Infrarosso ottica.png
-INPUT ./LED Infrarosso ottica.png
-INPUT ./LED Infrarosso ottica.png
-INPUT ./LED Infrarosso ottica.png
-INPUT ./LED Infrarosso ottica.png
+INPUT ./V - $_lambda$.png
+INPUT ./V - $_lambda$.png
+INPUT ./V - $_lambda$.png
+INPUT ./V - $_lambda$.png
+INPUT ./V - $_lambda$.png
+INPUT ./E_gap-V_soglia.png
+INPUT ./E_gap-V_soglia.png
+INPUT ./E_gap-V_soglia.png
+INPUT ./E_gap-V_soglia.png
+INPUT ./E_gap-V_soglia.png
 INPUT ./Plot LED Giallo.png
 INPUT ./Plot LED Giallo.png
 INPUT ./Plot LED Giallo.png
@@ -241,11 +221,6 @@ INPUT ./Plot Fotodiodo.png
 INPUT ./Plot Fotodiodo.png
 INPUT ./Plot Fotodiodo.png
 INPUT ./Plot Fotodiodo.png
-INPUT ./E_gap-V_soglia.png
-INPUT ./E_gap-V_soglia.png
-INPUT ./E_gap-V_soglia.png
-INPUT ./E_gap-V_soglia.png
-INPUT ./E_gap-V_soglia.png
 INPUT out/esperienza5.aux
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

@@ -80,82 +80,44 @@ Collegare in serie un multimetro, utilizzato come amperometro, e il LED all'alim
 Collegare il fotodiodo all'altro multimetro, utilizzato come voltmetro, tramite la scatola di condizionameto del segnale, che permette di avere una risposta lineare del fotodiodo.
 Allineare il braccio rotante e il foglio con la scala angolare cercando prima l'ordine zero: si deve osservare un massimo di risposta in tensione del fotodiodo quando LED, reticolo e fotodiodo sono allineati.
 Successivamente verificare che ruotando l'asta l'estremità del braccio rotante continui a scorrere smepre sulla linea dei 39 cm presente sul foglio con scala angolare.
-Far scorrere l'asta rotante e prendere nota dei valori in tensione in corrispondenza delle diverse lunghezze d'onda presenti sul foglio.
+Far scorrere l'asta rotante e prendere nota dei valori in tensione a diversi angoli.
+Per convertire l'angolo $\theta$ in lunghezza d'onda $\lambda$ bisogna usare la formula dell'interferenza: $\sin(\theta) = \frac{m\lambda}{d}$, dove in questo caso $m=1$ perchè quello che verrà misurato è solo il massimo al primo ordine.
+Questo calcolo, però non è da fare perchè sul foglio con scala angolare sono già presenti le lunghezze d'onda che corrispondono a determinati angoli.
+Quindi prendere nota dei valori in tensione in corrispondenza dei valori di lunghezza d'onda letti sul foglio. 
 
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
 \subsection{Grafici dati caratterizzazione elettrica}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{LED Giallo.png}
-    \label{grafico_exp_giallo}
+    \includegraphics[width=0.43\textwidth]{LED Giallo.png}
+    \includegraphics[width=0.43\textwidth]{LED Rosso.png}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{LED Rosso.png}
-    \label{grafico_exp_rosso}
+    \includegraphics[width=0.43\textwidth]{LED Blu.png}
+    \includegraphics[width=0.43\textwidth]{LED Verde.png}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{LED Blu.png}
-    \label{grafico_exp_blu}
+    \includegraphics[width=0.43\textwidth]{LED Bianco.png}
+    \includegraphics[width=0.43\textwidth]{LED Infrarosso.png}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{LED Verde.png}
-    \label{grafico_exp_verde}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Bianco.png}
-    \label{grafico_exp_bianco}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Infrarosso.png}
-    \label{grafico_exp_infrarosso}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Fotodiodo.png}
-    \label{grafico_exp_fotodiodo}
+    \includegraphics[width=0.43\textwidth]{Fotodiodo.png}
 \end{figure}
 
-\subsection{Grafici caratterizzazione ottica}
+\subsection{Grafico caratterizzazione ottica}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{LED Giallo ottica.png}
-    \label{grafico_ott_giallo}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Rosso ottica.png}
-    \label{grafico_ott_rosso}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Blu ottica.png}
-    \label{grafico_ott_blu}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Verde ottica.png}
-    \label{grafico_ott_verde}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Bianco ottica.png}
-    \label{grafico_ott_bianco}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{LED Infrarosso ottica.png}
-    \label{grafico_ott_infrarosso}
+    \includegraphics[width=0.6\textwidth]{V - $_lambda$.png}
+    \label{grafico_ottica}
 \end{figure}
 
 \subsection{Tabelle}
 \subsection{Tabellza risultati fit caratterizzazione elettrica}
-Usando come funzione di fit $I = I_0(e^\frac{qV}{kT}-1)$ abbiamo ottenuto come valori di $I_0$:
+Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come valori di $I_0$:
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -167,13 +129,13 @@ Usando come funzione di fit $I = I_0(e^\frac{qV}{kT}-1)$ abbiamo ottenuto come v
         \toprule
         {LED} & {Valore $I_0$ [\unit{A}]} & {Errore Assoluto $I_0$ [\unit{A}]} & {Errore Relativo $I_0$ [\%]} \\
         \midrule
-        Giallo & 2.27e-33 & 9.61e-34 & 42.25 \\
-        Rosso & 5.51e-30 & 3.64e-30 & 66.09 \\
-        Blu & 2.85e-53 & 3.12e-53 & 109.53 \\
-        Verde & 6.78e-54 & 8.05e-54 & 118.85 \\
-        Bianco & 2.54e-49 & 2.10e-49 & 82.57 \\
-        Infrarosso & 7.29e-23 & 1.93e-23 & 26.51 \\
-        Fotodiodo & 1.98e-11 & 6.90e-12 & 34.91 \\
+        Giallo & 3.28e-12 & 8.44e-12 & 257 \\
+        Rosso & 2.80e-07 & 6.03e-07 & 215 \\
+        Blu & 5.02e-06 & 9.04e-06 & 180 \\
+        Verde & 1.43e-05 & 2.29e-05 & 161 \\
+        Bianco & 4.13e-09 & 1.37e-08 & 331 \\
+        Infrarosso & 2.45e-12 & 8.96e-12 & 365 \\
+        Fotodiodo & 1.45e-04 & 7.94e-05 & 55 \\
         \bottomrule
     \end{tabular}
     \caption{Valori di $I_0$ per i diversi LED e per il fotodiodo}
@@ -181,7 +143,7 @@ Usando come funzione di fit $I = I_0(e^\frac{qV}{kT}-1)$ abbiamo ottenuto come v
 \end{table}
 
 \subsection{Tabella massimi caratterizzazione ottica}
-I dati riportati in seguito sono la lunghezza d'onda e la relativa intensità massima per i LED di diverso colore: 
+I dati riportati in seguito sono l'intensità massima e la relativa lunghezza d'onda $\lambda_{max}$ per i LED di diverso colore: 
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -190,14 +152,14 @@ I dati riportati in seguito sono la lunghezza d'onda e la relativa intensità ma
         S[table-format=3.1]   % Formato per V
     }
         \toprule
-        {LED} & {Valore $\lambda$ [\unit{nm}]} & {Valore $V$ [\unit{mV}]} \\
+        {LED} & {Valore $V$ [\unit{mV}]} & {Valore $\lambda_{max}$ [\unit{nm}]}\\
         \midrule
-        Giallo & 610 & 25.7 \\
-        Rosso & 650 & 16.5 \\
-        Blu & 470 & 132.1 \\
-        Verde & 520 & 41.8 \\
-        Bianco & 560 & 98.7 \\
-        Infrarosso & 850 & 42.1 \\
+        Giallo & 25.7 & 610 \\
+        Rosso & 16.5 & 650 \\
+        Blu & 132.1 & 470 \\
+        Verde & 41.8 & 520 \\
+        Bianco & 98.7 & 560 \\
+        Infrarosso & 42.1 & 850 \\
         \bottomrule
     \end{tabular}
     \caption{Valori del massimo per i diversi LED}
@@ -227,54 +189,43 @@ Nei dati seguenti $V_{soglia}$ rappresenta la tensione a cui abbiamo osservato u
     \label{tab:prima_emissione_LED}
 \end{table}
 
-\subsection{Plot}
-Di seguito è riportato il grafico dei dati sperimentali con la curva di fit.
-
-\subsection{Caratterizzazione elettrica}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Giallo.png}
-    \label{grafico_plot_giallo}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Rosso.png}
-    \label{grafico_plot_rosso}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Blu.png}
-    \label{grafico_plot_blu}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Verde.png}
-    \label{grafico_plot_verde}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Bianco.png}
-    \label{grafico_plot_bianco}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot LED Infrarosso.png}
-    \label{grafico_plot_infrarosso}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{Plot Fotodiodo.png}
-    \label{grafico_plot_fotodiodo}
-\end{figure}
-
 \subsection{Grafico $E_{gap}$ - $V_{soglia}$}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{E_gap-V_soglia.png}
+    \includegraphics[width=0.42\textwidth]{E_gap-V_soglia.png}
     \label{grafico_Egap_Vsoglia}
 \end{figure}
+
+\subsection{Plot}
+Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le curve disegnate usando $I_0$ trovato nei fit dei dati.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.43\textwidth]{Plot LED Giallo.png}
+    \includegraphics[width=0.43\textwidth]{Plot LED Rosso.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.43\textwidth]{Plot LED Blu.png}
+    \includegraphics[width=0.43\textwidth]{Plot LED Verde.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.43\textwidth]{Plot LED Bianco.png}
+    \includegraphics[width=0.43\textwidth]{Plot LED Infrarosso.png}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.43\textwidth]{Plot Fotodiodo.png}
+\end{figure}
+
 % -------------------------------------------------------------------
+
 \section{Conclusioni}
-
-
+Nella caratterizzazione elettrica si è verificato l'andaento esponenziale della corrente che passa in un LED in funzione della tensione ai capi di quest'ultimo. Gli errori sulle $I_0$ sono grandi, ma questo potrebbe essere dovuto al fit esponenziale.
+Nella caratterizzzazione ottica si osserva che i LED giallo, rosso, verde, blu hanno un massimo di emissione per una lunghezza d'onda che nello spettro elettromagnetico coincide con le lunghezze d'onda nella luce visibile, mentre il LED infrarosso ha un massimo per una lunghezza d'onda maggiore di quelle nello spettro del visibile. 
+Il LED bianco sembra invece avere due picchi: uno che coincide con il picco del verde e l'altro con quello del giallo.
+Infine nel grafico che mette a confronto l'energia di gap e la tensione di soglia si può osservare che si ha un andamento circa lineare: l'energia di soglia aumenta con il diminuire di $\lambda$. 
+Quello del LED bianco è un dato che si discosta dall'andamento lineare e potrebbe essere dovuto al doppio picco che è stato trovato nella caratterizzazione ottica, dato che per calcolare l'energia di gap è stato preso solo il picco maggiore cioè quello più tendente al giallo.
+Un'altra spiegazione è che nel LED bianco, blu e verde si osservava un emissione luminosa anche con un minimo passaggio di corrente, quindi anche il valore di $V_{soglia}$ ha un errore grande da tenere in considerazione. 
 \end{document}
