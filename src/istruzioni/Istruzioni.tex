@@ -1,0 +1,40 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[italian]{babel}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=cyan]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\title{Setup Github e VSCode per \LaTeX} 
+\date{\today}
+\author{Telemaco Pezzoni}
+
+\begin{document}
+\maketitle
+\section{Captatio benevolentiae}
+Il file contiene le istruzioni per settare VSCode e Github per lavorare in \LaTeX.
+Eventualmente possiamo organizzarci per setuppare anche Papeeria online.
+Questo documento lo trovate aggiornato nella repository alla cartella \textbf{src} con il nome \textbf{Istruzioni.tex}.
+Il pdf generato lo trovate nella sottocartella \textbf{out}.
+Sempre nella cartella \textbf{src} trovate un video che mostra i passaggi principali per modificare i documenti e sincronizzarli con Github. \newline
+\textbf{NB:} Nel caso lavorassimo contemporaneamente sullo stesso file potrebbero generarsi conflitti durante la sincronizzazione, se dovesse succedere dovremo correggerli manualmente.
+\section{Primi passaggi}
+\begin{enumerate}[1.]
+    \item Creare un account su \href{https://github.com/signup}{\textbf{Github}};
+    \item Aggiungere ai preferiti la \href{https://github.com/Basicnickname/Progetto-Lab-3.git}{repository} e farsi aggiungere come collaboratore;
+\end{enumerate}
+\section{Installazione software}
+\begin{enumerate}[1.]
+    \item Scaricare \href{https://code.visualstudio.com/}{\textbf{VSCode}} e installarlo;
+    \item Aprire VSCode e installare le estensioni (icona nella barra a sinistra oppure ctrl+shift+x) \textbf{LaTeX Workshop}, \textbf{GitHub Pull Requests}, \textbf{GitHub Copilot} e \textbf{Colab};
+    \item Scaricare e installare \href{https://www.tug.org/texlive/windows.html#install}{texlive} (consiglio dopo aver aperto l'installer di andare nelle impostazioni avanzate e selezionare l'installazione media);
+    \item Installare \href{https://git-scm.com/download/win}{Git} (consiglio di lasciare tutte le impostazioni di default);
+    \item Riavviare il computer;
+\end{enumerate}
+
+\section{Configurazione}    
+\begin{enumerate}[1.]
+    \item Aprire VSCode premere ctrl+shift+p e digitare Preferences: Open User Settings (JSON), aprire il file e copiarci all'interno il contenuto del file \href{https://github.com/Basicnickname/Progetto-Lab-3/blob/main/src/json}{json};
+    \item Aprire GIT Bash (dal menù start) e digitare i seguenti comandi: git config --global user.email "youremail@abc.example" e git config --global user.name "Your.Name";
+    \item Aprire VSCode, premere ctrl+shift+p e digitare Git: Clone, incollare \href{https://github.com/Basicnickname/Progetto-Lab-3.git}{url} e scegliere la cartella di destinazione (consiglio il desktop);
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,111 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = symbol            % Usa / per le unità (m/s)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+
+% --- Dati Intestazione ---
+\title{\textbf{Titolo dell'Esperienza}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+L'obiettivo dell'esperienza è studiare qualcosa di bellissimo, nello specifico:
+\begin{itemize}
+    \item Verificare che $1 + 1 = 2$.
+    \item Finire le relazioni prima del 2030.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+
+\subsection{Strumentazione utilizzata}
+Elenco degli strumenti (se necessario con relative sensibilità o incertezze):
+\begin{itemize}
+    \item Cervello (Sensibilità: \SI{0}{\%})
+    \item Cronometro digitale (Sensibilità: \SI{0.01}{s})
+\end{itemize}
+
+\subsection{Procedura sperimentale}
+Descrivi qui come hai svolto l'esperimento, meglio un testo discorsivo senza formule. Specifica quali grandezze sono state misurate direttamente e quali indirettamente.
+\textit{"Abbiamo posizionato il cervello sul tavolo e misurato qualcosa di straordinario..."}
+
+% -------------------------------------------------------------------
+\section{Dati sperimentali e Analisi}
+
+In questa sezione riportiamo i dati raccolti e i grafici di fit.
+
+\subsection{Grafici dati grezzi}
+Di seguito sono riportati i grafici dei dati sperimentali grezzi. (Direi non tabelle sennò occupano tutta la pagina) %Sistemare nome del grafico e legenda su Colab, in alcuni fit sono presenti nel grafico anche i risultati del fit, toglierli sarebbe meglio.       
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Dati_1_Foglio1.png} 
+    \caption{Grafico dei dati grezzi raccolti durante l'esperimento.}
+    \label{fig:grafico_dati_grezzi}
+\end{figure}
+
+\subsection{Tabelle Risultati Fit}
+fittando con la funzione $y = mx + q$ otteniamo i seguenti risultati:
+\begin{table}[H]
+    \centering
+    \caption{Misure di corrente nel cervello se tocchi una presa elettrica.}
+    \label{tab:dati_prima_misura}
+    \begin{tabular}{
+        l 
+        S[table-format=2.1]  % Formato per il valore (2 cifre intere, 1 decimale)
+        S[table-format=1.1]  % Formato per l'errore
+        S[table-format=1.2]  % Formato per l'errore relativo
+    }
+        \toprule
+        {Parametro} & {Valore [\unit{cm/s}]} & {Errore Assoluto [\unit{cm/s}]} & {Errore Relativo [\%]} \\
+        \midrule
+        $\Delta$ & 2.5 & 0.1 & 4.00 \\
+        $\delta$ & 5.1 & 0.1 & 1.96 \\
+        $\beta$ & 7.4 & 0.1 & 1.35 \\
+        $\alpha$ & 10.0 & 0.2 & 2.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Plot}
+Di seguito è riportato il grafico dei dati sperimentali con la curva di fit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fit_1_Foglio1.png} 
+    \caption{Grafico della Forza in funzione del conteggio di midichlorian.}
+    \label{fig:grafico_fit}
+\end{figure}
+
+Molto bello
+% -------------------------------------------------------------------
+\section{Conclusioni}
+\textbf{Esiti fisici:}
+Molto bello torna tutto
+\\
+\textbf{Commenti:}
+Discutere qui eventuali fonti di errore sistematico, la bontà del fit e possibili miglioramenti dell'esperimento. 
+\end{document}
