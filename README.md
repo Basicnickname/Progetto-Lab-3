@@ -12,3 +12,4 @@ Per l'analisi dati si utilizza esclusivamente la cartella di Google Colab, lì s
 
 Per ogni dubbio consultare i templates
 
+secondo test
