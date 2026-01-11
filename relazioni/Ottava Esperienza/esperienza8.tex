@@ -14,6 +14,7 @@
     output-decimal-marker = {.}, % Punto come separatore decimale
     separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
     per-mode = symbol            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
 }
 
 % --- Pacchetti Immagini e Tabelle ---
@@ -23,6 +24,8 @@
 \usepackage{caption}  % Per personalizzare le didascalie
 \usepackage{subcaption}
 \usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
+
 
 % --- Dati Intestazione ---
 \title{\textbf{Attività ottica}}
@@ -37,7 +40,7 @@
 \section{Obiettivo dell'esperienza}
 L'obiettivo dell'esperienza è studiare il fenomeno dell'attività ottica per luce di diverse lunghezze d'onda attraverso varie soluzioni acquose. In particolare si vuole:
 \begin{itemize}
-    \item Verificare la legge di Biot prima in funzione della lunghezza di propagazione nel mezzo $L$ (secondo $\alpha = k c L$) e successivamente in funzione della massa disciolta $P$ (secondo la relazione derivata $\alpha = k P/S$), in quest'ultima parte determinare anche il potere rotatorio specifico $k$ per la sostanza utilizzata.
+    \item Verificare la legge di Biot prima in funzione della lunghezza di propagazione nel mezzo $L$ (secondo $\alpha = K L$) e successivamente in funzione della massa disciolta $P$ (secondo la relazione derivata $\alpha = k P/S$), in quest'ultima parte determinare anche il potere rotatorio specifico $k$ per la sostanza utilizzata.
     \item Misurare il potere rotatorio specifico di varie soluzioni, verificandone la dipendenza dalla lunghezza d'onda della luce incidente.
     \item Osservare e studiare il fenomeno di mutarotazione in soluzione di glucosio.
     \item Osservare e studiare il fenomeno di inversione della soluzione di saccarosio.
@@ -71,36 +74,54 @@ Sono state preparate diverse soluzioni di saccarosio, fruttosio e glucosio sciog
 \subsubsection{Studio dell'inversione del saccarosio}
 Dopo aver sciolto $30 \unit{g}$ di saccarosio in acqua, sono stati aggiunti $2.5 \unit{ml}$ di HCl al $25\%$ per catalizzare l'inversione. Sono dunque stati misurati gli angoli di rotazione a intervalli di diversi minuti utilizzando luce verde; Per garantire il raggiungimento dell'equilibrio le ultime misurazioni sono state effettuate il giorno seguente. 
 % -------------------------------------------------------------------
-\section{Dati sperimentali e Analisi}
-
-\subsection{Grafici dati sperimentali}
-\subsubsection{Verifica della legge di Biot}
-\begin{figure}[H]
-\begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Dati_1_Funzione L.png}
-        \caption{Angolo di rotazione in funzione della lunghezza di propagazione L}
-        \label{fig:Biot L}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Dati_2_Funzione P.png}
-        \caption{Angolo di rotazione in funzione della massa disciolta P}
-        \label{Biot P}
-\end{subfigure}
-\end{figure}
-\subsubsection{Misura del potere rotatorio specifico}
-\subsubsection{Studio della mutarotazione del glucosio}
-\subsubsection{Studio dell'inversione del saccarosio}
-\begin{figure}[H]
-\end{figure}
+\section{Analisi dei dati e grafici}
 
 \subsection{Tabelle risultati}
 \begin{table}[H]
     \centering
     \begin{tabular}{
-        l 
+        l
+        S[table-format=1.3]  
+        S[table-format=1.3]  
+        S[table-format=2.3]  
+    }
+        \toprule
+        {Grandezza} & {Valore} & {Errore Assoluto} & {Errore Relativo [\%]} \\
+        \midrule
+        $offset$ [\unit{deg}] & 2 & 1 & 50.0 \\
+        $S$ [\unit{cm^2}] & 5.88 & 0.04 & 0.5 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Misure preliminari}
+    \label{tab:Misure preliminari}
+\end{table}
+\subsubsection{Verifica della legge di Biot}
+Utilizzando le formule $\alpha = K L$ e $\alpha = k P/S$, sono stati calcolati rispettivamente i coefficienti $K=kc$ e $k$ tramite regressione lineare.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l
+        S[table-format=1.3]  
+        S[table-format=1.3]  
+        S[table-format=2.3]  
+    }
+        \toprule
+        {Grandezza} & {Valore} & {Errore Assoluto} & {Errore Relativo [\%]} \\
+        \midrule
+        $K$ [\unit{deg.cm^-1}] & 2 & 1 & 50.0 \\
+        $k$ [\unit{deg.cm^2.g^-1}] & 5.88 & 0.04 & 0.5 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Verifica della legge di Biot: parametri per saccarosio con luce verde}
+    \label{tab:Legge di Biot}
+\end{table}
+\subsubsection{Misura del potere rotatorio specifico}
+\subsubsection{Studio della mutarotazione del glucosio}
+\subsubsection{Studio dell'inversione del saccarosio}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
         S[scientific-notation = true, table-format=1.2e2]   % Formato per il valore
         S[scientific-notation = true, table-format=1.2e2]   % Formato per l'errore
         S[table-format=3.2] % Formato per l'errore relativo
@@ -113,13 +134,50 @@ Dopo aver sciolto $30 \unit{g}$ di saccarosio in acqua, sono stati aggiunti $2.5
     \label{tab}
 \end{table}
 
-\subsection{Plot}
-Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le curve teoriche.
+\subsection{Grafici sperimentali e curve di regressione}
 
+\subsubsection{Verifica della legge di Biot}
 \begin{figure}[H]
-    \centering
+     \centering
+     \begin{subfigure}{0.48\textwidth}
+         \centering
+         \includegraphics[width=\linewidth]{neoneofitL.png}
+         \caption{Angolo in funzione della lunghezza $L$}
+         \label{fig:1a}
+     \end{subfigure}
+     \begin{subfigure}{0.48\textwidth}
+         \centering
+         \includegraphics[width=\linewidth]{neoneofitP.png}
+         \caption{Angolo in funzione della massa disciolta $P$}
+         \label{fig:1b}
+     \end{subfigure}
+     \caption{Verifica della legge di Biot}
+     \label{fig:1}
 \end{figure}
 
+\subsubsection{Misura del potere rotatorio specifico}
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\linewidth]{Grafico potere rotatorio specifico.png}
+     \caption{Potere rotatorio specifico in funzione della lunghezza d'onda}
+     \label{fig:2}
+\end{figure}
+
+\subsubsection{Studio della mutarotazione del glucosio}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Fit_6_mutarotazione glucosio.png}
+    \caption{Angolo di rotazione in funzione del tempo per la mutarotazione del glucosio}
+    \label{fig:3}
+\end{figure}
+
+\subsubsection{Studio dell'inversione del saccarosio}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Grafico inversione HCl e Rif.png}
+    \caption{Angolo di rotazione in funzione del tempo per l'inversione del saccarosio}
+    \label{fig:4}
+\end{figure}
 
 % -------------------------------------------------------------------
 
