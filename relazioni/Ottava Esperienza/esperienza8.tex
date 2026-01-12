@@ -140,7 +140,7 @@ Dopo aver misurato i valori di $k=\alpha \cdot S /P$, usando la formula $k = A \
     \label{tab:Potere rotatorio specifico}
 \end{table}
 \subsubsection{Studio della mutarotazione del glucosio}
-Dopo che la soluzione ha raggiunto l'equilibrio, sono stati misurati gli angoli di rotazione alle varie lunghezze d'onda per calcolare il potere rotatorio specifico $k$ a $\lambda = 589 \unit{nm}$ come nel passo precedente.
+Con i dati raccolti è stato eseguito un fit esponenziale con la formula tipica delle reazioni del primo ordine: $\alpha = (\alpha_0 - \alpha_{inf}).\exp^{-kt} + \alpha_{inf}$, dai parametri si sono ricavati i valori $k_0$ e $k_{inf}$. Inoltre al raggiungimento dell'equilibrio sono stati misurati gli angoli di rotazione alle varie lunghezze d'onda per calcolare il potere rotatorio specifico $k$ a $\lambda = 589 \unit{nm}$ come nel passo precedente.
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -153,7 +153,8 @@ Dopo che la soluzione ha raggiunto l'equilibrio, sono stati misurati gli angoli 
         \toprule
         {Grandezza} & {Valore Tabulato}& {Valore Misurato} & {$\sigma$} & {Errore Relativo [\%]} \\
         \midrule
-        $k$ [\unit{deg.cm^2.g^-1}] & 5.23 & 4.98 & 0.34 & 6.82 \\
+        $k_0$ [\unit{deg.cm^2.g^-1}] & 11.20 & 11.03 & 0.71 & 6.45 \\
+        $k_{inf}$ [\unit{deg.cm^2.g^-1}] & 5.23 & 5.35 & 0.63 & 11.81 \\
         \bottomrule
     \end{tabular}
     \caption{Potere rotatorio specifico del glucosio all'equilibrio a $\lambda = 589 \unit{nm}$}
@@ -240,7 +241,7 @@ la discrepanza che si riscontra con il glucosio è probabilmente dovuta al fenom
 uno stato intermedio tra i due.
 
 Nella terza parte si verifica che il glucosio in soluzione acquosa subisce il fenomeno di mutarotazione, in cui l'$\alpha$-D-glucosio iniziale si converte in una soluzione di equilibrio
-36[\%] $\alpha$-D-glucosio e 64[\%] $\beta$-D-glucosio, i valori dell'angolo di rotazione variano seguendo una cinetica esponenziale (\autoref{fig:3}). Inoltre il valore misurato del potere rotatorio specifico all'equilibrio risulta coerente con quello tabulato (\autoref{tab:Potere rotatorio specifico mutarotazione}).
+36[\%] $\alpha$-D-glucosio e 64[\%] $\beta$-D-glucosio, i valori dell'angolo di rotazione variano seguendo una cinetica esponenziale, trattandosi di una reazione del primo ordine (\autoref{fig:3}). Inoltre il valore misurato del potere rotatorio specifico all'equilibrio risulta coerente con quello tabulato (\autoref{tab:Potere rotatorio specifico mutarotazione}).
 %Forse bisogna aggiungere qualcosa circa al correzione per glucosio monoidrato (per ora non l'ho fatta)
 
 Nell'ultima parte si osserva il fenomeno di inversione del saccarosio, in cui la molecola di saccarosio viene scissa in glucosio e fruttosio. Per la soluzione con HCl si osserva 

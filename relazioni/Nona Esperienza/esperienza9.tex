@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
+
+
+% --- Dati Intestazione ---
+\title{\textbf{Polarizzazione della luce e lamine di ritardo}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+L'obiettivo dell'esperienza è studiare il comportamento della luce polarizzata e delle lamine di ritardo, in particolare:
+\begin{itemize}
+    \item Verificare la legge di Malus $I(\theta)=I_0 \cos^2(\theta)$.
+    \item Studiare l'utilizzo della lamina $\lambda/2$.
+    \item Studiare l'utilizzo della lamina $\lambda/4$.
+    \item Mostrare che la luce del LED non è polarizzata.
+    \item Calcolare i parametri di Stokes per diversi stati di polarizzazione.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+
+\subsection{Dotazione sperimentale}
+\begin{itemize}
+    \item LED e fotodiodo + scatola di polarizzazione.
+    \item 2 lenti per la focalizzazione.
+    \item 2 polarizzatori lineari.
+    \item Lamine di ritardo $\lambda/2$ e $\lambda/4$.
+    \item Supporti con ghiera rotante graduata.
+    \item Barra di supporto.
+    \item Generatore di tensione alternata.
+    \item Oscilloscopio.
+    \item Cavi coassiali e sdoppiatore.
+\end{itemize}
+
+\subsection{Procedura sperimentale}
+Come configurazione iniziale sono stati posizionati il LED ed il fotodiodo alle estremità della barra di supporto.
+Dal generatore di tensione alternata è stata sdoppiato il segnale di un'onda quadra a $\sim 6 \unit{V}$ e $\sim 1 \unit{kHz}$, il quale è stato mandato al LED per alimentarlo e ad un canale dell'oscilloscopio come trigger.
+Il fotodiodo è stato polarizzato inversamente, grazie alla scatola di polarizzazione, e collegato all'altro canale dell'oscilloscopio così da poter misurare i valori di intensità trasmessa.
+Sia al LED che al fotodiodo sono state applicate delle lenti per focalizzare il fascio luminoso, successivamente è stato montato un primo polarizzatore lineare sul LED ed un secondo sul supporto graduato posizionato fra LED e fotodiodo.
+Infine usando il secondo polarizzatore come analizzatore si è trovato l'angolo di massima trasmissione così da misurare l'eventuale offset dovuto allo sfasamento tra i due polarizzatori. 
+\subsubsection{Verifica della legge di Malus}
+Dopo aver misurato il valore massimo di intensità trasmessa $V_0$, si è ruotato gradualmente l'analizzatore così da misurare $V$ in funzione di $\theta$.
+\subsubsection{\texorpdfstring{Studio della lamina $\lambda/2$}{Studio della lamina lambda/2}}
+Dopo aver inserito la lamina $\lambda/2$ fra i due polarizzatori e aver allineato il sistema così da misurare il massimo dell'intensità, ruotando la lamina di un angolo $\theta_1$ sono stati misurati con l'analizzatore gli angoli $\theta_2^{max}$ e $\theta_2^{min}$ corrispondenti al massimo ed al minimo di trasmissione.
+\subsubsection{\texorpdfstring{Studio della lamina $\lambda/4$}{Studio della lamina lambda/4}}
+Dopo aver inserito la lamina $\lambda/4$ fra i due polarizzatori 
+\subsubsection{Polarizzazione della luce del LED}
+Dopo aver sciolto $30 \unit{g}$ di saccarosio in acqua, sono stati aggiunti $2.5 \unit{ml}$ di HCl al $25\%$ per catalizzare l'inversione. Sono dunque stati misurati gli angoli di rotazione a intervalli di diversi minuti utilizzando luce verde; Per garantire il raggiungimento dell'equilibrio le ultime misurazioni sono state effettuate il giorno seguente. 
+\subsubsection{Calcolo dei parametri di Stokes}
+% -------------------------------------------------------------------
+\section{Analisi dei dati e grafici}
+
+
+\end{document}
