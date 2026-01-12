@@ -5,6 +5,8 @@
 \usepackage[T1]{fontenc}    % Codifica font
 \usepackage[italian]{babel} % Lingua italiana
 \usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
 \geometry{a4paper, margin=2.5cm}
 
 % --- Pacchetti Matematica e Fisica ---
@@ -170,8 +172,8 @@ Dopo che la soluzione ha raggiunto l'equilibrio, sono stati misurati gli angoli 
         \toprule
         {Sostanza} & {$k_{i}^{tab}$} & {$k_{i}^{mis}$} & {$k_{f}^{tab}$} & {$k_{f}^{mis}$} \\
         \midrule
-        Saccarosio + HCl & 7.46 & 8.43(0.50) & -2.18 & -1.77(0.26) \\
-        Saccarosio (riferimento) & 7.46 & 8.04(0.49) & 7.46 & 7.26(0.46) \\
+        Saccarosio + HCl & 7.46 & 8.43(1.51) & -2.18 & -1.77(0.47) \\     %T:errori un po' alti ma gli ho dovuti propagare a mano, non sono sicuro di quello sulla bilancia ma comunque non so se si può fare molto meglio
+        Saccarosio (riferimento) & 7.46 & 8.04(1.45) & 7.46 & 7.26(1.33) \\
         \bottomrule
     \end{tabular}
     \caption{Misura del potere rotatorio specifico per l'inversione del saccarosio a $\lambda = 589 \unit{nm}$, tutte le misure sono espresse in [\unit{deg.cm^2.g^-1}]}
@@ -226,6 +228,24 @@ Dopo che la soluzione ha raggiunto l'equilibrio, sono stati misurati gli angoli 
 % -------------------------------------------------------------------
 
 \section{Conclusioni}
-Tutte le misure degli angoli riportate tengono già conto dell'offset del polarimetro misurato all'inizio; inoltre si è scelto di ricavare la sezione del cilindro graduato indirettamente, piuttosto che misurare direttamente il diametro, così da minimizzare l'errore associato a tale misura.\\
+Tutte le misure degli angoli riportate tengono già conto dell'offset del polarimetro misurato all'inizio; inoltre si è scelto di ricavare la sezione del cilindro graduato indirettamente, piuttosto che misurare direttamente il diametro, così da minimizzare l'errore associato a tale misura.
+
+Nella prima parte dell'esperienza si è verificata la proporzionalità diretta tra angolo di rotazione $\alpha$ e lunghezza di propagazione nel mezzo $L$ (\autoref{sub@fig:1a}), misurando anche il potere rotatorio
+$K=k \cdot c$ relativo alla concentrazione utilizzata. Per ottenere una buona misura del potere rotatorio specifico $k$, invece che variare la concentrazione, si è misurato $\alpha$ in funzione
+della massa disciolta $P$; il valore ottenuto per saccarosio a $\lambda = 525 \unit{nm}$ risulta coerente con quello misurato nella parte successiva (\autoref{fig:2}) ed in accordo con il valore tabulato (\autoref{tab:Potere rotatorio specifico}). 
+
+Nella seconda parte la dipendenza del potere rotatorio specifico dalla lunghezza d'onda della luce incidente è stata verificata per tutte le sostanze utilizzate (\autoref{fig:2}). I valori trovati per il saccarosio e il fruttosio sono in buon accordo con i valori tabulati, mentre 
+la discrepanza che si riscontra con il glucosio è probabilmente dovuta al fenomeno di mutarotazione ed al tempo trascorso tra le misure (\autoref{tab:Potere rotatorio specifico}). Infatti si è utilizzato $\alpha$-D-glucosio puro
+($k$ = 11.2 \unit{deg.cm^2.g^-1}), che in soluzione tende a trasformarsi in una miscela di $\alpha$ e $\beta$-D-glucosio ($k$ = 5.23 \unit{deg.cm^2.g^-1}); il valore misurato è pertanto
+uno stato intermedio tra i due.
+
+Nella terza parte si verifica che il glucosio in soluzione acquosa subisce il fenomeno di mutarotazione, in cui l'$\alpha$-D-glucosio iniziale si converte in una soluzione di equilibrio
+36[\%] $\alpha$-D-glucosio e 64[\%] $\beta$-D-glucosio, i valori dell'angolo di rotazione variano seguendo una cinetica esponenziale (\autoref{fig:3}). Inoltre il valore misurato del potere rotatorio specifico all'equilibrio risulta coerente con quello tabulato (\autoref{tab:Potere rotatorio specifico mutarotazione}).
+%Forse bisogna aggiungere qualcosa circa al correzione per glucosio monoidrato (per ora non l'ho fatta)
+
+Nell'ultima parte si osserva il fenomeno di inversione del saccarosio, in cui la molecola di saccarosio viene scissa in glucosio e fruttosio. Per la soluzione con HCl si osserva 
+una variazione dell'angolo di rotazione che segue una cinetica esponenziale (\autoref{fig:4}), mentre la soluzione di riferimento senza HCl non mostra variazioni significative.
+Si osserva che lo zucchero invertito è un mezzo levogiro, a differenza della soluzione iniziale destrogira, inoltre i valori misurati del potere rotatorio specifico iniziale e finale 
+sono in accordo con i valori tabulati per entrambe le soluzioni entro $3\sigma$ (\autoref{tab:Potere rotatorio specifico zucchero invertito}).
 
 \end{document}
