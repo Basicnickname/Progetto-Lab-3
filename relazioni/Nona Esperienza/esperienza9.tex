@@ -84,13 +84,14 @@ Dopodiché si è rimontata la lamina $\lambda/4$ tra LED e analizzatore e si è 
 \subsubsection{Calcolo dei parametri di Stokes}
 Per avere luce polarizzata linearmente si è rimontato il sistema nella configurazione iniziale con solamente polarizzatore lineare sul LED ed analizzatore, per luce polarizzata
 circolarmente si è aggiunto tra i due elementi una lamina $\lambda/4$ a $45^\circ$ rispetto al primo polarizzatore, mentre per luce polarizzata ellitticamente si è orientata la lamina $\lambda/4$ a $70^\circ$ e poi 
-$120^\circ$. Per ciascuna di queste configurazioni si è misurata l'intensità trasmessa con analizzatore posizionato a $0^\circ, 45^\circ, 90^\circ$, dopodiché si è inserita una seconda lamina $\lambda/4$ a $90^\circ$ e si è misurata l'intensità con analizzatore a $45^\circ$.
+$120^\circ$. Per ciascuna di queste configurazioni si è misurata l'intensità trasmessa con analizzatore posizionato a $0^\circ, 45^\circ, 90^\circ$, dopodiché si è inserita una seconda lamina $\lambda/4$ a $90^\circ$ e si è misurata l'intensità con analizzatore a $45^\circ$. 
 % -------------------------------------------------------------------
 \section{Analisi dei dati e grafici}
 \subsection{Tabelle risultati}
+In ogni sezione i valori di intensità $I$ sono stati ottenuti normalizzando i valori misurati dal fotodiodo rispetto al valore massimo misurato $V_0$ = 162.4 
 Tutti gli errori riportati corrispondono a deviazioni standard $\sigma$.
 \subsubsection{Verifica della legge di Malus}
-I parametri sono stati ricavati da un fit della legge di Malus: $I(\theta_{a}) = A \cdot \cos^2(\theta_{a} - \theta_{off}) + I^{fondo} $, normalizzando i valori di intensità misurati. 
+I parametri sono stati ricavati da un fit della legge di Malus: $I(\theta_{a}) = A \cdot \cos^2(\theta_{a} - \theta_{off}) + I^{fondo} $. 
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -133,7 +134,7 @@ I parametri sono stati ottenuti da un fit della relazione: $\theta_{a} = m \cdot
 \end{table}
 
 \subsubsection{\texorpdfstring{Studio della lamina $\lambda/4$}{Studio della lamina lambda/4}}
-Per la luce polarizzata linearmente i dati sono stati analizzati con la legge di Malus, normalizzando i valori di intensità misurati.
+Per la luce polarizzata linearmente i dati sono stati analizzati con la legge di Malus.
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -158,17 +159,17 @@ $\theta_1$ corrisponde all'orientazione di uno degli assi principali dell'elliss
     \centering
     \begin{tabular}{
     S[table-format=3]
-    S[table-format=3(1)]
-    S[table-format=3(1)]
+    S[table-format=1.2(2)]
+    S[table-format=1.2(2)]
     S[table-format=-3(1)]
     S[table-format=-3(1)]        
     }
     \toprule
     {$\theta_{\lambda/4}$ [$\unit{deg}$]} & {$I_x$ [$\unit{mV}$]} & {$I_y$ [$\unit{mV}$]} & {$\theta_1$ [$\unit{deg}$]} & {$\theta_2$ [$\unit{deg}$]} \\
     \midrule 
-    45 & 82(1) & 91(1) & -98(6) & -7(6)\\
-    70 & 160(2) & 150(2) & -18(1) & 72(1)\\
-    120 & 100(1) & 78(1) & 23(3) & 113(3)\\
+    45 & 1.01(0.01) & 0.92(0.01) & -8(6) & 82(6)\\
+    70 & 1.01(0.02) & 0.10(0.01) & -18(1) & 72(1)\\
+    120 & 1.04(0.02) & 0.81(0.02) & 23(3) & 113(3)\\
     \bottomrule
     \end{tabular}
 \caption{Parametri ottenuti dal fit generale in funzione dell'angolo di rotazione dell'analizzatore.}
@@ -200,18 +201,25 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
     \centering
     \begin{tabular}{
         l
-        S[table-format=1.2(2)]
-        S[table-format=1.2(2)]
-        S[table-format=1.2(2)]
-        S[table-format=1.2(2)]
+        S[table-format=-1.2]
+        S[table-format=-1.2]
+        S[table-format=-1.2]
+        S[table-format=-1.2]
+        S[table-format=-2.2]
+        S[table-format=-1.2]
+        S[table-format=-1.2]
+        S[table-format=-1.2]
     }
         \toprule
-        {Polarizzazione} & {$S_0$} & {$S_1$} & {$S_2$} & {$S_3$} & {$\theta_0$ [\unit{deg}]} & {I_x} & {I_y} & DoP\\
+        {Polarizzazione} & {$S_0$} & {$S_1$} & {$S_2$} & {$S_3$} & {$\theta_0$ [\unit{deg}]} & {$I_x$} & {$I_y$} & {DoP}\\
         \midrule 
-        Lineare & 1.00(0.02) & 0.97(0.02) & 0.00(0.02) & 0.00(0.02) & 44(1) & 0.98(0.02) & 0.02(0.02) \\
+        Lineare & 1.09 & 0.91 & -0.25 & 0.02 & -8 & 1.02 & 0.07 & 0.87\\
+        Circolare & 1.95 & 0.05 & 0 & -1.70 & NaN & 1 & 0.95 & 0.88\\
+        Ellittica 70$^\circ$ & 1.19 & 0.81 & -0.56 & -0.36 & -18 & 1.09 & 0.11 & 0.88\\
+        Ellittica 120$^\circ$ & 1.87 & 0.13 & 0.18 & 1.30 & 27 & 1.05 & 0.83 & 0.71\\ %T: DoP basso, occhio non vede cuore non duole?
         \bottomrule
     \end{tabular}
-\caption{Parametri di Stokes per la luce polarizzata linearmente e circolarmente}
+\caption{Parametri di Stokes per la luce polarizzata in vari stati.}
 \label{tab:Parametri di Stokes}
 \end{table}
 
