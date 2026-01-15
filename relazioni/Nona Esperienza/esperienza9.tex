@@ -88,7 +88,7 @@ $120^\circ$. Per ciascuna di queste configurazioni si è misurata l'intensità t
 % -------------------------------------------------------------------
 \section{Analisi dei dati e grafici}
 \subsection{Tabelle risultati}
-In ogni sezione i valori di intensità $I$ sono stati ottenuti normalizzando i valori misurati dal fotodiodo rispetto al valore massimo misurato $V_0$ = 162.4 
+In ogni sezione i valori di intensità $I$ sono stati ottenuti normalizzando i valori misurati dal fotodiodo rispetto al valore massimo misurato $V_0$.
 Tutti gli errori riportati corrispondono a deviazioni standard $\sigma$.
 \subsubsection{Verifica della legge di Malus}
 I parametri sono stati ricavati da un fit della legge di Malus: $I(\theta_{a}) = A \cdot \cos^2(\theta_{a} - \theta_{off}) + I^{fondo} $. 
@@ -154,7 +154,7 @@ Per la luce polarizzata linearmente i dati sono stati analizzati con la legge di
 \end {table}
 
 Invece per i restanti casi è stata usata la funzione più generale: $I(\theta_a) = I_x \cdot \cos^2(\theta_a - \theta_1) + I_y \cdot \sin^2(\theta_a - \theta_1)$.
-$\theta_1$ corrisponde all'orientazione di uno degli assi principali dell'ellisse di polarizzazione, si può ricavare $\theta_2 = \theta_1 + 90^\circ$.
+$\theta_1$ corrisponde all'orientazione dell'asse minore dell'ellisse di polarizzazione, si può ricavare l'asse maggiore $\theta_2 = \theta_1 + 90^\circ$.
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -240,7 +240,8 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
 \end{figure}
 
 \subsubsection{\texorpdfstring{Studio della lamina $\lambda/4$}{Studio della lamina lambda/4}}
-\begin{figure}[htbp]
+
+\begin{figure}[H]
     \centering
         
     % Grafico 1 (Alto Sinistra)
@@ -258,9 +259,7 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
         \subcaption{$\theta_{\lambda/4} = 0^\circ$ e $90^\circ$.}
         \label{fig:3.2}
     \end{subfigure}
-        
-    % --- Seconda Riga ---
-    
+            
     % Grafico 3 (Basso Sinistra)
     \begin{subfigure}[H]{0.45\textwidth}
         \centering
@@ -287,10 +286,22 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
     \label{fig:3}
 \end{figure}
 
+\section{Conclusioni}
+I valori dei parametri ricavati durante la verifica della legge di Malus sono compatibili con i valori attesi: il valore teorico per $\theta_{off}$ corrisponde in realtà ad una misura 
+dell'offset iniziale dovuto al disallineamento tra i polarizzatore, tuttavia vista la scarsa sensibilità del supporto graduato ($\sim 2^\circ$) il valore ottenuto dal fit è più affidabile; nelle restanti fasi dell'esperienze se ne è tenuto debitamente conto quando necessario.
+L'intensità di fondo invece è dovuta ad illuminazione ambientale.
 
+Una lamina $\lambda/2$ colpita da luce polarizzata linearmente ne ruota il piano di polarizzazione di un angolo doppio rispetto a quello formato dall'asse ottico della lamina e la polarizzazione incidente; i risultati ottenuti riflettono perfettamente questo comportamento.
+L'effettivo valore di $\theta_{off}'$ è stato successivamente confermato dal professore: infatti la lamina era ruotata rispetto allo 0 proprio dell'angolo trovato.
+In questa sezione non sono stati riportati gli errori poiché la semplicità del fit lineare e soprattutto la scarsa sensibilità della ghiera hanno causato una perfetto accordo con la relazione teorica.
 
+Durante lo studio di $\lambda_4$ si è inizialmente ottenuto un fascio polarizzato linearmente; le misure del quale, analizzate con la legge di Malus, hanno restituito parametri ragionevoli ed in accordo con la prima fase.
+Successivamente si sarebbe dovuto ottenere una polarizzazione circolare, tuttavia il difficile allineamento delle componenti ha provocato un piccolo errore che ha prodotto una leggera polarizzazione ellittica. Si osservi però che $\theta_1 \simeq 0$ e $I_x \simeq I_y$, la luce è pertanto quasi polarizzata circolarmente.
+Analizzando le polarizzazioni ellittiche si osserva che l'angolo della lamina $\theta_{lambda/4}$ corrisponde all'orientazione della asse maggiore dell'ellisse $\theta_2$. tali valori si vedono chiaramente nel plot polare (\autoref{sub@fig:3.5}), la forma ovaleggiante per $\theta_{\lambda/4}=120^{\circ}$ riflette il fatto che $I_x \simeq I_y$ a differenza del caso a $70^{\circ}$
 
+Nell'ultima fase dell'esperienza la prima misura limita le possibilità di polarizzazione della luce dal LED a circolare e non polarizzata; tuttavia se fosse circolare durante la seconda misura si sarebbe osservato un minimo di intensità, cosa che non è avvenuta.
+Il fatto che $V/V_{LED} \neq 0.5$ è probabilmente dovuto alla non perfetta trasparenza dei vari elemnti ottici.
 
-
+Infine il calcolo dei parametri di Stokes è stato effettuato per semplicità senza stima degli errori, nonostante ciò i valori ottenuti sono in accordo con tutti i risultati precedenti dell'esperienza: si osservi ad esempio l'accordo di $\theta_0$ nel caso lineare con l'offset misurato all'inizio, gli angoli di orientazione delle ellissi di polarizzazione ed i valori di $I_x$ e $I_y$.
 
 \end{document}
