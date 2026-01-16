@@ -23,7 +23,7 @@
 \usepackage{caption}  % Per personalizzare le didascalie
 
 % --- Dati Intestazione ---
-\title{\textbf{Caratterizzazione elettrica e ottica dei LED}}
+\title{\textbf{Diffrazione da fenditure}}
 \author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
 \date{\today}
 
@@ -43,14 +43,17 @@ In particolare per la singola fenditura calcolare la sua larghezza, mentre per l
 Strumenti e materiali utilizzati:
 \begin{itemize}
     \item Fenditure singole o doppie di diverse misure
-    \item Laser verde e rosso
-    \item Metro (Sensibilità: \SI{0.01}{\meter})
-    \item Generatore di funzione ? (o il generatore in continua)
+    \item Laser verde e rosso %T: magari specificare la lunghezza d'onda esatta
+    \item Metro (Sensibilità: \SI{0.01}{\meter}) %T: non credo serva specificare qua la sensibilità
+    \item Generatore di funzione ? (o il generatore in continua) %T: abbastanza sicuro fosse Generatore di tensione continua
     \item Carta millimetrata
     \item Binario e supporti ottici
 \end{itemize}
 
 \subsection{Procedura sperimentale}
+%T: secondo me qui scrivere esclusivamente la procedura sperimentale, le funzioni scriverle o prima delle tabelle risultati o nelle conclusioni
+%   sottolineare che prima è stato fatto per la singola fenditura e poi per la doppia variando spessore e distanza tra le fenditure
+%   far capire come si distinguono i minimi di diffrazione da quelli di interferenza
 Inserire il laser e una fenditura (singola o doppia) nei supporti e collegare il laser al generatore in continua (?) (generatore di funzione).
 Attaccare la carta millimetrata su una parete e porre il binario a una distanza L maggiore di 1 m da questa.
 Accendere il laser e illuminare la fenditura.
@@ -61,7 +64,7 @@ La fenditura trovandosi a una distanza molto maggiore rispetto alla lunghezza d'
 
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
-
+%T: anche qui prima tabelle e poi plot usando \subsubsection, per mettere tutti i dati unire i grafici che descrivono lo stesso fenomeno specificando bene la legenda per le differenze, circa le considerazioni estetiche come per la 5, mettere le lettere greche negli assi sarebbe figo
 \subsection{Grafici dei dati ottenuti}
 Di seguito sono riportati i grafici dei dati ottenuti sia per la singola che per la doppia fenditura e specificando anche il colore del laser utilizzato.
 
@@ -115,6 +118,7 @@ Di seguito sono riportati i grafici dei dati ottenuti sia per la singola che per
 \end{figure}
 
 \subsection{Tabelle Risultati Fit}
+%T: i valori di errore sigma dai fit o errori assoluti?
 \subsection{Tabelle singola fenditura}
 Usando la formula $\sin(\theta) = \frac{\lambda}{b}p$ per fare il fit dei dati si può ottenere un valore per il parametro b. 
 \begin{table}[H]
@@ -286,6 +290,7 @@ Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le cu
 % -------------------------------------------------------------------
 
 \section{Diffrazione da un capello}
+%T: inglobarlo nelle altre esperienze, quindi scrivere l'obiettivo in alto e la procedura in fondo alle altre procedure, idem per tabelle e grafici
 Questo caso è diverso dai precedenti: invece che una fenditura colpita da un fascio luminoso si ha un corpo opaco, un capello. 
 Le equazioni che descrivono questa situazione sono le stesse utilizzate in precedenza, cioè $\sin(\theta) = \frac{\lambda}{b}p$ dove b rappresenta lo spessore del corpo opaco. 
 \\
@@ -317,6 +322,8 @@ Sapendo che il laser utilizzato è quello verde ($\lambda = 531.9$ nm) si può f
 \end{figure}
 % -------------------------------------------------------------------
 \section{Conclusioni}
+%T: visto che in effetti non c'è molto da scrivere mettere qui le formule teoriche usate per fittate
+%   potrebbe aiutare chiarire quali valori sono dovuti a diffrazione e quali ad interferenza 
 Dai grafici si osserva la dipendenza lineare di $\sin(\theta)$ da p, ordine del minimo di diffrazione o interferenza.
 I dati per b e d ottenuti dai fit sono quasi tutti coerenti con quelli reali, a eccezione di uno, in cui il b dal fit viene $(0.082\pm0.010)$ mm mentre quello reale è di $0.15$ mm, ma questo potrebbe essere dovuto al fatto che in quel caso siamo riusciti a prendere solo 3 dati per quella misura.
 Per il fit del capello lo spessore viene di $(67.84\pm2.63)\mu$m che è una misura sensata; infatti normalmente lo spessore dei capelli si aggira tra i 60 e i 100 $\mu$m

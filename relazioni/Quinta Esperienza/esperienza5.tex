@@ -41,8 +41,11 @@ L'obiettivo dell'esperienza è studiare la caratterizzazione elettrica e ottica 
 
 % -------------------------------------------------------------------
 \section{Materiali e Metodi}
-
-\subsection{Strumentazione caratterizzazione elettrica}
+% T: qui farei \section {Materiali e metodi}
+%              \subsection {Strumentazione}
+%              \subsubsection{Caratterizzazione elettrica} e poi ottica
+%              idem per la procedura, per risparmiare spazio eventualmente si può unire la strumentazione in un solo blocco
+\subsection{Strumentazione caratterizzazione elettrica}    
 \begin{itemize}
     \item LED colore bianco, blu, giallo, rosso, verde e infrarosso
     \item Fotodiodo
@@ -87,6 +90,7 @@ Quindi prendere nota dei valori in tensione in corrispondenza dei valori di lung
 
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
+% T: mettere prima tabelle risultati e poi plot, anche qui usare \section \subsection \subsubsection
 \subsection{Grafici dati caratterizzazione elettrica}
 \begin{figure}[H]
     \centering
@@ -118,7 +122,7 @@ Quindi prendere nota dei valori in tensione in corrispondenza dei valori di lung
 \subsection{Tabelle}
 \subsection{Tabellza risultati fit caratterizzazione elettrica}
 Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come valori di $I_0$:
-\begin{table}[H]
+\begin{table}[H]  %T: gli errori sono i sigma dai fit o effettivamente gli errori assoluti?
     \centering
     \begin{tabular}{
         l 
@@ -145,7 +149,9 @@ Usando come funzione di fit $I = I_0(e^\frac{qV}{nkT}-1)$ abbiamo ottenuto come 
 \subsection{Tabella massimi caratterizzazione ottica}
 I dati riportati in seguito sono l'intensità massima e la relativa lunghezza d'onda $\lambda_{max}$ per i LED di diverso colore: 
 \begin{table}[H]
-    \centering
+    \centering % T: Aggiungere l'errore assoluto sui valori misurati dovuto all'incertezza nel formato val+-err (per sintassi l'ho messo in alcune mie tabelle), magari aggiungere anche il valore di lunghezza d'onda atteso per ogni colore 
+               %    il valore massimo di V ha qualche utilità fisica (se sì sottolinearlo nelle conclusioni sennò si può rimuovere)
+               %    si potrebbe unire questa tabella con quella dopo che calcola E_gap
     \begin{tabular}{
         l 
         S[table-format=3.0]   % Formato per lambda
@@ -198,7 +204,9 @@ Nei dati seguenti $V_{soglia}$ rappresenta la tensione a cui abbiamo osservato u
 
 \subsection{Plot}
 Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le curve disegnate usando $I_0$ trovato nei fit dei dati.
-
+% T: per i grafici direi di unire tutti quelli della caratterizzazione elettrica come fatto per quella ottica, magari metterne anche uno con scala logaritmica
+%    in generale metterli più grandi perché siano leggibili, altrimenti ingrandire il font da python e se si mettono affianco fare i plot quadrati (i valori alternativi che ho usato io sono da qualche parte nel colab della nona esperienza)
+%    Infine giusto per estetica togliere i titoli dei plot e lasciare solo le didascalie, inoltre se si riesce a scrive in pedice negli assi (tipo E_gap) sarebbe meglio
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.43\textwidth]{Plot LED Giallo.png}
@@ -222,6 +230,9 @@ Di seguito sono riportati i grafici di confronto tra i dati sperimentali e le cu
 % -------------------------------------------------------------------
 
 \section{Conclusioni}
+% T: separare con un doppio spazio i commenti su elettrica e ottica così da rendere più leggibile, dare una probabile spiegazione per qualunque incongruenza o roba strana
+%    ad esempio il LED bianco a 2 picchi nel blu e giallo-verde perché si tratta di un LED blu coperto da uno strato di fosforo la cui emissione crea il secondo picco
+%    sottolineare quando le misure sono in accordo con la teoria (se necessario spiegare molto ma molto brevemente perché) 
 Nella caratterizzazione elettrica si è verificato l'andaento esponenziale della corrente che passa in un LED in funzione della tensione ai capi di quest'ultimo. Gli errori sulle $I_0$ sono grandi, ma questo potrebbe essere dovuto al fit esponenziale.
 Nella caratterizzzazione ottica si osserva che i LED giallo, rosso, verde, blu hanno un massimo di emissione per una lunghezza d'onda che nello spettro elettromagnetico coincide con le lunghezze d'onda nella luce visibile, mentre il LED infrarosso ha un massimo per una lunghezza d'onda maggiore di quelle nello spettro del visibile. 
 Il LED bianco sembra invece avere due picchi: uno che coincide con il picco del verde e l'altro con quello del giallo.
