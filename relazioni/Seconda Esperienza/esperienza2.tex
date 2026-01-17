@@ -57,7 +57,10 @@
 \clearpage
 \pagenumbering{arabic}
 
+%T: in generale aggiustare il format come le altre relazioni, su github i riferimenti
+%   attenzione che probabilmente i warning sono perché di base non si può usare la notazione scientifica nelle didascalie, titoli, etc., vanno corretti tipo con \texorpdfstring{}, gemini lo sa meglio
 % Abstract
+%T: ridurre l'abstract e magari fare un elenco puntato che divida in grande le fasi
 \begin{abstract}
 Il presente lavoro di laboratorio si è posto l'obiettivo di investigare sulle risposte di un fotodiodo (PD) in due regimi operativi fondamentali. Il primo in cui il fotodiodo lavora in  modalità fotoconduttiva (polarizzazione inversa, $V_g < 0$), in cui la tensione di uscita ($V_R$) è direttamente proporzionale alla fotocorrente ($I_{ph}$), e determinare la costante di accoppiamento ottico $\beta$, che lega $I_{ph}$ alla corrente del LED ($I_{LED}$). Il secondo in cui lavora
  in modalità fotovoltaica (assenza di polarizzazione, $V_g = 0$) in cui  tramite l'applicazione di fitting mirati, sono stati ricavati i parametri intrinseci del diodo: la corrente di saturazione inversa ($I_0$) e il fattore di idealità ($n$).
@@ -65,7 +68,7 @@ L'esperienza è stata condotta utilizzando un circuito accoppiato LED-fotodiodo.
 \end{abstract}
 
 \section{Introduction}
-
+%T: questa parte può essere molto utile per studiare quindi se riesci copiala da un'altra parte ma se ho capito bene il prof non la vuole proprio (al massimo qualche breve commento alla fine se significativo per spiegare qualche misura)
 L'esperimento prevede la caratterizzazione elettrica e ottica di un fotodiodo al silicio, operante in regime di polarizzazione inversa, cioè in modalità fotoconduttiva, e a polarizzazione nulla, cioè in modalità fotovoltaica.
 Teoricamente esponendo un semiconduttore alla radiazione elettromagnetica, se l’energia del singolo
 fotone è maggiore del gap del semiconduttore, è possibile che il fotone
@@ -136,7 +139,7 @@ Per poter giungere a una conclusione sarà necessario estrarre, tramite procedur
 \section{Materials and Methods}
 
 Per l'esecuzione dell'esperimento è stata utilizzata la seguente strumentazione:
-
+%T: fare una subsection per materiali e una per metodi, nei materiali non serve descrivere troppo gli strumenti (tipo resistenze dire solo 10 e 20 k)
 \begin{itemize}
     \item \textbf{Fotodiodo (PD) }
     \item \textbf{LED}
@@ -166,7 +169,7 @@ Usare due resistenze diverse  permette di dimostrare che i valori di $n$ e $I_0$
 
 \subsection{Setup}
 esistono due possibili schemi di realizzazione pratica per questoesperimento, la prima è la seguente
-
+%T: non penso serva descrivere il setup, bastano le descrizioni dei circuiti prima
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{circuito1.png}
@@ -185,7 +188,7 @@ mentre la seconda è una  schematizzazione più semplice può essere ottenuto us
 
 
 \subsection{Data acquisition and analysis}
-
+%T: unire questa parte a quella dei metodi sopra che descrive come sono state fatte le misure, stringere un po' e lasciare solo le formule usate per fittare, queste ultime eventualmente possono essere messe prima dei fit
 
 L'acquisizione dei dati è avvenuta variando  la corrente di alimentazione del LED e registrando la corrispondente tensione $V_R$ tramite un voltmetro digitale. 
 Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi. 
@@ -214,7 +217,8 @@ I_{LED} = \frac{V_R}{R \beta}
 
 \section{Results}
 
-
+%T: non serve mettere tutte le misure esplicitamente, mettere solo 2 plot uno in scala lineare ed una semilogaritmica e mettere tutte le curve con la legenda che specifica il tipo di misura (vedi le nostre e i colab come reference)
+%   per i grafici togliere l'indice del tipo di scala usato da python ma specificarlo nella caption
 \begin{table}[H]
     \centering
     \caption{Dati sperimentali della tensione $V_R$ rilevata ai capi della resistenza $R = 10\text{ k}\Omega$ al variare della corrente $I_{LED}$ per tre diversi valori di tensione di polarizzazione $V_g$.}
@@ -312,6 +316,7 @@ A seguire sono riportati i valori dei parametri fisici $\beta$, $I_0$, $n$, con 
 
 
 \begin{table}[h]
+%T: unità di misura? ridurre mettere solo 2 massimo 3 cifre decimali e una cifra di errore, idem errore relativo
 \centering
 \caption{Parametri di fit: valori, errori standard ed errori relativi.}
 \label{tab:dati_fit}
@@ -332,7 +337,7 @@ $n_2$        & 1.2884     & 2.3598e-01 & 1.8316e-01 \\
 In cui $\beta_1$, $\beta$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
 Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
 Ottenuti quindi i parametri possiamo riplottare i valori sperimentali per confrontarli con la curva teorica 
-
+%T: usare pedici e apici sui parametri per far capire a quali misure corrispondono, lasciare le spiegazioni solo per metodi o conclusioni
   \begin{equation}
 I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q(V_R + V_g)}{nkT}} - 1 \right) + \frac{V_R}{R} \right]
 \end{equation}
@@ -391,7 +396,8 @@ in cui verranno sostituiti i parametri appena ricavati dal fit.
 
 
 \section{Discussion}
-
+%T: stringere un po': limitarsi a dire quali misure tornano e eventualmente quali no e perché 
+% occhio ad usare troppa AI che potrebbero sgamarci, rielaborare il più possibile
 Interpretando i valori appen ritrovati ci si rende conto che i parametri $\beta$ sono più solidi e precisi ($err_{rel} \approx 2-3\%$), mentre i parametri $I_0$ e $n$ sono incerti.
  Il fatto che $n$ sia circa $1.2$ indica che il LED non segue il modello ideale ($n=1$). In letteratura, un valore tra $1.2$ e $2.0$ è comune e indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
 Volendo fare un paragone con i valori tipici in letteratura, il valore di n peri Led commerciali è circa $1.2 - 1.5$; quindi possiamo dire che il valore di n stimato è compatibile con i valori in letteratura.
