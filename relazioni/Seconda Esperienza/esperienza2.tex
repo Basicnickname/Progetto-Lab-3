@@ -76,12 +76,12 @@ La risposta del diodo illuminato (o fotodiodo) sarà perciò descritta dall'equa
 \begin{equation}
     I_D = I_0 \left( e^{\frac{q V_D}{n k T}} - 1 \right) - I_{ph}
 \end{equation}
-dove il termine $I_{ph}$  è proporzionale al numero di fotoni assorbiti, ovvero all’intensit´a della radiazione eletromagnetica.
+dove il termine $I_{ph}$  è proporzionale al numero di fotoni assorbiti, ovvero all’intensità della radiazione elettromagnetica.
 La fotocorrente generata nel fotodiodo è proporzionale alla luce emessa dal LED e quindi alla corrente di alimentazione
 \begin{equation}
     I_{ph} = \beta I_{LED}
 \end{equation}
-non bisogna usare la tensione di alimentazion perché la caratteristica corrente--tensione del LED è di tipo non lineare.
+non bisogna usare la tensione di alimentazione perché la caratteristica corrente--tensione del LED è di tipo non lineare.
 Al contrario, l'intensità di radiazione emessa dal LED è direttamente proporzionale alla corrente che lo attraversa, garantendo così la validità della relazione.
 Il circuito relativo al fotodiodo può essere analizzato considerando la corrente
 \begin{equation}
@@ -99,12 +99,12 @@ fotocorrente generata fluisce in senso opposto. Definendo $V_R$ come la tensione
     I_D = I_R = -\frac{V_R}{R}
 \end{equation}
 
-Utilizzando tutte le relazioni appena elencate possiamo riscrivere la nostra equazione evidenziando l'andamento della Tensione ai capi della resistenza, V_R in funzione di I_{ph}.
+Utilizzando tutte le relazioni appena elencate possiamo riscrivere la nostra equazione evidenziando l'andamento della Tensione ai capi della resistenza, $V_R$ in funzione di $I_{ph}$.
 \begin{equation}
     V_R = R I_{ph} - R I_0 \left( e^{\frac{q(V_R + V_g)}{ k T}} - 1 \right) = R I_{ph} - R I_0 \left( e^{\frac{q V_D}{ k T}} - 1 \right)
 \end{equation}
 
-In questo modo è iù facile notare che in presenza di polarizzazione inversa ($V_g < 0$) con un valore assoluto sufficientemente grande, il termine esponenziale legato alla corrente di buio nell'equazione del diodo diventa trascurabile.
+In questo modo è più facile notare che in presenza di polarizzazione inversa ($V_g < 0$) con un valore assoluto sufficientemente grande, il termine esponenziale legato alla corrente di buio nell'equazione del diodo diventa trascurabile.
  In questa condizione, la relazione tra la tensione misurata e la fotocorrente si semplifica in
 \begin{equation}
     V_R = R I_{ph}
@@ -117,9 +117,9 @@ Il sistema segue quindi la curva di carico tipica di una cella solare
     I = I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) - I_{ph} = -\frac{V_R}{R}
 \end{equation}
  In tale configurazione si dice che il fotodiodo opera in \textbf{modalità fotovoltaica}.
-Questo approccio non è adatto al fit, perchè V_R compare anche al secondo membro.
-Per fittare i dati è opportuno scambiare gli assi e scrivere invece $I_{ph}$ in funzone di V_R.
-Introduciamo anche il fattore di idealità n, che tipicamente è compreso fra 1 e 5 ed èlegato ai processi di ricombinazione nonradiativa nel diodo. 
+Questo approccio non è adatto al fit, perchè $V_R$ compare anche al secondo membro.
+Per fittare i dati è opportuno scambiare gli assi e scrivere invece $I_{ph}$ in funzione di $V_R$.
+Introduciamo anche il fattore di idealità n, che tipicamente è compreso fra 1 e 5 ed è legato ai processi di ricombinazione non radiativa nel diodo. 
 \begin{equation}
     I_{ph} = \beta I_{LED} = I_0 \left( e^{\frac{q(V_R + V_g)}{ k T}} - 1 \right) + \frac{V_R}{R} 
 \end{equation}
@@ -153,7 +153,7 @@ Lo schema sperimentale è costituito da due circuiti indipendenti
 \end{enumerate}
 
 È fondamentale che il LED e il fotodiodo siano allineati con precisione l'uno di fronte all'altro per garantire che la fotocorrente generata sia massima e che la costante di accoppiamento $\beta$ rimanga stabile durante le misure.
-Sarebbe ottimo cercare di ridurre al minimo il disturbo della luce ambientale a cui il fotofiodo è sensibile e per  farlo si potrebbe usare un tubicino in cui inserire il fotodiodo e il led.
+Sarebbe ottimo cercare di ridurre al minimo il disturbo della luce ambientale a cui il fotodiodo è sensibile e per  farlo si potrebbe usare un tubicino in cui inserire il fotodiodo e il led.
 Il fotodiodo è estremamente sensibile. Senza un tubicino, il voltmetro registrerebbe una tensione $V_R$ influenzata anche dalle luci della stanza o dai monitor, falsando la misura della fotocorrente $I_{ph}$ generata esclusivamente dal LED. Il tubicino garantisce che le condizioni di "buio" siano quanto più reali possibile.
 Per ogni set di misure, è stata impostata tramite il Generatore 2 una tensione di polarizzazione $V_g$. Le misure sono state effettuate partendo da $V_g = \qty{0}{\volt}$ (modalità fotovoltaica) e procedendo con valori in modulo sempre crescenti (polarizzazione inversa, $V_g < 0$).
 Per un valore di $V_g$ fissato, si è variata la corrente di alimentazione del LED ($I_{LED}$) agendo sul Generatore 1, mantenendo sempre l'intensità sotto la soglia di sicurezza di \qty{20}{\milli\ampere}.
@@ -185,7 +185,7 @@ mentre la seconda è una  schematizzazione più semplice può essere ottenuto us
 
 
 \subsection{Data acquisition and analysis}
-Explain sampling rates, filtering, calibration, and software used. Show any data-processing equations.
+
 
 L'acquisizione dei dati è avvenuta variando  la corrente di alimentazione del LED e registrando la corrispondente tensione $V_R$ tramite un voltmetro digitale. 
 Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi. 
@@ -213,7 +213,7 @@ I_{LED} = \frac{V_R}{R \beta}
 
 
 \section{Results}
-Present measured data with figures and tables. Use clear captions and reference them in text.
+
 
 \begin{table}[H]
     \centering
@@ -289,7 +289,7 @@ Plottando i dati sperimentali qui elencati si ottengono i seguenti grafici
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{VR10Vg03.png}
+  \includegraphics[width=0.8\textwidth]{R10Vg03.png}
   \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0.3\text{ V}$.}
   \label{fig:risultati_10k_0.3V}
 \end{figure}
@@ -329,8 +329,8 @@ $n_2$        & 1.2884     & 2.3598e-01 & 1.8316e-01 \\
 \end{tabular}
 \end{table}
 
-In cui $\beta_1$, $\beta_$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
-Mentre $I_{01}$, $n_1$,$I_{02} , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
+In cui $\beta_1$, $\beta$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
+Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
 Ottenuti quindi i parametri possiamo riplottare i valori sperimentali per confrontarli con la curva teorica 
 
   \begin{equation}
@@ -403,16 +403,16 @@ I coefficienti $\beta$ presentano errori relativi contenuti nell'intervallo $2-3
  Al contrario, i parametri intrinseci della giunzione, $I_0$ e $n$, presentano incertezze  più marcate, sebbene i loro valori centrali risultino fisicamente coerenti con le aspettative teoriche.
  Il valore stimato di $n \approx 1.2$ indica una deviazione dal modello del diodo ideale ($n=1$). Tale risultato è in pieno accordo con la letteratura scientifica sui LED commerciali, la quale riporta tipicamente valori compresi tra $1.2$ e $1.5$.
  Questa discrepanza è riconducibile alla presenza di fenomeni di ricombinazione non radiativa all'interno della regione di svuotamento del semiconduttore.
-  Il valore ottenuto, dell'ordine di {10^{-9}}{\ampere}, rientra nel range tipico atteso per i dispositivi LED ad ampio band-gap ($10^{-9} - 10^{-11}$\,A). Tuttavia, l'errore relativo associato risulta estremamente elevato.
+  Il valore ottenuto, dell'ordine di {$10^{-9}$}{A}, rientra nel range tipico atteso per i dispositivi LED ad ampio band-gap ($10^{-9} - 10^{-11}$\,A). Tuttavia, l'errore relativo associato risulta estremamente elevato.
 L'elevata incertezza riscontrata su $I_0$ è probabilmente legata all influenza della luce ambientale, poiché $I_0$ rappresenta la corrente che fluisce nel dispositivo in condizioni di buio totale.
 
 
 
 \section{Conclusion}
-Summarize main findings and suggest improvements or future work.
 
 
-In conclusione, l'attività sperimentale ha permesso di caratterizzare il comportamento elettrico del dispositivo LED attraverso il fit della curva caratteristica $I($V_R)$. I risultati ottenuti confermano la validità del modello teorico, specialmente per quanto riguarda il parametro $\beta$, determinato con un'incertezza estremamente ridotta.
+
+In conclusione, l'attività sperimentale ha permesso di caratterizzare il comportamento elettrico del dispositivo LED attraverso il fit della curva caratteristica $I(V_R)$. I risultati ottenuti confermano la validità del modello teorico, specialmente per quanto riguarda il parametro $\beta$, determinato con un'incertezza estremamente ridotta.
 Sebbene i valori del fattore di idealità $n$ e $I_0$ siano coerenti con i dati presenti in letteratura per i LED commerciali, la forte incertezza statistica riscontrata su $I_0$ evidenzia i limiti del setup sperimentale utilizzato.
  L'analisi suggerisce che la fotocorrente indotta dalla luce ambientale sia la principale sorgente di errore.
 Per studi futuri, si raccomanda l'adozione di unametodologia per isolare la risposta del LED dalle interferenze luminose esterne. 
