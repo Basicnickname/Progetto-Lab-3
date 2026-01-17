@@ -198,7 +198,8 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
 
 \subsubsection{Parametri di Stokes}
 %   F: forse qui mettere come si ricavano theta_0, I_x, I_y e DoP a partire dai parametri di Stokes 
-
+A partire dai parametri di Stokes sono stati inoltre ricavati i valori: \\
+$\theta_0 = \frac{1}{2}\arctan{\frac{S_2}{S_1}}$, $I_x = \frac{S_0 + \sqrt{S_1^2 + S_2^2}}{2}$, $I_y = \frac{S_0 - \sqrt{S_1^2 + S_2^2}}{2}$
 \begin{table}[H]
     \centering
     \begin{tabular}{
@@ -247,47 +248,40 @@ Si è verificato che tali valori non variano né con $\theta_{\lambda/4} = 45^\c
 
 \begin{figure}[H]
     \centering
-        
-    % Grafico 1 (Alto Sinistra)
-    \begin{subfigure}[H]{0.45\textwidth}
+    \hfill % Spinge ai lati
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Fit_4_3a.png}
-        \subcaption{Senza analizzatore.}
+        \includegraphics[width=\linewidth, keepaspectratio]{Grafico lamina lambda4 lineare.png}
+        \subcaption{$\theta_{\lambda/4} = 0^\circ$ e $90^\circ$.}
         \label{fig:3.1}
     \end{subfigure}
-    \hfill % Spinge ai lati
-    % Grafico 2 (Alto Destra)
-    \begin{subfigure}[H]{0.45\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Grafico lamina lambda4 lineare.png}
-        \subcaption{$\theta_{\lambda/4} = 0^\circ$ e $90^\circ$.}
+        \includegraphics[width=\linewidth, keepaspectratio]{Fit_7_3c.png}
+        \subcaption{$\theta_{\lambda/4} = 45^\circ$.}
         \label{fig:3.2}
     \end{subfigure}
-            
-    % Grafico 3 (Basso Sinistra)
-    \begin{subfigure}[H]{0.45\textwidth}
+    \caption{Studio di polarizzazione lineare e circolare}
+    \label{fig:3}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Fit_7_3c.png}
-        \subcaption{$\theta_{\lambda/4} = 45^\circ$.}
-        \label{fig:3.3}
+        \includegraphics[width=\linewidth, keepaspectratio]{Grafico lamina lambda4 ellittico.png}
+        \subcaption{$\theta_{\lambda/4} = 70^\circ$ e $120^\circ$.}
+        \label{fig:4.1}
     \end{subfigure}
     \hfill
-    % Grafico 4 (Basso Destra)
-    \begin{subfigure}[H]{0.45\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{Grafico lamina lambda4 ellittico.png}
-        \subcaption{$\theta_{\lambda/4} = 70^\circ$ e $120^\circ$.}
-        \label{fig:3.4}
-    \end{subfigure}
-
-    % Grafico 5
-    \begin{subfigure}[H]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{Grafico_lamina_lambda4_polare.png}
+        \includegraphics[width=\linewidth, keepaspectratio]{Grafico_lamina_lambda4_polare.png}
         \subcaption{Rappresentazione polare}
-        \label{fig:3.5}
+        \label{fig:4.2}
     \end{subfigure}
-    \label{fig:3}
+    \caption{Studio delle polarizzazioni ellittiche}
+    \label{fig:4}
 \end{figure}
 
 %   F: la conclusione va bene, ti ho solo aggiunto uno \ a lambda che credo tu abbia dimanticato (così che compaia la lettera greca e non tutta la scritta)
@@ -303,7 +297,7 @@ In questa sezione non sono stati riportati gli errori poiché la semplicità del
 
 Durante lo studio di $\lambda_4$ si è inizialmente ottenuto un fascio polarizzato linearmente; le misure del quale, analizzate con la legge di Malus, hanno restituito parametri ragionevoli ed in accordo con la prima fase.
 Successivamente si sarebbe dovuto ottenere una polarizzazione circolare, tuttavia il difficile allineamento delle componenti ha provocato un piccolo errore che ha prodotto una leggera polarizzazione ellittica. Si osservi però che $\theta_1 \simeq 0$ e $I_x \simeq I_y$, la luce è pertanto quasi polarizzata circolarmente.
-Analizzando le polarizzazioni ellittiche si osserva che l'angolo della lamina $\theta_{\lambda/4}$ corrisponde all'orientazione della asse maggiore dell'ellisse $\theta_2$. Tali valori si vedono chiaramente nel plot polare (\autoref{sub@fig:3.5}), la forma ovaleggiante per $\theta_{\lambda/4}=120^{\circ}$ riflette il fatto che $I_x \simeq I_y$ a differenza del caso a $70^{\circ}$
+Analizzando le polarizzazioni ellittiche si osserva che l'angolo della lamina $\theta_{\lambda/4}$ corrisponde all'orientazione della asse maggiore dell'ellisse $\theta_2$. Tali valori si vedono chiaramente nel plot polare (\autoref{sub@fig:4.2}), la forma ovaleggiante per $\theta_{\lambda/4}=120^{\circ}$ riflette il fatto che $I_x \simeq I_y$ a differenza del caso a $70^{\circ}$
 
 Nell'ultima fase dell'esperienza la prima misura limita le possibilità di polarizzazione della luce dal LED a circolare e non polarizzata; tuttavia se fosse circolare durante la seconda misura si sarebbe osservato un minimo di intensità, cosa che non è avvenuta.
 Il fatto che $V/V_{LED} \neq 0.5$ è probabilmente dovuto alla non perfetta trasparenza dei vari elementi ottici.

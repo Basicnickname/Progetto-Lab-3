@@ -73,7 +73,7 @@ Per verificare la legge di Biot in funzione di $L$ è stata preparata nel becher
 In seguito, per verificare la legge in funzione della massa disciolta $P$, sono state preparate diverse soluzioni sciogliendo nella stessa quantità di acqua quantità crescenti di saccarosio e misurando per ognuna l'angolo di rotazione, sempre con luce verde.
 Infine è stato calcolato il potere rotatorio specifico $k$ della sostanza.
 \subsubsection{Misura del potere rotatorio specifico}
-Sono state preparate diverse soluzioni di saccarosio, fruttosio e glucosio sciogliendo in $80 \unit{ml}$ di acqua $30 \unit{g}$ di soluto. Per ognuna delle soluzioni è stato misurato l'angolo di rotazione con luce di diverse lunghezze d'onda (blu, verde, giallo, rosso) e calcolato il potere rotatorio specifico $k$ verificandone la dispersione. Infine è stato calcolato il potere rotatorio specifico per $\lambda = 589 \unit{nm}$. %T: non sono sicuro se l'ultima frase vada bene qui non essendo puramente procedura sperimentale
+Sono state preparate diverse soluzioni di saccarosio, fruttosio e glucosio sciogliendo in $80 \unit{ml}$ di acqua $30 \unit{g}$ di soluto. Per ognuna delle soluzioni è stato misurato l'angolo di rotazione con luce di diverse lunghezze d'onda (blu, verde, giallo, rosso) e calcolato il potere rotatorio specifico $k$ verificandone la dispersione. Infine è stato calcolato il potere rotatorio specifico per $\lambda = 589 \unit{nm}$. 
 \subsubsection{Studio della mutarotazione del glucosio}
 È stata preparata una soluzione sciogliendo $30 \unit{g}$ di glucosio in $80 \unit{ml}$ di acqua riscaldata sulla piastra così da accelerare la reazione. Subito dopo la preparazione della soluzione sono stati misurati gli angoli di rotazione ogni minuto utilizzando luce verde, fino a quando l'angolo non si è stabilizzato.
 Al raggiungimento dell'equilibrio sono stati misurati gli angoli di rotazione alle varie lunghezze d'onda.
@@ -114,8 +114,8 @@ Utilizzando le formule $\alpha = K \cdot L$ e $\alpha = k \cdot P/S$, sono stati
         \toprule
         {Grandezza} & {Valore Misurato} & {$\sigma$} & {Errore Relativo [\%]} \\
         \midrule
-        $K$ [\unit{deg.cm^-1}] & 2.53 & 0.15 & 5.76 \\
-        $k$ [\unit{deg.cm^2.g^-1}] & 8.05 & 0.41 & 5.03 \\
+        $K$ [\unit{deg.cm^{-1}}] & 2.53 & 0.15 & 5.76 \\
+        $k$ [\unit{deg.cm^2.g^{-1}}] & 8.05 & 0.41 & 5.03 \\
         \bottomrule
     \end{tabular}
     \caption{Verifica della legge di Biot: parametri per saccarosio con luce verde}
@@ -140,11 +140,11 @@ Dopo aver misurato i valori di $k=\alpha \cdot S /P$, usando la formula $k = A \
         Glucosio & 11.22 & 8.61 & 0.23 & 2.66 \\
         \bottomrule
     \end{tabular}
-    \caption{Misura del potere rotatorio specifico a $\lambda = 589 \unit{nm}$, tutte le misure sono espresse in [\unit{deg.cm^2.g^-1}]}
+    \caption{Misura del potere rotatorio specifico a $\lambda = 589 \unit{nm}$, tutte le misure sono espresse in [\unit{deg.cm^2.g^{-1}}]}
     \label{tab:Potere rotatorio specifico}
 \end{table}
 \subsubsection{Studio della mutarotazione del glucosio} %   F: Nella formula \alpha_0 - \alpha_{\infty}) \cdot \exp^{-ct} + \alpha_{\infty} l'esponenziale si può anche scrivere semplicemente con e^{-ct}, ma di nuovo solo per bellezza, per non avere la scritta exp nella formula
-Con i dati raccolti è stato eseguito un fit esponenziale con la formula tipica delle reazioni del primo ordine: $\alpha = (\alpha_0 - \alpha_{\infty}) \cdot \exp^{-ct} + \alpha_{\infty}$, dai parametri si sono ricavati i valori $k_0^{525}$ e $k_{\infty}^{525}$ per una soluzione di glucosio in luce verde.
+Con i dati raccolti è stato eseguito un fit esponenziale con la formula tipica delle reazioni del primo ordine: $\alpha = (\alpha_0 - \alpha_{\infty}) \cdot e^{-ct} + \alpha_{\infty}$, dai parametri si sono ricavati i valori $k_0^{525}$ e $k_{\infty}^{525}$ per una soluzione di glucosio in luce verde.
 Inoltre dai dati presi all'equilibrio alle varie lunghezze d'onda si è calcolato $k_{\infty}^{589}$ come nella sezione precedente.
 \begin{table}[H]
     \centering
@@ -163,7 +163,7 @@ Inoltre dai dati presi all'equilibrio alle varie lunghezze d'onda si è calcolat
         $k_{\infty}^{589}$ & 4.76 & 4.98 & 0.34 & 6.81 \\
         \bottomrule
     \end{tabular}
-    \caption{Potere rotatorio specifico del glucosio, tutte le misure sono espresse in [\unit{deg.cm^2.g^-1}]}
+    \caption{Potere rotatorio specifico del glucosio, tutte le misure sono espresse in [\unit{deg.cm^2.g^{-1}}]}
     \label{tab:Potere rotatorio specifico mutarotazione}
 \end{table}
 \subsubsection{Studio dell'inversione del saccarosio}
@@ -186,7 +186,7 @@ Come nella sezione precedente i parametri della soluzione catalizzata sono stati
         Saccarosio (Rif.) & 8.37 & 8.37 & 7.49 & 0.35 & 7.49 & 0.35 \\
         \bottomrule
     \end{tabular}
-    \caption{Misura del potere rotatorio specifico per l'inversione del saccarosio in luce verde $\lambda = 525 \unit{nm}$, tutte le misure sono espresse in [\unit{deg.cm^2.g^-1}]}
+    \caption{Misura del potere rotatorio specifico per l'inversione del saccarosio in luce verde $\lambda = 525 \unit{nm}$, tutte le misure sono espresse in [\unit{deg.cm^2.g^{-1}}]}
     \label{tab:Potere rotatorio specifico zucchero invertito}
 \end{table}
 
@@ -246,7 +246,7 @@ della massa disciolta $P$; il valore ottenuto per saccarosio a $\lambda = 525 \u
 
 Nella seconda parte la dipendenza del potere rotatorio specifico dalla lunghezza d'onda della luce incidente è stata verificata per tutte le sostanze utilizzate (\autoref{fig:2}). I valori trovati per il saccarosio e il fruttosio sono in buon accordo con i valori tabulati, mentre 
 la discrepanza che si riscontra con il glucosio è probabilmente dovuta al fenomeno di mutarotazione ed al tempo trascorso tra le misure (\autoref{tab:Potere rotatorio specifico}). Infatti si è utilizzato $\alpha$-D-glucosio puro
-($k$ = 11.2 \unit{deg.cm^2.g^-1}), che in soluzione tende a trasformarsi in una miscela di $\alpha$ e $\beta$-D-glucosio ($k$ = 5.23 \unit{deg.cm^2.g^-1}); il valore misurato è pertanto
+($k$ = 11.2 \unit{deg.cm^2.g^{-1}}), che in soluzione tende a trasformarsi in una miscela di $\alpha$ e $\beta$-D-glucosio ($k$ = 5.23 \unit{deg.cm^2.g^{-1}}); il valore misurato è pertanto
 uno stato intermedio tra i due.
 
 Nella terza parte si verifica che il glucosio in soluzione acquosa subisce il fenomeno di mutarotazione, in cui l'$\alpha$-D-glucosio iniziale si converte in una soluzione di equilibrio
@@ -257,7 +257,5 @@ Ad eccezione del valore di $k_0^{525}$, probabilmente influenzato dal tempo tras
 Nell'ultima parte si osserva il fenomeno di inversione del saccarosio, in cui la molecola di saccarosio viene scissa in glucosio e fruttosio. Per la soluzione con HCl si osserva 
 una variazione dell'angolo di rotazione che segue una cinetica esponenziale (\autoref{fig:4}), mentre la soluzione di riferimento senza HCl non mostra variazioni significative.
 Si osserva che lo zucchero invertito è un mezzo levogiro, a differenza della soluzione iniziale destrogira, inoltre i valori misurati del potere rotatorio specifico iniziale e finale 
-sono in accordo con i valori tabulati entro $3\sigma$ (\autoref{tab:Potere rotatorio specifico zucchero invertito}). La soluzione di riferimento mostra invece un valore di $k$ leggermente inferiore a quello tabulato,
-ciò probabilmente è dovuto al ridotto numero di misure effettuate. %T: oppure una parte dello zucchero si è invertito spontaneamente?
-
+sono in accordo con i valori tabulati entro $3\sigma$ (\autoref{tab:Potere rotatorio specifico zucchero invertito}). 
 \end{document}
