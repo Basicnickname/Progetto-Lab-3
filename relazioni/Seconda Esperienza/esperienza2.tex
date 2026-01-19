@@ -1,155 +1,67 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[a4paper,12pt]{article}
 
-% Encoding and language
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
 
-% Page layout
-\usepackage{geometry}
-\geometry{margin=25mm}
-\usepackage{setspace}
-% Typography & math
-\usepackage{microtype}
-\usepackage{amsmath,amssymb}
-\usepackage{siunitx}
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
 
-% Graphics, tables and captions
-\usepackage{graphicx}
-\usepackage{caption,subcaption}
-\usepackage{booktabs}
-\usepackage{float}
-\usepackage[utf8]{inputenc}
-\usepackage{booktabs} % Per linee orizzontali professionali
-\usepackage{siunitx}  % Per allineamento dei numeri e notazione scientifica
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
 
-% Hyperlinks
-\usepackage[hidelinks]{hyperref}
+% --- Dati Intestazione ---
+\title{\textbf{Lettura da un fotodiodo polarizzato inversamente}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
 
-% Custom commands for metadata
-\newcommand{\Course}{Course Name}
-\newcommand{\LabTitle}{Title of the Lab Report}
-\newcommand{\Authors}{Author One \\ Author Two \\ Author three di nuovo}
-\newcommand{\Supervisor}{Supervisor Name}
-\newcommand{\DateSubmitted}{\today}
-
-% Document
 \begin{document}
 
-% Title page
-\begin{titlepage}
-  \centering
-  {\LARGE\bfseries \LabTitle \par}
-  \vspace{1.5cm}
-  {\large \Course \par}
-  \vspace{1.0cm}
-  {\large \Authors \par}
-  \vfill
-  {\large Supervisor: \Supervisor \par}
-  \vspace{0.5cm}
-  {\large Date: \DateSubmitted \par}
-\end{titlepage}
+\maketitle
 
-\pagenumbering{roman}
-\tableofcontents
-\listoffigures
-\listoftables
-\clearpage
-\pagenumbering{arabic}
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+    Il presente lavoro di laboratorio si è posto l'obiettivo di investigare sulle risposte di un fotodiodo (PD) in due regimi operativi fondamentali.
+    \begin{itemize}
+        \item modalità fotoconduttiva (polarizzazione inversa, $V_g < 0$):la tensione di uscita ($V_R$) è direttamente proporzionale alla fotocorrente ($I_{ph}$). Determinare la costante di accoppiamento ottico $\beta$, che lega $I_{ph}$ alla corrente del LED ($I_{LED}$).
+    \end{itemize}
+    \begin{itemize}
+        \item  modalità fotovoltaica (assenza di polarizzazione, $V_g = 0$): Ricavare i parametri intrinseci del diodo;la corrente di saturazione inversa ($I_0$) e il fattore di idealità ($n$).
+    \end{itemize}
 
-%T: in generale aggiustare il format come le altre relazioni, su github i riferimenti
-%   attenzione che probabilmente i warning sono perché di base non si può usare la notazione scientifica nelle didascalie, titoli, etc., vanno corretti tipo con \texorpdfstring{}, gemini lo sa meglio
-% Abstract
-%T: ridurre l'abstract e magari fare un elenco puntato che divida in grande le fasi
-\begin{abstract}
-Il presente lavoro di laboratorio si è posto l'obiettivo di investigare sulle risposte di un fotodiodo (PD) in due regimi operativi fondamentali. Il primo in cui il fotodiodo lavora in  modalità fotoconduttiva (polarizzazione inversa, $V_g < 0$), in cui la tensione di uscita ($V_R$) è direttamente proporzionale alla fotocorrente ($I_{ph}$), e determinare la costante di accoppiamento ottico $\beta$, che lega $I_{ph}$ alla corrente del LED ($I_{LED}$). Il secondo in cui lavora
- in modalità fotovoltaica (assenza di polarizzazione, $V_g = 0$) in cui  tramite l'applicazione di fitting mirati, sono stati ricavati i parametri intrinseci del diodo: la corrente di saturazione inversa ($I_0$) e il fattore di idealità ($n$).
-L'esperienza è stata condotta utilizzando un circuito accoppiato LED-fotodiodo. La luce emessa dal LED, proporzionale alla corrente $I_{LED}$, ha generato la fotocorrente nel PD. Le misure di $V_R$ sono state registrate in funzione di $I_{LED}$ per diversi valori di tensione di polarizzazione $V_g$.
-\end{abstract}
+% -------------------------------------------------------------------
 
-\section{Introduction}
-%T: questa parte può essere molto utile per studiare quindi se riesci copiala da un'altra parte ma se ho capito bene il prof non la vuole proprio (al massimo qualche breve commento alla fine se significativo per spiegare qualche misura)
-L'esperimento prevede la caratterizzazione elettrica e ottica di un fotodiodo al silicio, operante in regime di polarizzazione inversa, cioè in modalità fotoconduttiva, e a polarizzazione nulla, cioè in modalità fotovoltaica.
-Teoricamente esponendo un semiconduttore alla radiazione elettromagnetica, se l’energia del singolo
-fotone è maggiore del gap del semiconduttore, è possibile che il fotone
-venga assorbito dando origine ad una coppia elettrone-lacuna. Questo significa un
-elettrone in più in banda di conduzione ed una lacuna in pi`u in banda di valenza. Si ha
-quindi una variazione nel numero di portatori sia elettroni che lacune, simultaneamente.
-La risposta del diodo illuminato (o fotodiodo) sarà perciò descritta dall'equazione
-\begin{equation}
-    I_D = I_0 \left( e^{\frac{q V_D}{n k T}} - 1 \right) - I_{ph}
-\end{equation}
-dove il termine $I_{ph}$  è proporzionale al numero di fotoni assorbiti, ovvero all’intensità della radiazione elettromagnetica.
-La fotocorrente generata nel fotodiodo è proporzionale alla luce emessa dal LED e quindi alla corrente di alimentazione
-\begin{equation}
-    I_{ph} = \beta I_{LED}
-\end{equation}
-non bisogna usare la tensione di alimentazione perché la caratteristica corrente--tensione del LED è di tipo non lineare.
-Al contrario, l'intensità di radiazione emessa dal LED è direttamente proporzionale alla corrente che lo attraversa, garantendo così la validità della relazione.
-Il circuito relativo al fotodiodo può essere analizzato considerando la corrente
-\begin{equation}
- I_D = I_R
-\end{equation}
- che scorre sia nel fotodiodo che sulla resistenza.
-\begin{equation}
-V_D= V_R + V_g
-\end{equation}
-in assenza di tensione del generatore, la tensione sulla resistenza è uguale a quella sul diodo.
-Assumendo come positiva la corrente circolante in senso orario, si osserva che la 
-fotocorrente generata fluisce in senso opposto. Definendo $V_R$ come la tensione 
-(positiva) ai capi della resistenza di carico $R$, la corrente nel ramo risulta:
-\begin{equation}
-    I_D = I_R = -\frac{V_R}{R}
-\end{equation}
-
-Utilizzando tutte le relazioni appena elencate possiamo riscrivere la nostra equazione evidenziando l'andamento della Tensione ai capi della resistenza, $V_R$ in funzione di $I_{ph}$.
-\begin{equation}
-    V_R = R I_{ph} - R I_0 \left( e^{\frac{q(V_R + V_g)}{ k T}} - 1 \right) = R I_{ph} - R I_0 \left( e^{\frac{q V_D}{ k T}} - 1 \right)
-\end{equation}
-
-In questo modo è più facile notare che in presenza di polarizzazione inversa ($V_g < 0$) con un valore assoluto sufficientemente grande, il termine esponenziale legato alla corrente di buio nell'equazione del diodo diventa trascurabile.
- In questa condizione, la relazione tra la tensione misurata e la fotocorrente si semplifica in
-\begin{equation}
-    V_R = R I_{ph}
-\end{equation}
-In questo regime, la tensione misurata risulta direttamente proporzionale alla corrente fotogenerata. Il fotodiodo opera quindi in \textbf{modalità lineare} o \textbf{fotoconduttiva},
- garantendo la massima accuratezza nella trasduzione del segnale luminoso.
-Invece in assenza di polarizzazione esterna ($V_g = 0$), la corrente di buio del diodo non è più trascurabile e si sottrae alla fotocorrente, portando a valori di $V_R$ inferiori rispetto al caso di polarizzazione inversa. 
-Il sistema segue quindi la curva di carico tipica di una cella solare
-\begin{equation}
-    I = I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) - I_{ph} = -\frac{V_R}{R}
-\end{equation}
- In tale configurazione si dice che il fotodiodo opera in \textbf{modalità fotovoltaica}.
-Questo approccio non è adatto al fit, perchè $V_R$ compare anche al secondo membro.
-Per fittare i dati è opportuno scambiare gli assi e scrivere invece $I_{ph}$ in funzione di $V_R$.
-Introduciamo anche il fattore di idealità n, che tipicamente è compreso fra 1 e 5 ed è legato ai processi di ricombinazione non radiativa nel diodo. 
-\begin{equation}
-    I_{ph} = \beta I_{LED} = I_0 \left( e^{\frac{q(V_R + V_g)}{ k T}} - 1 \right) + \frac{V_R}{R} 
-\end{equation}
-
-
-Per poter giungere a una conclusione sarà necessario estrarre, tramite procedure di fitting non lineare sui dati sperimentali, i parametri fisici: 
-\begin{itemize}
-    \item \textbf{Fattore di idealità ($n$)}: Indica il meccanismo di trasporto prevalente.
-    \item \textbf{Corrente di saturazione inversa ($I_0$)}: Determina il limite inferiore della corrente di buio.
-    \item \textbf{Costante di accoppiamento ($\beta$)}: Lega la corrente del LED alla fotocorrente generata ($I_{ph} = \beta I_{LED}$).
-\end{itemize}
-
-
-\section{Materials and Methods}
-
-Per l'esecuzione dell'esperimento è stata utilizzata la seguente strumentazione:
-%T: fare una subsection per materiali e una per metodi, nei materiali non serve descrivere troppo gli strumenti (tipo resistenze dire solo 10 e 20 k)
-\begin{itemize}
-    \item \textbf{Fotodiodo (PD) }
-    \item \textbf{LED}
-    \item \textbf{Resistenze di carico ($R$)}: due resistenze di precisione da \qty{10}{\kilo\ohm} e \qty{20}{\kilo\ohm} per il circuito del fotodiodo, utilizzate per valutare l'effetto della retta di carico sui dati.
-    \item \textbf{Resistenza di protezione ($R_{LED}$)}
-    \item \textbf{due generatori d tensione}: usati per la polarizzazione del LED e la gestione della tensione $V_g$ del fotodiodo.
-    \item \textbf{Multimetri digitali}: utilizzati in modalità Voltmetro (per la misura di $V_R$) e Amperometro (per la misura di $I_{LED}$).
+\section{Materiali e Metodi}
+    \subsection{Strumentazione}
+   \begin{itemize}
+    \item \textbf Fotodiodo (PD) 
+    \item \textbf LED
+    \item \textbf Resistenze di carico ($R$): due resistenze da \qty{10}{\kilo\ohm} e \qty{20}{\kilo\ohm}
+    \item \textbf Resistenza di protezione ($R_{LED}$) 
+    \item \textbf due generatori d tensione 
+    \item \textbf Multimetri digitali  
  \end{itemize}
 
-Lo schema sperimentale è costituito da due circuiti indipendenti
+\subsection{Procedura sperimentale}
+   Lo schema sperimentale è costituito da due circuiti indipendenti
 \begin{enumerate}
     \item \textbf{Circuito 1}: Composto dal Generatore 1, un amperometro, il LED e la resistenza $R_{LED} = \qty{500}{\ohm}$. Quest'ultima facilita la regolazione della corrente tramite l'alimentatore e limita la corrente massima per preservare l'integrità del LED. L'intensità della radiazione emessa è regolata modulando la corrente di alimentazione $I_{LED}$.
     \item \textbf{Circuito 2}: Composto dal Generatore 2 (per la gestione della tensione di polarizzazione $V_g$), il fotodiodo e la resistenza di carico $R$. Un voltmetro è posto ai capi della resistenza per misurare la tensione di uscita $V_R$.
@@ -161,162 +73,35 @@ Il fotodiodo è estremamente sensibile. Senza un tubicino, il voltmetro registre
 Per ogni set di misure, è stata impostata tramite il Generatore 2 una tensione di polarizzazione $V_g$. Le misure sono state effettuate partendo da $V_g = \qty{0}{\volt}$ (modalità fotovoltaica) e procedendo con valori in modulo sempre crescenti (polarizzazione inversa, $V_g < 0$).
 Per un valore di $V_g$ fissato, si è variata la corrente di alimentazione del LED ($I_{LED}$) agendo sul Generatore 1, mantenendo sempre l'intensità sotto la soglia di sicurezza di \qty{20}{\milli\ampere}.
 Per ogni incremento di $I_{LED}$, è stata registrata la tensione $V_R$ ai capi della resistenza di carico tramite il voltmetro digitale.
+Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi.
 Durante l'acquisizione, i dati sono stati riportati su un grafico $I_{LED}$ in funzione di $V_R$ per verificare immediatamente la coerenza con l'andamento teorico atteso.
 Questo campionamento sistematico è stato ripetuto per due diverse resistenze di carico ($R = \qty{10}{\kilo\ohm}$ e $R = \qty{20}{\kilo\ohm}$), al fine di analizzare lo spostamento del punto di lavoro del circuito sulla retta di carico.
-Inoltre usando due resistenze si ci può rendere conto che il modello fisico che si sta utilizzando sia  meno corretto.
- i parametri intrinseci del fotodiodo ($I_0$ e $n$) e la costante  $\beta$ non devono cambiare al variare della resistenza appartenente al circuito 2.
-Usare due resistenze diverse  permette di dimostrare che i valori di $n$ e $I_0$ estratti dal fit sono proprietà reali del semiconduttore e non dipendono dal circuito di misura scelto.
-
-\subsection{Setup}
-esistono due possibili schemi di realizzazione pratica per questoesperimento, la prima è la seguente
-%T: non penso serva descrivere il setup, bastano le descrizioni dei circuiti prima
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{circuito1.png}
-  \caption{Schema del possibile setup sperimentale che mostra i collegamenti tra LED, fotodiodo e strumenti di misura.}
-  \label{fig:setup}
-\end{figure}
-
-mentre la seconda è una  schematizzazione più semplice può essere ottenuto usando la connessione a morsetto
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{circuito2.png}
-  \caption{Schema del possibile setup sperimentale che mostra i collegamenti tra LED, fotodiodo e strumenti di misura.}
-  \label{fig:setup}
-\end{figure}
+Inoltre usando due resistenze si ci può rendere conto che il modello fisico che si sta utilizzando sia  meno corretto, in quanto permette di dimostrare che i valori di $n$ e $I_0$ estratti dal fit sono proprietà reali del semiconduttore e non dipendono dal circuito di misura scelto.
+Si può dunque verificare confrontando i risultati dei fit, in cui $\beta_1$, $\beta_2$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
+Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
 
 
-\subsection{Data acquisition and analysis}
-%T: unire questa parte a quella dei metodi sopra che descrive come sono state fatte le misure, stringere un po' e lasciare solo le formule usate per fittare, queste ultime eventualmente possono essere messe prima dei fit
+% -------------------------------------------------------------------
 
-L'acquisizione dei dati è avvenuta variando  la corrente di alimentazione del LED e registrando la corrispondente tensione $V_R$ tramite un voltmetro digitale. 
-Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi. 
-Si è cercato di ridurrel'influenza della luce ambientale  mediante l'impiego di un tubicino, condizione necessaria per una stima accurata della corrente di buio.
-I dati sono stati inizialmente raccolti in Excell, dove la visualizzazione in tempo reale dei grafici ha permesso di monitorare la coerenza delle misure e identificare  eventuali anomalie sperimentali. 
-La fase finale di analisi è stata successivamente condotta mediante Google Colab, dove sono stati ricavati i parametri sperimentali eseguend dei fit non lineari:
+\section{Analisi dei dati e grafici}
+    \subsection{Tabelle risultati}
+         Utilizzando le seguenti formule sono stati calcolati rispettivamente:
 \begin{itemize}
     \item Il fattore di idealità ($n$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
 \begin{equation}
     I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) + \frac{V_R}{R} \right] \label{eq:fit_completo}
 \end{equation}
 
-    \item La corrente di saturazione inversa ($I_0$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
-\begin{equation}
-    I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) + \frac{V_R}{R} \right] \label{eq:fit_completo}
-\end{equation}
+    \item La corrente di saturazione inversa ($I_0$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula precedente (sempre con K costante di Boltzman e T temperatura ambientale(300K)).
 
     \item La costante di accoppiamento ottico ($\beta$): polarizzando con un valore grande e negativo di  $V_g$  e fittiando utilizzando la relazione:
 \begin{equation}
 I_{LED} = \frac{V_R}{R \beta}
 \end{equation}
 \end{itemize}
- Una volta ricavati i seguenti parametri si è eseguito un plot dei dati sperimentali e della funzione teorica, sostituendo in essa i dati ricavati dal fit, per studiarne la compatibilità.
-
-
-
-\section{Results}
-
-%T: non serve mettere tutte le misure esplicitamente, mettere solo 2 plot uno in scala lineare ed una semilogaritmica e mettere tutte le curve con la legenda che specifica il tipo di misura (vedi le nostre e i colab come reference)
-%   per i grafici togliere l'indice del tipo di scala usato da python ma specificarlo nella caption
-\begin{table}[H]
-    \centering
-    \caption{Dati sperimentali della tensione $V_R$ rilevata ai capi della resistenza $R = 10\text{ k}\Omega$ al variare della corrente $I_{LED}$ per tre diversi valori di tensione di polarizzazione $V_g$.}
-    \label{tab:dati_sperimentali per $R = 10\text{ k}\Omega$}
-    \begin{tabular}{c|ccc}
-        \hline
-        \textbf{$I_{LED}$ [mA]} & \textbf{$V_R$ ($V_g=0$) [mV]} & \textbf{$V_R$ ($V_g=0.1$) [mV]} & \textbf{$V_R$ ($V_g=0.3$) [mV]} \\ \hline
-        1 & 17.4 & 16.5 & 16.9 \\
-        2 & 40.0 & 38.5 & 39.2 \\
-        3 & 65.6 & 63.5 & 64.7 \\
-        4 & 92.3 & 89.2 & 91.5 \\
-        5 & 120.0 & 116.0 & 119.3 \\
-        6 & 147.2 & 143.2 & 147.0 \\
-        7 & 173.9 & 170.0 & 175.2 \\
-        8 & 198.5 & 197.5 & 202.3 \\
-        9 & 220.9 & 224.8 & 231.6 \\
-        10 & 239.3 & 251.8 & 259.7 \\
-        11 & 254.2 & 278.0 & 287.2 \\
-        12 & 266.4 & 304.1 & 314.7 \\
-        13 & 276.0 & 327.5 & 341.5 \\
-        14 & 284.3 & 350.4 & 368.5 \\
-        15 & 291.2 & 369.3 & 394.7 \\
-        16 & 297.1 & 386.0 & 421.0 \\
-        17 & 302.4 & 400.0 & 441.0 \\
-        18 & 306.9 & 410.7 & 465.3 \\
-        19 & 311.0 & 421.0 & 487.3 \\
-        20 & 314.5 & 429.7 & 510.4 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \centering
-    \caption{Dati sperimentali della tensione $V_R$ rilevata ai capi della resistenza $R = 20\text{ k}\Omega$ al variare di $I_{LED}$ per diversi valori di tensione di polarizzazione $V_g$ [V].}
-    \label{tab:dati_sperimentali per $R = 20\text{ k}\Omega$}
-    \small % Riduce leggermente la dimensione per far stare tutte le colonne
-    \begin{tabular}{c|cccccc}
-        \hline
-        \textbf{$I_{LED}$ [mA]} & \textbf{$V_R$($V_g=0$)[mV]} & \textbf{$V_R$($V_g=0.3$)[mV]} & \textbf{$V_R$($V_g=0.5$)[mV]} & \textbf{$V_R$($V_g=1$)[mV]} & \textbf{$V_R$($V_g=3$)[mV]} & \textbf{$V_R$($V_g=5$)[mV]} \\ \hline
-         1 &   29.2 &   28.2 &   34.5 &   29.0 &   29.0 &   29.2 \\
-         2 &   55.1 &   53.8 &   80.6 &   53.3 &   53.3 &   53.5 \\
-         3 &  122.5 &  125.0 &  131.6 &  131.6 &  131.6 &  131.6 \\
-         4 &  168.7 &  176.4 &  185.6 &  185.4 &  185.6 &  185.6 \\
-         5 &  207.0 &  228.7 &  241.0 &  241.0 &  241.0 &  241.0 \\
-         6 &  233.1 &  281.5 &  298.4 &  295.9 &  296.4 &  297.2 \\
-         7 &  250.0 &  335.0 &  355.0 &  352.2 &  352.4 &  352.4 \\
-         8 &  262.5 &  386.3 &  412.0 &  408.5 &  409.1 &  409.7 \\
-         9 &  272.3 &  437.7 &  467.8 &  465.0 &  464.8 &  465.0 \\
-        10 &  280.9 &  485.4 &  523.5 &  520.8 &  521.5 &  522.0 \\
-        11 &  287.7 &  524.3 &  579.5 &  576.4 &  576.8 &  576.9 \\
-        12 &  293.4 &  554.1 &  635.0 &  629.0 &  631.0 &  632.0 \\
-        13 &  298.1 &  576.2 &  686.0 &  684.0 &  685.0 &  685.0 \\
-        14 &  301.5 &  600.0 &  734.0 &  736.0 &  737.0 &  739.0 \\
-        15 &  304.9 &  611.0 &  767.0 &  790.0 &  790.0 &  790.0 \\
-        16 &  307.8 &  621.0 &  790.0 &  838.0 &  841.0 &  842.0 \\
-        17 &  310.7 &  631.0 &  804.0 &  887.0 &  888.0 &  889.0 \\
-        18 &  312.5 &  638.0 &  815.0 &  933.0 &  936.0 &  938.0 \\
-        19 &  314.8 &  643.0 &  824.0 &  983.0 &  983.0 &  983.0 \\
-        20 &  316.8 &  648.0 &  832.0 & 1030.0 & 1035.0 & 1038.0 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Plottando i dati sperimentali qui elencati si ottengono i seguenti grafici
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{R10Vg0.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0\text{ V}$.}
-  \label{fig:risultati_10k_0V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{R10Vg03.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0.3\text{ V}$.}
-  \label{fig:risultati_10k_0.3V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{R20Vg0.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 0\text{ V}$.}
-  \label{fig:risultati_20k_0V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{R20Vg1.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 1\text{ V}$.}
-  \label{fig:risultati_20k_1V}
-\end{figure}
-
-A seguire sono riportati i valori dei parametri fisici $\beta$, $I_0$, $n$, con i corrispettivi errori:
 
 
 \begin{table}[h]
-%T: unità di misura? ridurre mettere solo 2 massimo 3 cifre decimali e una cifra di errore, idem errore relativo
 \centering
 \caption{Parametri di fit: valori, errori standard ed errori relativi.}
 \label{tab:dati_fit}
@@ -324,27 +109,20 @@ A seguire sono riportati i valori dei parametri fisici $\beta$, $I_0$, $n$, con 
 \toprule
 \textbf{Parametro} & {\textbf{Valore}} & {\textbf{Err. Std ($err_{st}$)}} & {\textbf{Err. Rel ($err_{rel}$)}} \\
 \midrule
-$\beta_1$    & 2.5864e-03 & 6.1468e-05 & 2.3766e-02 \\
-$\beta_2$    & 2.5954e-03 & 7.0627e-05 & 2.7212e-02 \\
-$I_{01}$    & 1.0936e-09 & 1.9005e-09 & 1.7378e+00 \\
-$n_1$        & 1.2387     & 2.2610e-01 & 1.8253e-01 \\
-$I_{02}$    & 2.5810e-09 & 4.3662e-09 & 1.6917e+00 \\
-$n_2$        & 1.2884     & 2.3598e-01 & 1.8316e-01 \\
+$\beta_1$    & 2.58e-03 & 6.14e-05 & 2.37e-02 \\
+$\beta_2$    & 2.59e-03 & 7.06e-05 & 2.72e-02 \\
+$I_{01}[mA]$    & 1.09e-09 & 1.90e-09 & 1.73e+00 \\
+$n_1$        & 1.23     & 2.26e-01 & 1.82e-01 \\
+$I_{02}[mA]$    & 2.58e-09 & 4.36e-09 & 1.69e+00 \\
+$n_2$        & 1.28     & 2.35e-01 & 1.83e-01 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-In cui $\beta_1$, $\beta$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
-Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
-Ottenuti quindi i parametri possiamo riplottare i valori sperimentali per confrontarli con la curva teorica 
-%T: usare pedici e apici sui parametri per far capire a quali misure corrispondono, lasciare le spiegazioni solo per metodi o conclusioni
-  \begin{equation}
-I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q(V_R + V_g)}{nkT}} - 1 \right) + \frac{V_R}{R} \right]
-\end{equation}
 
-in cui verranno sostituiti i parametri appena ricavati dal fit.
-
-\begin{figure}[H]
+    \subsection{Grafici sperimentali e curve di regressione}
+        
+           \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{PR10Vg0.png}
   \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0\text{ V}$, comparato all'andamento della curva teorica}
@@ -392,41 +170,19 @@ in cui verranno sostituiti i parametri appena ricavati dal fit.
   \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 1\text{ V}$, comparato all'andamento della curva teorica}
   \label{fig:risultati_20k_1V}
 \end{figure}
+% ---------------------------------------------------------------------------------------
 
-
-
-\section{Discussion}
-%T: stringere un po': limitarsi a dire quali misure tornano e eventualmente quali no e perché 
-% occhio ad usare troppa AI che potrebbero sgamarci, rielaborare il più possibile
-Interpretando i valori appen ritrovati ci si rende conto che i parametri $\beta$ sono più solidi e precisi ($err_{rel} \approx 2-3\%$), mentre i parametri $I_0$ e $n$ sono incerti.
- Il fatto che $n$ sia circa $1.2$ indica che il LED non segue il modello ideale ($n=1$). In letteratura, un valore tra $1.2$ e $2.0$ è comune e indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
-Volendo fare un paragone con i valori tipici in letteratura, il valore di n peri Led commerciali è circa $1.2 - 1.5$; quindi possiamo dire che il valore di n stimato è compatibile con i valori in letteratura.
-I risultati confermano l'andamento esponenziale, ma con una discrepanza nei valori di $I_0$ che presentano un errore molto elevato.
-Il valore di I0 trovato rientra nei valori tipici di letteratura che per i Led che hannoun "band gap" più larga rispetto al silicio, con un I0 tipico compreso tra  $10^{-9}$ A (nA) e $10^{-11}$ A; tutto ciò è probabilmente dovuto con molta probabilità all'influenza del fattore luce ambientale.
-
-Dall'analisi dei parametri ottenuti tramite il processo di fitting, si osserva una netta distinzione nella qualità statistica dei risultati. 
-I coefficienti $\beta$ presentano errori relativi contenuti nell'intervallo $2-3\%$.
- Al contrario, i parametri intrinseci della giunzione, $I_0$ e $n$, presentano incertezze  più marcate, sebbene i loro valori centrali risultino fisicamente coerenti con le aspettative teoriche.
- Il valore stimato di $n \approx 1.2$ indica una deviazione dal modello del diodo ideale ($n=1$). Tale risultato è in pieno accordo con la letteratura scientifica sui LED commerciali, la quale riporta tipicamente valori compresi tra $1.2$ e $1.5$.
- Questa discrepanza è riconducibile alla presenza di fenomeni di ricombinazione non radiativa all'interno della regione di svuotamento del semiconduttore.
-  Il valore ottenuto, dell'ordine di {$10^{-9}$}{A}, rientra nel range tipico atteso per i dispositivi LED ad ampio band-gap ($10^{-9} - 10^{-11}$\,A). Tuttavia, l'errore relativo associato risulta estremamente elevato.
-L'elevata incertezza riscontrata su $I_0$ è probabilmente legata all influenza della luce ambientale, poiché $I_0$ rappresenta la corrente che fluisce nel dispositivo in condizioni di buio totale.
-
-
-
-\section{Conclusion}
-
-
-
-In conclusione, l'attività sperimentale ha permesso di caratterizzare il comportamento elettrico del dispositivo LED attraverso il fit della curva caratteristica $I(V_R)$. I risultati ottenuti confermano la validità del modello teorico, specialmente per quanto riguarda il parametro $\beta$, determinato con un'incertezza estremamente ridotta.
-Sebbene i valori del fattore di idealità $n$ e $I_0$ siano coerenti con i dati presenti in letteratura per i LED commerciali, la forte incertezza statistica riscontrata su $I_0$ evidenzia i limiti del setup sperimentale utilizzato.
- L'analisi suggerisce che la fotocorrente indotta dalla luce ambientale sia la principale sorgente di errore.
-Per studi futuri, si raccomanda l'adozione di unametodologia per isolare la risposta del LED dalle interferenze luminose esterne. 
-Un metodo potrebbe essere svolgere l'esperimento in una stanza completamente buia, o isolare il LED ed il fotodiodo da qualsiasi fonte luminosa mediante una scatola nera da posizionare intorno all'apparato sperimentale.
-Tali accorgimenti permetterebbero di ridurre l'errore relativo di $I_0$ e di verificare con maggiore accuratezza la dipendenza del fattore di idealità dai processi di ricombinazione interna.
+\section{Conclusioni}
+I parametri $\beta$ sono più solidi e precisi ($err_{rel} \approx 2-3\%$), mentre i parametri $I_0$ e $n$ presentano incertezze maggiori.
+ Il valore $n=1.2$ indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
+I risultati confermano l'andamento esponenziale, ma presentano un errore molto elevato nei valori di $I_0$.
+Questa elevata incertezza è probabilmente legata all influenza della luce ambientale.
+Concludiamo che i risultati ottenuti confermano la validità del modello teorico.
+Per studi futuri, si raccomanda l'adozione di una metodologia per isolare la risposta del LED dalle interferenze luminose esterne.
 
 
 
 
-% End document
+
+ 
 \end{document}

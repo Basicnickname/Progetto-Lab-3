@@ -1,8 +1,0 @@
-\babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Materials and Methods}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Setup}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Data acquisition and analysis}{4}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Results}{5}{section.3}%
-\contentsline {section}{\numberline {4}Discussion}{10}{section.4}%
-\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}%
