@@ -39,12 +39,12 @@
 
 % -------------------------------------------------------------------
 \section{Obiettivo dell'esperienza}
-    Il presente lavoro di laboratorio si è posto l'obiettivo di investigare sulle risposte di un fotodiodo (PD) in due regimi operativi fondamentali.
+    Il presente lavoro di laboratorio si è posto l'obiettivo di investigare sulle risposte di un fotodiodo (PD) in due regimi operativi fondamentali:
     \begin{itemize}
-        \item modalità fotoconduttiva (polarizzazione inversa, $V_g < 0$):la tensione di uscita ($V_R$) è direttamente proporzionale alla fotocorrente ($I_{ph}$). Determinare la costante di accoppiamento ottico $\beta$, che lega $I_{ph}$ alla corrente del LED ($I_{LED}$).
+        \item Modalità fotoconduttiva (polarizzazione inversa, $V_g < 0$): la tensione di uscita ($V_R$) è direttamente proporzionale alla fotocorrente ($I_{ph}$). Determinare la costante di accoppiamento ottico $\beta$, che lega $I_{ph}$ alla corrente del LED ($I_{LED}$).
     \end{itemize}
     \begin{itemize}
-        \item  modalità fotovoltaica (assenza di polarizzazione, $V_g = 0$): Ricavare i parametri intrinseci del diodo;la corrente di saturazione inversa ($I_0$) e il fattore di idealità ($n$).
+        \item Modalità fotovoltaica (assenza di polarizzazione, $V_g = 0$). Ricavare i parametri intrinseci del diodo, la corrente di saturazione inversa ($I_0$) e il fattore di idealità ($n$).
     \end{itemize}
 
 % -------------------------------------------------------------------
@@ -52,12 +52,12 @@
 \section{Materiali e Metodi}
     \subsection{Strumentazione}
    \begin{itemize}
-    \item \textbf Fotodiodo (PD) 
-    \item \textbf LED
-    \item \textbf Resistenze di carico ($R$): due resistenze da \qty{10}{\kilo\ohm} e \qty{20}{\kilo\ohm}
-    \item \textbf Resistenza di protezione ($R_{LED}$) 
-    \item \textbf due generatori d tensione 
-    \item \textbf Multimetri digitali  
+    \item  Fotodiodo (PD) 
+    \item  LED
+    \item  Resistenze di carico ($R$): due resistenze da \qty{10}{\kilo\ohm} e \qty{20}{\kilo\ohm}
+    \item  Resistenza di protezione ($R_{LED}$) 
+    \item  Due generatori d tensione 
+    \item  Multimetri digitali  
  \end{itemize}
 
 \subsection{Procedura sperimentale}
@@ -85,16 +85,16 @@ Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettiv
 
 \section{Analisi dei dati e grafici}
     \subsection{Tabelle risultati}
-         Utilizzando le seguenti formule sono stati calcolati rispettivamente:
+         Utilizzando le seguenti formule calcoliamo rispettivamente:
 \begin{itemize}
-    \item Il fattore di idealità ($n$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
+    \item Il fattore di idealità ($n$): annulliamo la polarizzazione,  Vg=0\unit{V}  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
 \begin{equation}
     I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) + \frac{V_R}{R} \right] \label{eq:fit_completo}
 \end{equation}
 
     \item La corrente di saturazione inversa ($I_0$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula precedente (sempre con K costante di Boltzman e T temperatura ambientale(300K)).
 
-    \item La costante di accoppiamento ottico ($\beta$): polarizzando con un valore grande e negativo di  $V_g$  e fittiando utilizzando la relazione:
+    \item La costante di accoppiamento ottico ($\beta$): polarizziamo con un valore grande e negativo di  $V_g$  e fittiamo utilizzando la relazione:
 \begin{equation}
 I_{LED} = \frac{V_R}{R \beta}
 \end{equation}
@@ -105,76 +105,43 @@ I_{LED} = \frac{V_R}{R \beta}
 \centering
 \caption{Parametri di fit: valori, errori standard ed errori relativi.}
 \label{tab:dati_fit}
-\begin{tabular}{l S[table-format=1.4e-2] S[table-format=1.4e-2] S[table-format=1.4e+2]}
+\begin{tabular}{l S[table-format=1.2e-2] S[table-format=1.2e-2] S[table-format=3.2]}
 \toprule
-\textbf{Parametro} & {\textbf{Valore}} & {\textbf{Err. Std ($err_{st}$)}} & {\textbf{Err. Rel ($err_{rel}$)}} \\
+{Parametro} & {Valore} & {$\sigma$} & {Err. Rel. [\%]} \\
 \midrule
-$\beta_1$    & 2.58e-03 & 6.14e-05 & 2.37e-02 \\
-$\beta_2$    & 2.59e-03 & 7.06e-05 & 2.72e-02 \\
-$I_{01}[mA]$    & 1.09e-09 & 1.90e-09 & 1.73e+00 \\
-$n_1$        & 1.23     & 2.26e-01 & 1.82e-01 \\
-$I_{02}[mA]$    & 2.58e-09 & 4.36e-09 & 1.69e+00 \\
-$n_2$        & 1.28     & 2.35e-01 & 1.83e-01 \\
+$\beta_1$    & 2.59e-03 & 0.06e-03 & 2.38 \\
+$\beta_2$    & 2.60e-03 & 0.07e-03 & 2.72 \\
+$I_{01}[A]$    & 1.09e-09 & 1.90e-09 & 173 \\
+$n_1$        & 1.24     & 0.23 & 18.2 \\
+$I_{02}[A]$    & 2.58e-09 & 4.37e-09 & 169 \\
+$n_2$        & 1.29     & 0.24 & 18.3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
     \subsection{Grafici sperimentali e curve di regressione}
-        
-           \begin{figure}[H]
+
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{PR10Vg0.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_10k_0V}
+  \includegraphics[width=\textwidth]{Fit unito R1.png}
+  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e vari $V_g$}
+  \label{fig:risultati_10k}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{PR10Vg01.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0.1\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_10k_0.1V}
+  \includegraphics[width=\textwidth]{Fit unito R2.png}
+  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e vari $V_g$}
+  \label{fig:risultati_20k}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{PR10Vg03.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 10\text{ k}\Omega$ e $V_g = 0.3\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_10k_0.3V}
-\end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{PR20Vg0.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 0\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_20k_0V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{PR20Vg03.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 0.3\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_20k_0.3V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{PR20Vg05.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 0.5\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_20k_0.5V}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{PR20Vg1.png}
-  \caption{Andamento della tensione $V_R$ in funzione di $I_{LED}$ per $R = 20\text{ k}\Omega$ e $V_g = 1\text{ V}$, comparato all'andamento della curva teorica}
-  \label{fig:risultati_20k_1V}
-\end{figure}
 % ---------------------------------------------------------------------------------------
 
 \section{Conclusioni}
 I parametri $\beta$ sono più solidi e precisi ($err_{rel} \approx 2-3\%$), mentre i parametri $I_0$ e $n$ presentano incertezze maggiori.
- Il valore $n=1.2$ indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
+ Il valore $n\simeq1.2$ indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
 I risultati confermano l'andamento esponenziale, ma presentano un errore molto elevato nei valori di $I_0$.
 Questa elevata incertezza è probabilmente legata all influenza della luce ambientale.
 Concludiamo che i risultati ottenuti confermano la validità del modello teorico.

@@ -1,4 +1,38 @@
 \documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
+
+% --- Dati Intestazione ---
+\title{\textbf{Accoppiamento LED-FOTODIODO in funzione della frequenza di modulazione del segnale}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
 
 % --- Pacchetti Fondamentali ---
 \usepackage[utf8]{inputenc} % Codifica caratteri
@@ -45,6 +79,16 @@ L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fot
 \section{Materiali e Metodi}
     \subsection{Strumentazione}
         \begin{itemize}
+\maketitle
+
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fotodiodo in funzione della sua frequenza di modulazione e della resistenza di carico R usata.
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+    \subsection{Strumentazione}
+        \begin{itemize}
     \item Generatore di funzoni
     \item Basetta per circuiti
     \item Oscilloscopio
@@ -54,6 +98,12 @@ L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fot
     \item  Presa per cavo coassiale con morsetti
 \end{itemize}
 
+    \subsection{Procedura sperimentale}
+        Lo schema sperimentale è costituito da un sistema accoppiato LED-Fotodiodo.
+        Un LED, alimentato da un generatore di funzioni, funge da sorgente luminosa modulata per il fotodiodo, il quale è inserito in un circuito chiuso con una resistenza di carico.
+        Il segnale elettrico risultante viene prelevato ai capi della resistenza e analizzato tramite un oscilloscopio
+        L’alimentazione del LED si ottiene tipicamente impostando una tensione picco-picco di 5-6 Volt sul generatore.
+        Pilotando il LED tramite un segnale in onda quadra(in modo da non prendere in considerazione fenomeni di distorsione della forma d’onda che non siano riconducibili alla detezione col fotodiodo.), in cui l’intensità di illuminazione (e quindi anche la corrente fotogenerata) viene mantenuta costante per un intervallo $\frac{T}{2}=\frac{2\pi}{2\omega}$ e quindi spenta per un intervallo di tempo analogo, possiamo analizzare in due fasi
     \subsection{Procedura sperimentale}
         Lo schema sperimentale è costituito da un sistema accoppiato LED-Fotodiodo.
         Un LED, alimentato da un generatore di funzioni, funge da sorgente luminosa modulata per il fotodiodo, il quale è inserito in un circuito chiuso con una resistenza di carico.
@@ -72,7 +122,14 @@ con
 Per frequenze tendenti a zero, $V_S$ tende a $V_0$, mentre per frequenze grandi $V_S$ tende a 0.
 Al variare della frequenza si analizzano i segnali visualizzati sull’oscilloscopio, che consentono di valutare la costante di tempo $\tau$= R $C_d$ (e quindi la capacità $C_d$) analizzando il comportamento in funzione della frequenza e valutando le frequenze a cui avviene la caduta di intensità, e determinando la frequenza di taglio $f_0$.
  I parametri sperimentali possono essere ricavati mrdiante due diverse strategie di fit:
+Al variare della frequenza si analizzano i segnali visualizzati sull’oscilloscopio, che consentono di valutare la costante di tempo $\tau$= R $C_d$ (e quindi la capacità $C_d$) analizzando il comportamento in funzione della frequenza e valutando le frequenze a cui avviene la caduta di intensità, e determinando la frequenza di taglio $f_0$.
+ I parametri sperimentali possono essere ricavati mrdiante due diverse strategie di fit:
 \begin{itemize}
+    \item Fit onda sinusoidale: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione
+    \begin{equation}
+    V_V=\frac{I_V R}{1+\frac{\omega^2}{\omega_0^2}}=\frac{I_V R}{1+\frac{f^2}{f_0^2}}
+\end{equation}
+    \item Fit onda quadra: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione (1).
     \item Fit onda sinusoidale: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione
     \begin{equation}
     V_V=\frac{I_V R}{1+\frac{\omega^2}{\omega_0^2}}=\frac{I_V R}{1+\frac{f^2}{f_0^2}}
@@ -179,8 +236,12 @@ Dai risultati appena riportati è possibile confrontare i valori che assume $C_d
 \section{Conclusioni}
 Il confronto tra i modelli di fit ha confermato che la funzione basata sulla tangente iperbolica descrive con maggior coerenza la risposta all'onda quadra, evitando le sovrastime di $f_0$ indotte dal modello sinusoidale.
 Dai risultati ottenuti si è osservata la diminuzione della capacità $C_d$ all'aumentare di $R$, mentre la costante di tempo del sistema $\tau = RC_d$ mostra un netto aumento complessivo.
+Dai risultati ottenuti si è osservata la diminuzione della capacità $C_d$ all'aumentare di $R$, mentre la costante di tempo del sistema $\tau = RC_d$ mostra un netto aumento complessivo.
  Si osserva un errore relativo critico($>80\%$) nella configurazione a $0\,\Omega$ per la frequenza di taglio.
+ Tale incertezza è attribuibile all'elevata impedenza di carico presentata dall'oscilloscopio ($1\,M\Omega$ in parallelo con \qty{20}{\pico\farad}.), che porta il fotodiodo in regime di saturazione.
+ 
  Tale incertezza è attribuibile all'elevata impedenza di carico presentata dall'oscilloscopio ($1\,M\Omega$ in parallelo con \qty{20}{\pico\farad}.), che porta il fotodiodo in regime di saturazione.
  
  
 \end{document}
+
