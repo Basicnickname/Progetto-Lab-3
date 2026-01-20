@@ -39,7 +39,7 @@
 
 % -------------------------------------------------------------------
 \section{Obiettivo dell'esperienza}
-L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fotodiodo in funzione della sua frequenza di modulazione e della resistenza di carico R usata.
+L'obbiettivo è quello di studiare il comportamento del segnale rilevato da un fotodiodo in funzione della sua frequenza di modulazione e della resistenza di carico R usata.
 
 % -------------------------------------------------------------------
 \section{Materiali e Metodi}
@@ -49,7 +49,7 @@ L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fot
     \item Basetta per circuiti
     \item Oscilloscopio
     \item 1 LED
-    \item Un set di resistenze di diverso valore
+    \item Set di resistenze di diverso valore
     \item Cavetti coassiali di connessione (e un connettore a T)
     \item  Presa per cavo coassiale con morsetti
 \end{itemize}
@@ -57,27 +57,26 @@ L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fot
     \subsection{Procedura sperimentale}
         Lo schema sperimentale è costituito da un sistema accoppiato LED-Fotodiodo.
         Un LED, alimentato da un generatore di funzioni, funge da sorgente luminosa modulata per il fotodiodo, il quale è inserito in un circuito chiuso con una resistenza di carico.
-        Il segnale elettrico risultante viene prelevato ai capi della resistenza e analizzato tramite un oscilloscopio
+        Il segnale elettrico risultante viene prelevato ai capi della resistenza e analizzato tramite un oscilloscopio.
         L’alimentazione del LED si ottiene prelevnado dal generatore un segnale ad onda quadra con una tensione picco-picco di 5-6 Volt, così da non prendere in considerazione fenomeni di distorsione della forma d’onda che non siano riconducibili alla detezione col fotodiodo. In questa configurazione l’intensità di illuminazione (e quindi anche la corrente fotogenerata) viene mantenuta costante per un intervallo $\frac{T}{2}=\frac{\pi}{\omega}$ e poi nulla per un intervallo di tempo analogo.
-        Possiamo dunque analizzare l’evoluzione del segnale in due fasi distinte.
+        
 
-Al variare della frequenza ci si può aspettare un andamento proporzionale a: 
+Al variare della frequenza ci si aspetta il seguente andamento: 
 \begin{equation}
-    V_s=V_0 \tanh(\frac{\pi}{2}{\frac{\omega_0}{\omega}})= V_0 \tanh({\frac{\pi}{2}\frac{f_0}{f}})
+    V_s=V_0 \tanh(\frac{\pi}{2}{\frac{\omega_0}{\omega}})= V_0 \tanh({\frac{\pi}{2}\frac{f_0}{f}}) \label{eq:onda quadra}
 \end{equation}
 con 
 \begin{equation}
     \omega_0= 2\pi f_0 =\frac{1}{\tau}=\frac{1}{R C_d}
 \end{equation}
 Per frequenze tendenti a zero, $V_S$ tende a $V_0$, mentre per frequenze grandi $V_S$ tende a 0.
-Al variare della frequenza si analizzano i segnali visualizzati sull’oscilloscopio, i quali consentono di valutare la costante di tempo $\tau = R C_d$ (e di conseguenza la capacità $C_d$) analizzando il comportamento in funzione della frequenza, valutando le frequenze a cui avviene la caduta di intensità e determinando la frequenza di taglio $f_0$.
- I parametri sperimentali possono essere ricavati mediante due diverse strategie di fit:
+Al variare della frequenza si raccolgono i valori misurati dall’oscilloscopio, i parametri sperimentali sono successivamente ricavati mediante due diverse strategie di fit:
 \begin{itemize}
     \item Fit onda sinusoidale: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione
     \begin{equation}
     V_V=\frac{I_V R}{1+\frac{\omega^2}{\omega_0^2}}=\frac{I_V R}{1+\frac{f^2}{f_0^2}}
 \end{equation}
-    \item Fit onda quadra: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione (1).
+    \item Fit onda quadra: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando \autoref{eq:onda quadra}.
 \end{itemize}
  
 
@@ -185,10 +184,10 @@ Dai risultati appena riportati è possibile confrontare i valori che assume $C_d
 % -------------------------------------------------------------------
 
 \section{Conclusioni}
-Quando nel circuito non è presente alcuna resistenza di carico, in realtà bisogna considerare l'impedenza intrinseca dell'oscilloscopio. Questa corrisponde ad una resistenza di $1$ \unit{M\Omega} in parallelo ad una capacità di $20$ \unit{pF}, pertanto alle frequenze utilizzate nell'esperienza si può stimare un valore di $80$ \unit{k\Omega}.
+Quando nel circuito non è presente alcuna resistenza di carico, in realtà bisogna considerare l'impedenza intrinseca dell'oscilloscopio. Questa corrisponde ad una resistenza di $1$ \unit{M\Omega} in parallelo ad una capacità di $20$ \unit{pF}, pertanto alle frequenze utilizzate nell'esperienza si è stimato un valore di $80$ \unit{k\Omega}.
 
 Il confronto tra i modelli di fit conferma che la funzione basata sulla tangente iperbolica descrive con maggior coerenza la risposta all'onda quadra.
-I risultati ottenuti sono compatibili con quelli previsti teoricamente e il valori di $C_d$ restano relativamente stabili.
+I risultati ottenuti sono verosimili rispetto a quelli previsti teoricamente ed i valori di $C_d$ restano relativamente stabili.
 Si osserva un errore relativo notevole ($>80\%$) per la frequenza di taglio nella configurazione senza resistenza di carico, tale incertezza è probabilmente dovuta all'elevata impedenza dell'oscilloscopio che porta il fotodiodo in regime di saturazione.
  
  
