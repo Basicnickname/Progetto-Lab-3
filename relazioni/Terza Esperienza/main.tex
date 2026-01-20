@@ -1,137 +1,50 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[a4paper,12pt]{article}
 
-% Encoding and language
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
 
-% Page layout
-\usepackage{geometry}
-\geometry{margin=25mm}
-\usepackage{setspace}
-% Typography & math
-\usepackage{microtype}
-\usepackage{amsmath,amssymb}
-\usepackage{siunitx}
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
 
-% Graphics, tables and captions
-\usepackage{graphicx}
-\usepackage{caption,subcaption}
-\usepackage{booktabs}
-\usepackage{float}
-\usepackage[utf8]{inputenc}
-\usepackage{booktabs} % Per linee orizzontali professionali
-\usepackage{siunitx}  % Per allineamento dei numeri e notazione scientifica
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
 
-% Hyperlinks
-\usepackage[hidelinks]{hyperref}
+% --- Dati Intestazione ---
+\title{\textbf{Accoppiamento LED-FOTODIODO in funzione della frequenza di modulazione del segnale}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
 
-% Custom commands for metadata
-\newcommand{\Course}{Course Name}
-\newcommand{\LabTitle}{Title of the Lab Report}
-\newcommand{\Authors}{Author One \\ Author Two \\ Author three di nuovo}
-\newcommand{\Supervisor}{Supervisor Name}
-\newcommand{\DateSubmitted}{\today}
-
-% Document
 \begin{document}
 
-% Title page
-\begin{titlepage}
-  \centering
-  {\LARGE\bfseries \LabTitle \par}
-  \vspace{1.5cm}
-  {\large \Course \par}
-  \vspace{1.0cm}
-  {\large \Authors \par}
-  \vfill
-  {\large Supervisor: \Supervisor \par}
-  \vspace{0.5cm}
-  {\large Date: \DateSubmitted \par}
-\end{titlepage}
+\maketitle
 
-\pagenumbering{roman}
-\tableofcontents
-\listoffigures
-\listoftables
-\clearpage
-\pagenumbering{arabic}
+% -------------------------------------------------------------------
+\section{Obiettivo dell'esperienza}
+L'obbiettivo è quello di studiare il comportamento del segnale rilevato dal fotodiodo in funzione della sua frequenza di modulazione e della resistenza di carico R usata.
 
-%T: Di base valgono gli stessi commenti della 2
-% Abstract
-\begin{abstract}
-Il presente lavoro di laboratorio si è posto l'obbiettivo di studiare il comportamento del segnale rilevato dal fotodiodo in funzione della sua frequenza di modulazione e della resistenza di carico R usata.
-L'esperienza è stata condotta utilizzando un sistema accoppiato LED-Fotodiodo. Il LED, alimentato da un generatore di funzioni, funge da sorgente luminosa modulata per il fotodiodo, il quale è inserito in un circuito chiuso con una resistenza di carico. Il segnale elettrico risultante viene prelevato ai capi della resistenza e analizzato tramite un oscilloscopio
-Si consiglia di usare una modulazione in onda quadra che corrisponde ad una sequenza di accesospento per il LED, in modo da non prendere in considerazione fenomeni di distorsione della forma
-d’onda che non siano riconducibili alla detezione col fotodiodo.
-
-\end{abstract}
-
-\section{Introduction}
-
-La seguente esperienza cercherà di analizzare il segnale in uscita da un circuito chiuso, composto da un fotodiodo e da una resistenza di carico R in serie.
-Analizzando lo schema circuitale di  di un fotodiodo
-accoppiato ad una resistenza 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{ceqpd2.png}
-  \caption{schema circuitale fotodiodo}
-  \label{fig:setup}
-\end{figure}
-è fondamentale tenere conto della capacità intrinseca ($C_d$) del fotodiodo. Considerando questo parametro, è possibile notare una forte analogia tra il sistema in esame e un circuito RC in parallelo.
-In questo modello, la corrente fotogenerata non fluisce interamente nella resistenza di carico $R$, ma viene in parte impiegata per caricare la capacità $C_d$.
-
-Applicando la prima legge di Kirchoof al circuito:
-\begin{equation}
-    I(t)=I_ph = I_d + C_d \frac{dQ}{dt} + \frac{V_R}{R}
-\end{equation}
-dove può essere tralascare il termine
-\begin{equation}
-    I_d=I_0(e^{-\frac{qV_d}{Kt}} - 1)
-\end{equation}
-poichè ci si concentra sulla corrente modulata nel caso di segnali variabili.
-Inoltre Se consideriamo una frequenza specifica $\omega$ , I(t) deve assumere la forma
-
-\begin{equation}
-    I(t)=I_0+I_v e^{i \omega t}
-\end{equation}
-con
-\begin{equation}
-    I_0>I_v
-\end{equation}
-La parte modulata viene ad essere quindi data da
-\begin{equation}
-    V_V=I_V(i\omega C + \frac{1}{R})=I_V(\frac{i\omega RC + 1}{R})
-\end{equation}
-Il termine complesso indica che esiste uno sfasamento tra la corrente modulata Iv, fotogenerata, e il segnale di tensione Vv rilevato ai capi della resistenza
-\begin{equation}
-    V_V=\frac{I_V R}{1+\frac{\omega^2}{\omega_0^2}}=\frac{I_V R}{1+\frac{f^2}{f_0^2}}
-\end{equation}
-L’andamento in frequenza della risposta risulta quindi caratterizzato da una frequenza
-di taglio 
-\begin{equation}
-    f_0=\frac{1}{2\pi \tau}
-\end{equation}
- per la quale il segnale si riduce di un fattore $\sqrt{2}$, e tende a zero per frequenze maggiori.
-
-
-Basandoci su questa analogia l'analisi si concentra sul ricavare due parametri fondamentali:
-\begin{itemize}
-    \item $V_0$: il massimo valore che si raggiunge quando la frequenza è sufficientemente bassa da permettere al condensatore di caricarsi e scaricarsi completamente secondo la legge
-\begin{equation}
-    V_d=V_0 (1 - e^{-\frac{t}{\tau}} )
-\end{equation}
-con
-\begin{equation}
-    \tau=RC
- \end{equation}   
-    \item  $f_0$(la frequenza di taglio): il limite oltre il quale il condensatore non ha più il tempo fisico per completare i cicli di carica e scarica. Superata tale soglia, il sistema si comporta come un integratore, causando un'attenuazione del segnale e portando l'ampiezza della tensione a decrescere verso lo zero all'aumentare della frequenza
-\end{itemize}
-
-
-\section{Materials and Methods}
-Per l'esecuzione dell'esperienza è stata utilizzata la seguente strumentazione:
-\begin{itemize}
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+    \subsection{Strumentazione}
+        \begin{itemize}
     \item Generatore di funzoni
     \item Basetta per circuiti
     \item Oscilloscopio
@@ -141,11 +54,12 @@ Per l'esecuzione dell'esperienza è stata utilizzata la seguente strumentazione:
     \item  Presa per cavo coassiale con morsetti
 \end{itemize}
 
-È fondamentale che il LED e il fotodiodo siano allineati con precisione l'uno di fronte all'altro per garantire che la fotocorrente generata sia massima.
-Il fotodiodo può infatti fungere da generatore di corrente ideale proporzionale all'intensità di luce ricevuta(dal LED in questo caso).
-Il segnale luminoso prodotto dal LED, alimentato da un generatore di funzioni, è modulato in frequenza.
-L’alimentazione del LED si ottiene tipicamente impostando una tensione picco-picco di 5-6 Volt sul generatore.
- Pilotando il LED tramite un segnale in onda quadra, in cui l’intensità di illuminazione (e quindianche la corrente fotogenerata) viene mantenuta costante per un intervallo $\frac{T}{2}=\frac{2\pi}{2\omega}$ e quindi spenta per un intervallo di tempo analogo, possiamo analizzare in due fasi
+    \subsection{Procedura sperimentale}
+        Lo schema sperimentale è costituito da un sistema accoppiato LED-Fotodiodo.
+        Un LED, alimentato da un generatore di funzioni, funge da sorgente luminosa modulata per il fotodiodo, il quale è inserito in un circuito chiuso con una resistenza di carico.
+        Il segnale elettrico risultante viene prelevato ai capi della resistenza e analizzato tramite un oscilloscopio
+        L’alimentazione del LED si ottiene tipicamente impostando una tensione picco-picco di 5-6 Volt sul generatore.
+        Pilotando il LED tramite un segnale in onda quadra(in modo da non prendere in considerazione fenomeni di distorsione della forma d’onda che non siano riconducibili alla detezione col fotodiodo.), in cui l’intensità di illuminazione (e quindi anche la corrente fotogenerata) viene mantenuta costante per un intervallo $\frac{T}{2}=\frac{2\pi}{2\omega}$ e quindi spenta per un intervallo di tempo analogo, possiamo analizzare in due fasi
 l’evoluzione del segnale.
 Supponendo che variare della frequenza ci si può aspettare  un andamento proporzionale a 
 \begin{equation}
@@ -156,98 +70,28 @@ con
     \omega_0= 2\pi f_0 =\frac{1}{\tau}=\frac{1}{R C_d}
 \end{equation}
 Per frequenze tendenti a zero, $V_S$ tende a $V_0$, mentre per frequenze grandi $V_S$ tende a 0.
-Al variare della frequenza si analizzano i segnali visualizzati sull’oscilloscopio, che consentono di valutare la costante di tempo $\tau$= R $C_d$ (e quindi la capacità $C_d$) analizzando il comportamento in funzione della frequenza e valutando le frequenze a cui avviene la caduta di
-intensità, o meglio ancora determinando la frequenza di taglio $f_0$ dal fit dei dati.
-
-
-\subsection{Setup}
-Lo schema sperimentale è il seguente
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{circuito3.png}
-  \caption{schema sperimentale}
-  \label{fig:setup}
-\end{figure}
-
-
-\subsection{Data acquisition and analysis}
-Per una corretta presa dei dati, è opportuno alimentare il LED  impostando una tensione picco-picco di 5-6 Volt sul generatore.
-L'acquisizione dei dati è avvenuta variando la frequenza di alimentazione del generatore, partendo da basse frequenze a salire,  e registrando la corrispondente tensione riportata sull'oscilloscopio.
-Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi. 
-Si è cercato di ridurrel'influenza della luce ambientale  mediante l'impiego di un tubicino, per garantire che il LED e il fotodiodo siano correttamente affacciati e isolati dall'esterno .
-I dati sono stati inizialmente raccolti in Excell, dove la visualizzazione in tempo reale dei grafici ha permesso di monitorare la coerenza delle misure e identificare  eventuali anomalie sperimentali. 
-La fase finale di analisi è stata successivamente condotta mediante Google Colab, dove possono essere ricavati i parametri sperimentali eseguendo due diverse strategie di fit:
+Al variare della frequenza si analizzano i segnali visualizzati sull’oscilloscopio, che consentono di valutare la costante di tempo $\tau$= R $C_d$ (e quindi la capacità $C_d$) analizzando il comportamento in funzione della frequenza e valutando le frequenze a cui avviene la caduta di intensità, e determinando la frequenza di taglio $f_0$.
+ I parametri sperimentali possono essere ricavati mrdiante due diverse strategie di fit:
 \begin{itemize}
-    \item Fit onda sinusoidale: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione (6).
-    \item Fit onda quadra: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione (10).
+    \item Fit onda sinusoidale: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione
+    \begin{equation}
+    V_V=\frac{I_V R}{1+\frac{\omega^2}{\omega_0^2}}=\frac{I_V R}{1+\frac{f^2}{f_0^2}}
+\end{equation}
+    \item Fit onda quadra: in cui i parametri $f_0$ e $V_0$ vengono ricavati utilizzando l'equazione (1).
 \end{itemize}
-Una volta ricavati in maniera solida questi parametri è possibile confrontare i i valori che $C_d$ assume per diverse resistenze di carico.
+ 
+       
+       
 
-\section{Results}
-\begin{table}[htbp]
-\centering
-\caption{Dati sperimentali di tensione (mV) al variare della frequenza e del carico}
-\label{tab:dati_completi}
-\begin{tabular}{rccccc}
-\toprule
-Freq. (Hz) & $V_{0\Omega}$ (mV) & $V_{500\Omega}$ (mV) & $V_{1000\Omega}$ (mV) & $V_{5000\Omega}$ (mV) & $V_{10000\Omega}$ (mV) \\
-\midrule
-100 & 220 & 18.8 & 36 & 184 & 320 \\
-500 & 220 & 18.8 & 36 & 184 & 320 \\
-1000 & 220 & 18.4 & 35.2 & 184 & 320 \\
-2000 & 160 & 18.4 & 35.2 & 184 & 320 \\
-5000 & 140 & -- & -- & -- & 320 \\
-10000 & 140 & -- & 35.2 & 184 & 320 \\
-20000 & 100 & -- & -- & -- & 312 \\
-50000 & -- & 18.4 & 35.2 & -- & -- \\
-100000 & 40 & 17.6 & 35.2 & -- & -- \\
-200000 & 20 & -- & 34.4 & 160 & 208 \\
-500000 & 20 & 17.6 & -- & -- & 104 \\
-1000000 & 20 & 17.6 & 30.4 & 56 & 64 \\
-\bottomrule
-\end{tabular}
-\end{table}
 
-plottando i dati sperimentali qui elencati si ottengono i seguenti grafici
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{d11.png}
-  \caption{plot dati $V_{0\Omega}$ }
-  \label{fig:setup}
-\end{figure}
+ 
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{d12.png}
-  \caption{plot dati $V_{500\Omega}$ }
-  \label{fig:setup}
-\end{figure}
+% -------------------------------------------------------------------
+\section{Analisi dei dati e grafici}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{d13.png}
-  \caption{plot dati $V_{1000\Omega}$ }
-  \label{fig:setup}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{d14.png}
-  \caption{plot dati $V_{50000\Omega}$ }
-  \label{fig:setup}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\textwidth]{d15.png}
-  \caption{plot dati $V_{10000\Omega}$ }
-  \label{fig:setup}
-\end{figure}
-
-A seguire sono riportati i valori dei parametri fisici $f_0$, $V_0$, mediante un fit sinusoidale, con i corrispettivi errori:
-
-\begin{table}[htbp]
+    \subsection{Tabelle Risultati Fit}
+     \begin{table}[htbp]
 \centering
 \caption{Parametri fittati per l'onda sinusoidale}
 \label{tab:fit_sinusoidale}
@@ -255,22 +99,20 @@ A seguire sono riportati i valori dei parametri fisici $f_0$, $V_0$, mediante un
 \setlength{\tabcolsep}{2pt}
 \begin{tabular}{ccccccc}
 \toprule
-Resistenza & $f_{0\_fit}$ (Hz) & $std\_dev_{f0}$ & $rel\_error_{f0}$ & $V_{0\_fit}$ (mV) & $std\_dev_{V0}$ & $rel\_error_{V0}$ \\
+Resistenza & $f_{0\_fit}$ [\unit{Hz}] & $std\_dev_{f0}$ & $rel\_error_{f0} [\%]$ & $V_{0\_fit}$ [\unit{mV}] & $std\_dev_{V0}$ & $rel\_error_{V0} [\%]$ \\
 \midrule
-$0\Omega$ & $1.435547 \times 10^{4}$ & $1.1979 \times 10^{4}$ & $8.3444 \times 10^{-1}$ & $193.710686$ & $42.5722$ & $2.1977 \times 10^{-1}$ \\
+$0\Omega$ & $1.43 \times 10^{4}$ & $1.19 \times 10^{4}$ & $83.4$ & $193.71$ & $42.57$ & $21.9$ \\
 \addlinespace
-$500\Omega$ & $2.834884 \times 10^{6}$ & $6.6799 \times 10^{5}$ & $2.3563 \times 10^{-1}$ & $18.429425$ & $0.5076$ & $2.7541 \times 10^{-2}$ \\
+$500\Omega$ & $2.83 \times 10^{6}$ & $0.67 \times 10^{6}$ & $23.5$ & $18.42$ & $0.50$ & $2.8$ \\
 \addlinespace
-$1000\Omega$ & $1.304796 \times 10^{6}$ & $2.6375 \times 10^{5}$ & $2.0214 \times 10^{-1}$ & $35.967929$ & $2.4609$ & $6.8419 \times 10^{-2}$ \\
+$1000\Omega$ & $1.30 \times 10^{6}$ & $0.26 \times 10^{6}$ & $20.2$ & $35.96$ & $2.46$ & $6.8$ \\
 \addlinespace
-$5000\Omega$ & $3.384685 \times 10^{5}$ & $1.7267 \times 10^{4}$ & $5.1014 \times 10^{-2}$ & $184.657070$ & $3.1904$ & $1.7277 \times 10^{-2}$ \\
+$5000\Omega$ & $3.38 \times 10^{5}$ & $0.17 \times 10^{5}$ & $5.1$ & $184.65$ & $3.19$ & $1.7$ \\
 \addlinespace
-$10000\Omega$ & $1.720020 \times 10^{5}$ & $1.3778 \times 10^{4}$ & $8.0106 \times 10^{-2}$ & $316.187221$ & $8.7224$ & $2.7586 \times 10^{-2}$ \\
+$10000\Omega$ & $1.72 \times 10^{5}$ & $0.14 \times 10^{5}$ & $8.01$ & $316.18$ & $8.72$ & $2.8$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-analogamente sono riportati a seguire i valori dei parametri fisici $f_0$, $V_0$, mediante un fit con onda quadra
 
 \begin{table}[htbp]
 \centering
@@ -280,17 +122,17 @@ analogamente sono riportati a seguire i valori dei parametri fisici $f_0$, $V_0$
 \setlength{\tabcolsep}{2pt}
 \begin{tabular}{ccccccc}
 \toprule
-Resistenza & $f_{0\_fit}$ (Hz) & $std\_dev_{f0}$ & $rel\_error_{f0}$ & $V_{0\_fit}$ (mV) & $std\_dev_{V0}$ & $rel\_error_{V0}$ \\
+Resistenza & $f_{0\_fit}$ [\unit{Hz}] & $std\_dev_{f0}$ & $rel\_error_{f0} [\%]$ & $V_{0\_fit}$ [\unit{mV}] & $std\_dev_{V0}$ & $rel\_error_{V0} [\%]$ \\
 \midrule
-$0\Omega$ & $8.854299 \times 10^{3}$ & $7.6533 \times 10^{3}$ & $8.6436 \times 10^{-1}$ & $189.320226$ & $45.4134$ & $2.3988 \times 10^{-1}$ \\
+$0\Omega$ & $8.85 \times 10^{3}$ & $7.65 \times 10^{3}$ & $86.4$ & $189.32$ & $45.41$ & $23.9$ \\
 \addlinespace
- $500\Omega$ & $1.416685 \times 10^{6}$ & $2.2776 \times 10^{5}$ & $1.6077 \times 10^{-1}$ & $18.348945$ & $0.4869$ & $2.6534 \times 10^{-2}$ \\
+ $500\Omega$ & $1.41 \times 10^{6}$ & $0.23\times 10^{6}$ & $16$ & $18.34$ & $0.48$ & $2.7$ \\
 \addlinespace
-$1000\Omega$ & $7.807551 \times 10^{5}$ & $9.8678 \times 10^{4}$ & $1.2639 \times 10^{-1}$ & $35.334172$ & $1.6828$ & $4.7626 \times 10^{-2}$ \\
+$1000\Omega$ & $7.80 \times 10^{5}$ & $0.98 \times 10^{5}$ & $12.6$ & $35.33$ & $1.68$ & $4.8 $ \\
 \addlinespace
- $5000\Omega$ & $2.028521 \times 10^{5}$ & $1.5609 \times 10^{4}$ & $7.6949 \times 10^{-2}$ & $181.695559$ & $5.1630$ & $2.8416 \times 10^{-2}$ \\
+ $5000\Omega$ & $2.02 \times 10^{5}$ & $0.16 \times 10^{5}$ & $7.6$ & $181.69$ & $5.16$ & $2.8$ \\
 \addlinespace
- $10000\Omega$ & $1.025996 \times 10^{5}$ & $1.6375 \times 10^{4}$ & $1.5960 \times 10^{-1}$ & $310.899398$ & $18.6648$ & $6.0035 \times 10^{-2}$ \\
+ $10000\Omega$ & $1.02 \times 10^{5}$ & $0.16\times 10^{5}$ & $15.9$ & $310.89$ & $18.66$ & $6$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -303,35 +145,42 @@ Dai risultati appena riportati è possibile confrontare i valori che assume $C_d
     \label{tab:capacita_fotodiodo}
     \begin{tabular}{c c}
         \toprule
-        \textbf{Resistenza di carico $R$ ($\Omega$)} & \textbf{Capacità di giunzione $C_d$ (F)} \\
+        \textbf{Resistenza di carico $R$ [$\Omega$]} & \textbf{Capacità di giunzione $C_d$ [\unit{F}]} \\
         \midrule
-        0 & $2.2468597418468055 \times 10^{-10}$ \\
-        500   & $2.2468636309369896 \times 10^{-10}$ \\
-        1000  & $2.0384746377861727 \times 10^{-10}$ \\
-        5000  & $1.5691718930142804 \times 10^{-10}$ \\
-        10000 & $1.55122334985695 \times 10^{-10}$ \\
+        0 & $2.25 \times 10^{-10}$ \\
+        500   & $2.25 \times 10^{-10}$ \\
+        1000  & $2.04 \times 10^{-10}$ \\
+        5000  & $1.57 \times 10^{-10}$ \\
+        10000 & $1.55 \times 10^{-10}$ \\
         \bottomrule
         
     \end{tabular}
 \end{table}
 
-\section{Discussion}
+    \subsection{Grafici e curve di regressione}
+        \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{ondq2.png}
+  \caption{plot modello fit onda quadra}
+  \label{fig:setup}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{ondsin3.png}
+  \caption{plot modello fit sinusoidale}
+  \label{fig:setup}
+\end{figure}
+
+
+
+% -------------------------------------------------------------------
+
+\section{Conclusioni}
 Il confronto tra i modelli di fit ha confermato che la funzione basata sulla tangente iperbolica descrive con maggior coerenza la risposta all'onda quadra, evitando le sovrastime di $f_0$ indotte dal modello sinusoidale.
-
-L'analisi della capacità di giunzione $C_d$ al variare della resistenza di carico $R$ ha rivelato un andamento non costante: il valore decresce da circa \qty{225}{\pico\farad} (per $R \leq 500\,\Omega$) a circa \qty{155}{\pico\farad} (per $R \geq 5\,\text{k}\Omega$). Tale fenomeno suggerisce che l'aumento della tensione ai capi del fotodiodo, indotto da resistenze di carico elevate, provochi un aumento della regione di svuotamento della giunzione, riducendone la capacità intrinseca. In conclusione, sebbene il modello RC parallelo sia efficace per una prima caratterizzazione, una descrizione accurata del dispositivo richiede di considerare la dipendenza funzionale di $C_d$ dalla tensione di esercizio.
-Sebbene si sia osservata una diminuzione della capacità di giunzione $C_d$ all'aumentare della resistenza di carico $R$, la costante di tempo del sistema $\tau = RC_d$ mostra un netto aumento complessivo. Questo conferma che l'effetto della resistenza è prevalente nella dinamica del circuito, determinando una drastica riduzione della larghezza di banda (frequenza di taglio $f_0$) per valori elevati di $R$.
-Fino ad adesso abbiamo parlato di resistenze da $0\,\Omega$ ma in realtà il fotodido era collegato all'oscilloscopio che presenta una resistenza interna di $1\,M\Omega$ in parallelo con \qty{20}{\pico\farad}.
-Inoltree si osserva che il valore di $V_{0}$ per la configurazione a $0\,\Omega$ nominali risulta inferiore a quello ottenuto con $R=10\,\text{k}\Omega$. Questo fenomeno è riconducibile alla saturazione del fotodiodo: lavorando sull'impedenza d'ingresso dell'oscilloscopio ($1\,\text{M}\Omega$), la tensione ai capi della giunzione raggiunge un limite fisico (tensione di circuito aperto) che impedisce alla risposta $V = I \cdot R$ di crescere ulteriormente. La scarsa affidabilità del dato in questa configurazione è confermata dall'elevato errore relativo del fit ($24\%$), suggerendo che l'impedenza complessa dello strumento domini e distorca la risposta.
-
-
- \section{conclusion}
- In conclusione il fit basato sulla funzione $\tanh$ si è rivelato il più accurato per descrivere la risposta all'onda quadra.
- Dai risultati ottenuti la capacità $C_d$ è stata determinata con successo, osservando una sua diminuzione all'aumentare di $R$.
+Dai risultati ottenuti si è osservata la diminuzione della capacità $C_d$ all'aumentare di $R$, mentre la costante di tempo del sistema $\tau = RC_d$ mostra un netto aumento complessivo.
  Si osserva un errore relativo critico($>80\%$) nella configurazione a $0\,\Omega$ per la frequenza di taglio.
- Tale incertezza è attribuibile all'elevata impedenza di carico presentata dall'oscilloscopio ($1\,\text{M}\Omega$), che porta il fotodiodo in regime di saturazione.
- In queste condizioni, l'effetto delle capacità parassite dei cavi e l'impedenza complessa dello strumento degradano il rapporto segnale-rumore, rendendo il modello RC parallelo meno accurato nel descrivere i dati sperimentali rispetto alle configurazioni con resistenze di carico medie, come quelle analizzate($1\text{--}10\,\text{k}\Omega$).
-Per studi futuri, si consiglia l'uso di connessioni più corte per ridurre le capacità parassite dei cavi, che possono influire sulla raccolta dati, specialmente ad alte frequenze.
-
+ Tale incertezza è attribuibile all'elevata impedenza di carico presentata dall'oscilloscopio ($1\,M\Omega$ in parallelo con \qty{20}{\pico\farad}.), che porta il fotodiodo in regime di saturazione.
+ 
  
 \end{document}
