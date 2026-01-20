@@ -67,18 +67,17 @@
     \item \textbf{Circuito 2}: Composto dal Generatore 2 (per la gestione della tensione di polarizzazione $V_g$), il fotodiodo e la resistenza di carico $R$. Un voltmetro è posto ai capi della resistenza per misurare la tensione di uscita $V_R$.
 \end{enumerate}
 
-È fondamentale che il LED e il fotodiodo siano allineati con precisione l'uno di fronte all'altro per garantire che la fotocorrente generata sia massima e che la costante di accoppiamento $\beta$ rimanga stabile durante le misure.
-Sarebbe ottimo cercare di ridurre al minimo il disturbo della luce ambientale a cui il fotodiodo è sensibile e per  farlo si potrebbe usare un tubicino in cui inserire il fotodiodo e il led.
-Il fotodiodo è estremamente sensibile. Senza un tubicino, il voltmetro registrerebbe una tensione $V_R$ influenzata anche dalle luci della stanza o dai monitor, falsando la misura della fotocorrente $I_{ph}$ generata esclusivamente dal LED. Il tubicino garantisce che le condizioni di "buio" siano quanto più reali possibile.
+È fondamentale che il LED e il fotodiodo siano allineati con precisione l'uno di fronte all'altro per garantire che la fotocorrente generata sia massima e inoltre sarebbe ottimo cercare di ridurre al minimo il disturbo della luce ambientale a cui il fotodiodo è sensibile; per  farlo si usa un tubicino in cui inserire il fotodiodo e il led.
+Il fotodiodo è estremamente sensibile, per cui senza il tubicino, il voltmetro registrerebbe una tensione $V_R$ influenzata prevalentemente dalle luci della stanza, falsando la misura della fotocorrente $I_{ph}$ generata esclusivamente dal LED.
 Per ogni set di misure, è stata impostata tramite il Generatore 2 una tensione di polarizzazione $V_g$. Le misure sono state effettuate partendo da $V_g = \qty{0}{\volt}$ (modalità fotovoltaica) e procedendo con valori in modulo sempre crescenti (polarizzazione inversa, $V_g < 0$).
 Per un valore di $V_g$ fissato, si è variata la corrente di alimentazione del LED ($I_{LED}$) agendo sul Generatore 1, mantenendo sempre l'intensità sotto la soglia di sicurezza di \qty{20}{\milli\ampere}.
 Per ogni incremento di $I_{LED}$, è stata registrata la tensione $V_R$ ai capi della resistenza di carico tramite il voltmetro digitale.
-Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere segnale di stabilizzarsi.
+Per garantire un miglior dato sperimentale si è atteso un intervallo di alcuni secondi per assecondare i tempi di risposta della strumentazione e permettere al segnale di stabilizzarsi.
 Durante l'acquisizione, i dati sono stati riportati su un grafico $I_{LED}$ in funzione di $V_R$ per verificare immediatamente la coerenza con l'andamento teorico atteso.
-Questo campionamento sistematico è stato ripetuto per due diverse resistenze di carico ($R = \qty{10}{\kilo\ohm}$ e $R = \qty{20}{\kilo\ohm}$), al fine di analizzare lo spostamento del punto di lavoro del circuito sulla retta di carico.
-Inoltre usando due resistenze si ci può rendere conto che il modello fisico che si sta utilizzando sia  meno corretto, in quanto permette di dimostrare che i valori di $n$ e $I_0$ estratti dal fit sono proprietà reali del semiconduttore e non dipendono dal circuito di misura scelto.
-Si può dunque verificare confrontando i risultati dei fit, in cui $\beta_1$, $\beta_2$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $V_g=0.3$ e $R = 20\text{ k}\Omega$ e $V_g=1$.
-Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
+Questo campionamento sistematico è stato ripetuto per due diverse resistenze di carico ($R = \qty{10}{\kilo\ohm}$ e $R = \qty{20}{\kilo\ohm}$).
+Usando due resistenze si può capire se il modello fisico che si sta utilizzando sia corretto, in quanto permette di dimostrare che i valori di $n$ e $I_0$ estratti dal fit sono proprietà reali del semiconduttore e non dipendono dal circuito di misura scelto.
+Si può dunque verificare confrontando i risultati dei fit, in cui $\beta_1$, $\beta_2$, sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ a $V_g=0.3$ e $R = 20\text{ k}\Omega$ a $V_g=1$.
+Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai dati presi rispettivamente per  $R = 10\text{ k}\Omega$ e $R = 20\text{ k}\Omega$, entrambi con  $V_g=0$.
 
 
 % -------------------------------------------------------------------
@@ -87,12 +86,12 @@ Mentre $I_{01}$, $n_1$,$I_{02}$ , $n_2$ sono stati ricavati dai  presi rispettiv
     \subsection{Tabelle risultati}
          Utilizzando le seguenti formule calcoliamo rispettivamente:
 \begin{itemize}
-    \item Il fattore di idealità ($n$): annulliamo la polarizzazione,  Vg=0\unit{V}  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
+    \item Il fattore di idealità ($n$): annulliamo la polarizzazione,  $Vg=0$\unit{V}  ed utilizziamo la formula (con K costante di Boltzman e T temperatura ambientale(300K)):
 \begin{equation}
     I_{LED} = \frac{1}{\beta} \left[ I_0 \left( e^{\frac{q V_R}{n k T}} - 1 \right) + \frac{V_R}{R} \right] \label{eq:fit_completo}
 \end{equation}
 
-    \item La corrente di saturazione inversa ($I_0$): annulliamo la polarizzazione,  Vg=0V  ed utilizziamo la formula precedente (sempre con K costante di Boltzman e T temperatura ambientale(300K)).
+    \item La corrente di saturazione inversa ($I_0$): annulliamo la polarizzazione,  $Vg=0V$  ed utilizziamo l'\autoref{eq:fit_completo} (sempre con K costante di Boltzman e T temperatura ambientale(300K)).
 
     \item La costante di accoppiamento ottico ($\beta$): polarizziamo con un valore grande e negativo di  $V_g$  e fittiamo utilizzando la relazione:
 \begin{equation}
@@ -140,12 +139,10 @@ $n_2$        & 1.29     & 0.24 & 18.3 \\
 % ---------------------------------------------------------------------------------------
 
 \section{Conclusioni}
-I parametri $\beta$ sono più solidi e precisi ($err_{rel} \approx 2-3\%$), mentre i parametri $I_0$ e $n$ presentano incertezze maggiori.
- Il valore $n\simeq1.2$ indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
-I risultati confermano l'andamento esponenziale, ma presentano un errore molto elevato nei valori di $I_0$.
-Questa elevata incertezza è probabilmente legata all influenza della luce ambientale.
-Concludiamo che i risultati ottenuti confermano la validità del modello teorico.
-Per studi futuri, si raccomanda l'adozione di una metodologia per isolare la risposta del LED dalle interferenze luminose esterne.
+I risultati ottenuti confermano l'andamento esponenziale previsto dalla teoria, i parametri $\beta$ sono i più precisi ($err_{rel} \approx 2-3\%$), mentre $I_0$ e $n$ presentano incertezze maggiori.
+Questo è probabilmente dovuto a difetti di isolamento dalla luce ambientale, alla natura esponenziale del modello utilizzato nei fit e soprattutto per $I_0$ al sua magnitudine ridotta.
+Il valore $n\simeq1.2$ indica la presenza di fenomeni di ricombinazione non radiativa nella regione di svuotamento.
+Concludiamo pertanto che i risultati ottenuti sono coerenti con il modello teorico adottato.
 
 
 
