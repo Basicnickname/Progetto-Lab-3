@@ -8,6 +8,6 @@ Questo repository contiene il materiale del progetto di laboratorio di gruppo.
 - `src/` – Script comuni e templates
 
 ## Workflow
-Per l'analisi dati si utilizza esclusivamente la cartella di Google Colab, lì si generano poi i grafici (in .pdf o .pgf) e le tabelle coi risultati (in .tex) che vanno spostati nelle apposite sottocartelle della repo.
+Per l'analisi dati si utilizza esclusivamente la cartella di [Google Colab](https://drive.google.com/drive/folders/1fbZwAE11IwBDc-eAMVye_s3CIrsL2liG?usp=drive_link), lì si salvano poi i grafici che vanno spostati nelle apposite sottocartelle della repo.
 
-Per ogni dubbio consultare i templates
+Per ogni dubbio consultare i templates.
