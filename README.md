@@ -1,7 +1,7 @@
 # **Università di Pavia - Dipartimento di Fisica - Laboratorio di Fisica III**
 `Audisio` `Insalaco` `Pezzoni`
 
-Questo repository contiene il materiale del progetto di laboratorio di gruppo.
+Questo repository contiene il materiale per le relazioni di gruppo svolte durante il corso di laboratorio.
 
 ## Struttura
 - `relazioni/` – Relazioni in LaTeX 
