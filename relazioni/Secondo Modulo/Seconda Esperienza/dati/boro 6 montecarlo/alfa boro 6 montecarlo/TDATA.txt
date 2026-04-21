@@ -1,0 +1,63 @@
+====== He (1780) into Skin_Human (W&W type 1)   =======
+        SRIM-2013.00
+=======================================
+      Data  of  TRIM  Calculation      
+=======================================
+
+boh
+------------------------------------------------------------------------------
+--------------------------------------------------------------------
+    Recoil/Damage Calculations made with Kinchin-Pease Estimates    
+--------------------------------------------------------------------
+Ion = He ( 2)   Ion Mass= 004,0030
+Energy  = 1780000,E-03 keV
+Ion Angle to Surface = 0 degrees
+============= TARGET MATERIAL ======================================
+  Layer # 1 - Skin_Human (W&W type 1)
+  Layer # 1 - Bottom Depth=     2,E+05 A
+  Layer # 1- Density = 10.56E22 atoms/cm3 = 1.09 g/cm3
+  Layer # 1-  H = 61.7 Atomic Percent = 10.0 Mass Percent
+  Layer # 1-  C = 12.9 Atomic Percent = 25.0 Mass Percent
+  Layer # 1-  N = 2.04 Atomic Percent = 4.60 Mass Percent
+  Layer # 1-  O = 23.1 Atomic Percent = 59.4 Mass Percent
+  Layer # 1-  S = 5.82 Atomic Percent = .300 Mass Percent
+  Layer # 1- Cl = .052 Atomic Percent = .300 Mass Percent
+  Layer # 1- Na = .054 Atomic Percent = .200 Mass Percent
+  Layer # 1-  K = 1.59 Atomic Percent = .100 Mass Percent
+====================================================================
+Target energies for target atom =  H
+    Displacement = 10 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  C
+    Displacement = 28 eV, Binding = 3 eV, Surface = 7,41 eV
+Target energies for target atom =  N
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  O
+    Displacement = 28 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom =  S
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2,88 eV
+Target energies for target atom = Cl
+    Displacement = 25 eV, Binding = 3 eV, Surface = 2 eV
+Target energies for target atom = Na
+    Displacement = 25 eV, Binding = 3 eV, Surface = 1,12 eV
+Target energies for target atom =  K
+    Displacement = 25 eV, Binding = 3 eV, Surface = 0,93 eV
+====================================================================
+Depth Range of Tabulated Data=  000000,E+00  -  200000,E+00  Angstroms
+====================================================================
+Total Ions calculated =  005000
+Average Range         =   73374,E+00 Angstroms
+Average Straggling    =   44763,E+00 Angstroms
+Average Vacancy/Ion   =   12500,E-02
+====================================================================
+Total Backscattered Ions=  1129 
+Total Transmitted Ions  =  0 
+====================================================================
+See files SRIM Outputs\*.txt for tables :
+   TDATA.txt    -- Details of the calculation.
+   RANGE.txt    -- Final distribution of Ions/Recoils
+   VACANCY.txt  -- Distribution of Vacancies
+   IONIZ.txt    -- Distribution of Ionization
+   PHONON.txt   -- Distribution of Phonons
+   E2RECOIL.txt -- Energy transferred to recoils
+   NOVAC.txt    -- Replacement collisions
+   LATERAL.txt  -- Lateral Spread of Ions
