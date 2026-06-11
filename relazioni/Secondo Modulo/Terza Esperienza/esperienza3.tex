@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
+
+
+% --- Dati Intestazione ---
+\title{\textbf{Studio rivelatori di raggi cosmici}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -------------------------------------------------------------------
+
+%   F: su questa non ho niente da commentare, c'è solo da scrivere meglio qualche g^-1 ome g^{-1} e qualche cm^-1 come cm^{-1}, ma solo per bellezza
+
+\section{Obiettivo dell'esperienza}
+L'obiettivo dell'esperienza è studiare il flusso dei muoni cosmici a terra utilizzando scintillatori plastici. In particolare si vuole:
+\begin{itemize}
+    \item Costruire la curva della frequenza dei muoni cosmici in funzione dell'angolo zenitale, verificando la legge $f(\theta) = f_v \cdot \cos^2(\theta) + b$.
+    \item Eseguire la stessa verifica tramite fit lineare.
+    \item Valutare l'accordanza con il valore previsto di flusso verticale.
+    \item Stimare l'efficienza di una lastra del rivelatore.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+
+\subsection{Dotazione sperimentale}
+\begin{itemize}
+    \item Due lastre di scintillatore plastico $(15 \times 15) \text{ cm}$ accoppiate a SiPM.
+    \item Modulo per la misura dei conteggi di coincidenza.
+    \item Goniometro e struttura di supporto per i rivelatori.
+    \item Chiavi a brugola per modificare l'angolo di puntamento del telescopio.
+\end{itemize}
+
+\subsection{Procedura sperimentale}
+Per prima cosa sono stati collegati gli scintillatori plastici al modulo di conteggio. In seguito sono state effettuate acquisizioni di $\sim 5 \unit{min}$ per ciascun angolo zenitale, esplorando l'intervallo da -80° a +80° con passi di 10°; ad ogni fase si è segnato il numero di conteggi di coincidenza.
+Infine, laddove necessario, sono stati prolungati i tempi di presa dati al fine di incrementare il campione e ridurre l'incertezza statistica.
+% -------------------------------------------------------------------
+\section{Dati sperimentali e Analisi}
+
+% -------------------------------------------------------------------
+
+\section{Conclusioni}
+
+\end{document}
