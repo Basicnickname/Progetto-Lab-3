@@ -7,5 +7,5 @@
 *.bbl
 *.bbl-SAVE-ERROR
 *.blg
-*.run.xml
+*.xml
 *.bcf
