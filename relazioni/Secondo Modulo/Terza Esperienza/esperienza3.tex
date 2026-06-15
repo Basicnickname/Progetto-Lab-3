@@ -6,8 +6,9 @@
 \usepackage[italian]{babel} % Lingua italiana
 \usepackage{geometry}       % Gestione margini
 \usepackage{parskip}        % Gestione spazi tra paragrafi
-\usepackage{hyperref}
 \usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{hyperref}
+
 \addbibresource{bibliografia.bib}
 
 \geometry{a4paper, margin=2.5cm}
@@ -28,8 +29,7 @@
 \usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
 \usepackage{caption}  % Per personalizzare le didascalie
 \usepackage{subcaption}
-\usepackage[font=small, labelfont=bf]{caption}
-\usepackage[font=small, labelfont=bf]{subcaption}
+\captionsetup[font=small, labelfont=bf]
 
 
 % --- Dati Intestazione ---
@@ -42,8 +42,6 @@
 \maketitle
 
 % -------------------------------------------------------------------
-
-%   F: su questa non ho niente da commentare, c'è solo da scrivere meglio qualche g^-1 ome g^{-1} e qualche cm^-1 come cm^{-1}, ma solo per bellezza
 
 \section{Obiettivo dell'esperienza}
 L'obiettivo dell'esperienza è studiare il flusso dei muoni cosmici a terra utilizzando scintillatori plastici. In particolare si vuole:
@@ -177,7 +175,7 @@ Infine per stimare l'efficienza di una singola lastra del rivelatore si è utili
     \label{tab:Efficienza}
 \end{table} 
 
-Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore \cite[page.~25]{Haino_2004}
+Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore. Stimando lo spessore complessivo dei piani superiori a circa 150 \unit{cm} di cemento, sfruttando   
 % -------------------------------------------------------------------
 
 \section{Conclusioni}
