@@ -5,10 +5,9 @@
 \usepackage[T1]{fontenc}    % Codifica font
 \usepackage[italian]{babel} % Lingua italiana
 \usepackage{geometry}       % Gestione margini
+\usepackage{csquotes}      % Raccomandato da biblatex con babel/polyglossia
 \usepackage{parskip}        % Gestione spazi tra paragrafi
 \usepackage[backend=biber,style=numeric]{biblatex}
-\usepackage{hyperref}
-
 \addbibresource{bibliografia.bib}
 
 \geometry{a4paper, margin=2.5cm}
@@ -29,7 +28,8 @@
 \usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
 \usepackage{caption}  % Per personalizzare le didascalie
 \usepackage{subcaption}
-\captionsetup[font=small, labelfont=bf]
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
 
 
 % --- Dati Intestazione ---
@@ -177,7 +177,7 @@ Infine per stimare l'efficienza di una singola lastra del rivelatore si è utili
 
 Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore. Stimando lo spessore complessivo dei piani superiori a circa 150 \unit{cm} di cemento, sfruttando   
 % -------------------------------------------------------------------
-
+\cite{Haino_2004}
 \section{Conclusioni}
 \printbibliography
 \end{document}
