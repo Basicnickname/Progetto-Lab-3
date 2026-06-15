@@ -134,7 +134,7 @@ In questo caso invece è stato eseguito un fit lineare, valutando anche il coeff
 \end{table}
 
 \subsection{Accordanza con il flusso verticale previsto}
-L'angolo solido sotteso dal rivelatore $\Omega = 0.252$ \unit{srad} è stato ricavato tramite simulazione Monte Carlo. Da questo si è ricavato il flusso verticale previsto $f_v \simeq I_v \cdot A \cdot \Omega $, in cui $A = 0.0225$ \unit{m^2} è l'area di una lastra del rivelatore e $I_v \simeq 70$ \unit{m^{-2} s^{-1} srad^{-1}} è il flusso verticale previsto per unità di angolo solido a livello del mare.
+L'angolo solido sotteso dal rivelatore $\Omega = 0.252$ \unit{srad} è stato ricavato tramite simulazione Monte Carlo. Da questo si è ricavato la frequenza prevista $f_v \simeq I_v \cdot A \cdot \Omega $, in cui $A = 0.0225$ \unit{m^2} è l'area di una lastra del rivelatore e $I_v \simeq 70$ \unit{m^{-2} s^{-1} srad^{-1}} è il flusso verticale previsto per unità di angolo solido a livello del mare.
 \begin{table}[H] 
     \centering
     \begin{tabular}{
@@ -158,26 +158,42 @@ Infine per stimare l'efficienza di una singola lastra del rivelatore si è utili
 \begin{equation}
     \epsilon = \sqrt{\frac{f_v^{sper}}{f_v^{teor}}}
 \end{equation}
-\begin{table}[H]
+
+Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore. Ipotizzando uno spessore complessivo dei piani superiori di circa 150 \unit{cm} di cemento e sfruttando i dati in \cite{Haino_2004} - \cite{ParticleDataGroup:2026aaa},
+ si ricava l'energia minima $E_{min}$ dei muoni che arrivano fino alle lastre. Dunque si ottiene il flusso verticale assorbito $I_v^{abs}$ da cui si calcola la relativa frequenza $f_v^{abs}$, la quale viene infine sottratta al valore teorico.
+
+
+\begin{table}[H] 
     \centering
     \begin{tabular}{
         l
-        S[table-format=1.3]  
+        c 
     }
         \toprule
-        {Tipologia} & {$\epsilon$} \\
+        {Dato} & {Valore}\\
         \midrule
-        3 parametri & 0.875 \\
-        Lineare & 0.877 \\
+        $E_{min}$ & 0.59 \unit{GeV} \\
+        $I_v^{abs}$ & 3.67 \unit{m^{-2} s^{-1} srad^{-1}} \\
+        $f_v^{abs}$ & 0.021 \unit{Hz} \\
+        Percentuale assorbita & $\sim5$ \% \\
+        \midrule
+        $\epsilon^{abs}$ & 0.90 \\
+        $\epsilon$ & 0.88 \\
         \bottomrule
     \end{tabular}
 
     \label{tab:Efficienza}
-\end{table} 
+\end{table}
 
-Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore. Stimando lo spessore complessivo dei piani superiori a circa 150 \unit{cm} di cemento, sfruttando   
 % -------------------------------------------------------------------
-\cite{Haino_2004}
+
 \section{Conclusioni}
+Dai risultati ottenuti si può concludere che la legge $f(\theta) = f_v \cdot \cos^2(\theta) + b$ è verificata, con un buon coefficiente di determinazione $R^2$ per il fit lineare.
+La simulazione Monte Carlo è stata effettuata con C++ e ha permesso di stimare l'angolo solido sotteso dal rivelatore in modo più accurato.
+Il flusso verticale sperimentale è risultato inferiore a quello teorico, ma nel complesso si ottiene un'efficienza di $\sim90\%$, abbastanza ragionevole per il tipo di apparato utilizzato.
+Infine per quanto riguarda la stima sull'assorbimento da parte dell'edificio si osservi che si tratta di una stima molto approssimativa, infatti da \cite{ParticleDataGroup:2026aaa} sono stati considerati i dati relativi a "Shielding concrete" con densità e potere di frenamento sicuramente superiori al materiale utilizzato per la costruzione dei piani.
+Inoltre, consultando anche \cite{shukla2018energyangulardistributionsatmospheric}, il valore $I_v$ fornito inizialmente potrebbe essere già riferito ai muoni con $"E>0.5$ \unit{GeV}" ed in quel caso la stima dell'assorbimento superflua.   
+
+
 \printbibliography
 \end{document}
