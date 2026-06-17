@@ -79,7 +79,9 @@
                 \end{tabular}
             \end{table}
             Nella seconda parte si è supposto che il decadimento non avvenisse più sulla superficie, ma al centro della cellula.
-            Usando lo stesso procedimento del primo punto si è calcolata la dose assorbita dalla cellula e dalla cellula limitrofa, usando però masse e volumi diversi.
+            Usando lo stesso procedimento del primo punto si è calcolata la dose assorbita dalla cellula e dalla cellula limitrofa.
+            In questo caso i dati utilizzati sono stati quelli del primo punto, ma sono stati considerati solo i primi 5 \unit{\angstrom} per la cellula sorgente e i successivi 10 \unit{\angstrom} per quella limitrofa.
+            Le masse e i volumi delle cellule considerate per questo secondo punto sono quindi quelli nella seguente tabella.
             \begin{table}[H]
                 \centering
                 \begin{tabular}{
@@ -108,7 +110,7 @@
                         \centering
                         \begin{subfigure}{0.33\textwidth}  
                             \centering
-                            \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/alfa_boro_6.png}
+                            \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/alfa_boro_6.png}                         
                             \caption{$\alpha$ ($E_{\alpha}$ = 1.78 MeV)}
                             \label{fig:alpha_boro_6}
                         \end{subfigure}\hfill
@@ -117,6 +119,21 @@
                             \includegraphics[width=\textwidth]{dati/boro_6/litio_boro_6/litio_boro_6.png}
                             \caption{Litio ($E_{Li}$ = 1.01 MeV)}
                             \label{fig:litio_boro_6}
+                        \end{subfigure}\hfill
+                    \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/range_alfa_boro_6.png}                         
+                            \caption{Range $\alpha$}
+                            \label{fig:alpha_boro_6_range}
+                        \end{subfigure}\hfill
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/boro_6/litio_boro_6/range_litio_boro_6.png}
+                            \caption{Range litio}
+                            \label{fig:litio_boro_6_range}
                         \end{subfigure}\hfill
                     \end{figure}
                     \begin{table}[H]
@@ -149,6 +166,21 @@
                             \label{fig:litio_boro_94}
                         \end{subfigure}\hfill
                     \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/boro_94/alfa_boro_94/range_alfa_boro_94.png}                         
+                            \caption{Range $\alpha$}
+                            \label{fig:alpha_boro_94_range}
+                        \end{subfigure}\hfill
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/boro_94/litio_boro_94/range_litio_boro_94.png}
+                            \caption{Range litio}
+                            \label{fig:litio_boro_94_range}
+                        \end{subfigure}\hfill
+                    \end{figure}
                     \begin{table}[H]
                         \centering
                         \begin{tabular}{
@@ -179,6 +211,21 @@
                             \label{fig:tritone_litio}
                         \end{subfigure}\hfill
                     \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/litio/alfa_litio/range_alfa_litio.png}                         
+                            \caption{Range $\alpha$}
+                            \label{fig:alpha_litio_range}
+                        \end{subfigure}\hfill
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/litio/tritone_litio/range_tritone_litio.png}
+                            \caption{Range tritone}
+                            \label{fig:litio_tritone_range}
+                        \end{subfigure}\hfill
+                    \end{figure}
                     \begin{table}[H]
                         \centering
                         \begin{tabular}{
@@ -207,6 +254,21 @@
                             \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/carbonio_azoto/carbonio_azoto.png}
                             \caption{Carbonio ($E_{C}$ = 0.042 MeV)}
                             \label{fig:carbonio_azoto}
+                        \end{subfigure}\hfill
+                    \end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/carbonio_azoto/range_carbonio_azoto.png}                         
+                            \caption{Range carbonio}
+                            \label{fig:carbonio_azoto_range}
+                        \end{subfigure}\hfill
+                        \begin{subfigure}{0.33\textwidth}  
+                            \centering
+                            \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/protone_azoto/range_protone_azoto.png}
+                            \caption{Range protone}
+                            \label{fig:protone_azoto_range}
                         \end{subfigure}\hfill
                     \end{figure}
                     \begin{table}[H]
@@ -419,5 +481,8 @@
             \end{itemize}
     % -------------------------------------------------------------------
     \section{Conclusioni}
-        
+    Da questi dati si può osservare che c'è una dipendenza del deposito di energia rispetto a dove avvengono i decadimenti. 
+    Se il decadimento avviene al centro della cellula o sulla sua superficie, i frammenti prodotti più pesanti (come gli ioni di litio e carbonio) depositano quasi interamente la loro energia all'interno del volume della cellula sorgente, rilasciando una dose nulla o trascurabile alla cellula limitrofa. 
+    Il modello con decadimenti casuali, generati con simulazione Montecarlo,  mostra invece una maggior dispersione dell'energia, con un conseguente aumento della dose assorbita dalle cellule limitrofe rispetto ai casi precedenti.
+    
 \end{document}
