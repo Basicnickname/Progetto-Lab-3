@@ -33,7 +33,7 @@
 
 
 % --- Dati Intestazione ---
-\title{\textbf{Raggi cosmici}}
+\title{\textbf{Spettroscopia gamma}}
 \author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
 \date{\today}
 
@@ -44,12 +44,11 @@
 % -------------------------------------------------------------------
 
 \section{Obiettivo dell'esperienza}
-L'obiettivo dell'esperienza è studiare il flusso dei muoni cosmici a terra utilizzando scintillatori plastici. In particolare si vuole:
+L'obiettivo dell'esperienza è caratterizzare lo spettro emesso da alcuni radionuclidi emettitori di radiazione gamma di energia nota, così da poter costruire una curva di calibrazione energetica. In particolare si vuole:
 \begin{itemize}
-    \item Costruire la curva della frequenza dei muoni cosmici in funzione dell'angolo zenitale, verificando la legge $f(\theta) = f_v \cdot \cos^2(\theta) + b$.
-    \item Eseguire la stessa verifica tramite fit lineare.
-    \item Valutare l'accordanza con il valore previsto di flusso verticale.
-    \item Stimare l'efficienza di una lastra del rivelatore.
+    \item Acquisire lo spettro di: \texttt{Na-22}, \texttt{Ba-133}, \texttt{Cs-137}, \texttt{Am-241}.
+    \item Costruire la curva di calibrazione energetica.
+    \item Verificare la risoluzione del foto-rivelatore.
 \end{itemize}
 
 % -------------------------------------------------------------------
@@ -57,15 +56,17 @@ L'obiettivo dell'esperienza è studiare il flusso dei muoni cosmici a terra util
 
 \subsection{Dotazione sperimentale}
 \begin{itemize}
-    \item Due lastre di scintillatore plastico $(15 \times 15) \text{ cm}$ accoppiate a SiPM.
-    \item Modulo per la misura dei conteggi di coincidenza.
-    \item Goniometro e struttura di supporto per i rivelatori.
-    \item Chiavi a brugola per modificare l'angolo di puntamento del telescopio.
+    \item Sorgenti radioattive: \texttt{Na-22}, \texttt{Ba-133}, \texttt{Cs-137}, \texttt{Am-241}.
+    \item Rivelatore a scintillazione inorganico LaBr3 (Cs), accoppiato a un SiPM.
+    \item Alimentatori per SiPM.
+    \item Oscilloscopio.
+    \item Amplificatore e digitalizzatore del segnale.
+    \item Software Maestro.
+    \item Blocco di Piombo.
 \end{itemize}
 
 \subsection{Procedura sperimentale}
-Per prima cosa sono stati collegati gli scintillatori plastici al modulo di conteggio. In seguito sono state effettuate acquisizioni di $\sim 5 \unit{min}$ per ciascun angolo zenitale, esplorando l'intervallo da -80° a +80° con passi di 10°; ad ogni fase si è segnato il numero di conteggi di coincidenza.
-Infine, laddove necessario, sono stati prolungati i tempi di presa dati al fine di incrementare il campione e ridurre l'incertezza statistica.
+.
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
 Dai dati sperimentali si è ricavato $f(\theta)$ dividendo il numero di conteggi in coincidenza per il tempo di acquisizione.
