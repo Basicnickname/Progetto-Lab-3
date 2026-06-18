@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+% --- PACCHETTI PER LA MATEMATICA (Mettili qui) ---
+\usepackage{amsmath}   % Il pacchetto principale per formule e simboli
+\usepackage{amsfonts}  % Per i font matematici come i numeri reali \mathbb{R}
+\usepackage{amssymb}   % Per simboli matematici aggiuntivi
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = symbol            % Usa / per le unità (m/s)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage[justification=centering]{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+
+% --- Dati Intestazione ---
+\title{\textbf{Relazione 5}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+    \maketitle
+
+    % -------------------------------------------------------------------
+    \section{Obiettivo dell'esperienza}
+    
+    L'obbiettivo di questa esperienza è determinare l’andamento angolare di valori $T_s$, $T_p$, $R_s$, $R_p$ a lunghezza d’onda prescelta.
+    Determinare inoltre il valore dell’ angolo di Brewster per ogni materiale.
+        
+
+    % -------------------------------------------------------------------
+    \section{Materiali e Metodi}
+
+      \begin{itemize}
+    \item  Sorgente a banda spettrale limitata nel visibile , LED a $\lambda$ picco predeterminate, 1kHz in onda quadra.
+    \item  Lente accoppiate a LED, tripletto di lenti Thorlabs per focalizzazione.
+    \item  polarizzatore lineare Thorlabs LPVISE2X2, banda 400-700 nm
+    \item goniometro $\theta$ – 2$\theta$ solidale al banco, differenti portacampioni.
+    \item Rivelatore fotodiodo in Si polarizzato in inversa, carico 10 kOhm.
+     \item tester digitale
+ \end{itemize}
+ 
+ \subsection{Procedura sperimentale}
+ Regolare alimentazione LED:  circa 6 (verde) – 5(giallo) V con 20 mA.
+  Bisogna allineare in aria la sorgente (LED), il tripletto di lenti Thorlabs per la focalizzazione e il rivelatore.
+   È necessario regolare con precisione l'altezza del fascio, la focalizzazione e le distanze tra i vari componenti.
+   Solo dopo un perfetto allineamento si può misurare correttamente l'intensità iniziale $I_0$, $I_0s$, $I_0p$.
+   Una volta misurate, per le misure in trasmissione, si procede a ruotare il campione di 5° alla volta, annotando le correnti corrispondenti.
+   Sarà fondamentale la presenza del polarizzatore  per selezionare lo stato di polarizzazione della radiazione che colpisce il materiale.
+. Ruotandolo, puoi decidere se far incidere luce con polarizzazione s o p .
+   Per le misure in riflessione, si allinea il rivelatore all'angolo 2$\theta$ (tipicamente partendo da piccoli angoli come 10-15°) e si agisce sul posizionamento del campione a circa $\theta$, e poi spostato in un intorno, per massimizzare il segnale riflesso.
+   Ruotando di volta in volta rivelatore e campione, si prende poi nota delle correnti corrispondenti ai vari angoli.
+Con lo stesso set-up della riflessione si ripetono infine le misue usando come campione il Silicio.
+
+\section{Dati sperimentali e Analisi}
+
+Dai dati misuratisi è poi svolto un fit su colab in cui sono stati ricavati i valori di A, n, $\theta_0$.
+Nel modello del fit bisogna stare attenti al Silicio, che richiede un indice di rifrazione complesso, a differenza dei mezzi trasparenti, il $\tilde{n} = n + ik$.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni.}
+\label{tab:dati_fit_esatti}
+\smallskip
+\begin{tabular}{ll S[table-format=1.4e-1] S[table-format=1.4e-1] S[table-format=3.2]}
+\toprule
+\textbf{Dataset} & \textbf{Parametro} & {\textbf{Valore Ottimale}} & {\textbf{Errore Standard}} & {\textbf{$\varepsilon_r$ (\%)}} \\
+\midrule
+\textbf{$T_p$}  
+    & $A$          & 0.99502  & 0.0058631 & 0.59 \\
+    & $\theta_0$  & 3.5058   & 0.28580   & 8.15 \\
+    & $n$          & 1.7195   & 0.031570  & 1.84 \\
+\midrule
+\textbf{$T_s$}  
+    & $A$          & 1.0125   & 0.021949  & 2.17 \\
+    & $\theta_0$  & 2.6567   & 0.83542   & 31.45 \\
+    & $n$          & 1.5540   & 0.063710  & 4.10 \\
+\midrule
+\textbf{$R_p$}  
+    & $A$          & 0.98214  & 0.049298  & 5.02 \\
+    & $n$          & 1.5718   & 0.043591  & 2.77 \\
+\midrule
+\textbf{$R_s$}  
+    & $A$          & 1.2798   & 0.073439  & 5.74 \\
+    & $n$          & 1.5175   & 0.036739  & 2.42 \\
+\midrule
+\textbf{$R_p$ Si}  
+    & $A$          & 0.80869  & 0.31403   & 38.83 \\
+    & $\theta_0$  & 4.1839   & 4.4209    & 105.66 \\
+    & $n$          & 3.0863   & 1.0035    & 32.51 \\
+    & $k$          & 0.85073  & 0.31232   & 36.71 \\
+\midrule
+\textbf{$R_s$ Si}  
+    & $A$          & 1.3948   & 0.061950  & 4.44 \\
+    & $\theta_0$  & 24.513   & 0.52592   & 2.15 \\
+    & $n$          & 0.56853  & 0.017786  & 3.13 \\
+    & $k$          & 0.36223  & 0.016754  & 4.63 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\textwidth]{trasm.png}
+                \caption{Grafico $T_s$ e $T_p$}
+            \end{figure}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\textwidth]{rifl.png}
+                \caption{Grafico $R_s$ e $R_p$}
+            \end{figure}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\textwidth]{si.png}
+                \caption{Grafico $R_s$ e $R_p$ con silicio}
+            \end{figure}
+
+
+            \section{Conclusioni}
+            I fit effettuati sui dati di trasmissione, hanno stimato un indice di rifrazione pari a $n \approx 1.719 \pm 0.031$ (polarizzazione parallela) e $n \approx 1.554 \pm 0.063$ (polarizzazione perpendicolare). 
+            i due valori siano statisticamente compatibili entro le incertezze, la discrepanza quantitativa suggerisce la presenza di lievi effetti sistematici legati alla stabilità del LED o alla calibrazione angolare del goniometro.
+            Nei dati di riflessione ($R_p$), la netta discesa del segnale verso un minimo prossimo allo zero in corrispondenza dell'angolo di Brewster ($\theta_B \approx 56^\circ$) ha fornito una prova della polarizzazione totale per riflessione.
+            Per il silicio dall'analisi della polarizzazione parallela ( $R_p$ ), si nota che il minimo della curva di riflessione non si annulla mai completamente, e questo comportamento convalida la necessità di ricorrere a un indice di rifrazione complesso $\tilde{n} = n + ik$, con n e k ricavati dal fit.
+            
+
+            
+
+\end{document}
