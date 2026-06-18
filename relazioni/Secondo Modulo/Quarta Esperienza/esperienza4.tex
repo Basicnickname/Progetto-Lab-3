@@ -7,8 +7,6 @@
 \usepackage{geometry}       % Gestione margini
 \usepackage{csquotes}      % Raccomandato da biblatex con babel/polyglossia
 \usepackage{parskip}        % Gestione spazi tra paragrafi
-\usepackage[backend=biber,style=numeric]{biblatex}
-\addbibresource{bibliografia.bib}
 
 \geometry{a4paper, margin=2.5cm}
 
@@ -30,7 +28,6 @@
 \usepackage{subcaption}
 \usepackage[font=small, labelfont=bf]{caption}
 \usepackage[font=small, labelfont=bf]{subcaption}
-
 
 % --- Dati Intestazione ---
 \title{\textbf{Spettroscopia gamma}}
@@ -66,135 +63,129 @@ L'obiettivo dell'esperienza è caratterizzare lo spettro emesso da alcuni radion
 \end{itemize}
 
 \subsection{Procedura sperimentale}
-.
+Per prima cosa si accende il foto-rivelatore, alimentandoli con tensione predefinita, e si verifica la presenza di segnale dall'oscilloscopio avvicinando una sorgente al cristallo. Dopodiché si collega l'intera catena elettronica
+per l'amplificazione e digitalizzazione del segnale e sfruttando il software Maestro si acquisisce lo spettro di ciascuna sorgente posizionandola sopra il rivelatore coperto da un panno, così da bloccare la luce ambientale. L'acquisizione per ogni sorgente viene effettuata per un  $\sim 10$ \unit{min}, mentre tra una misura e l'altra viene effettuata un'acquisizione di fondo per un tempo complessivo di $\sim 15$ \unit{min}. 
+Infine per il Cs-137 si è effettuata una seconda acquisizione con un blocco di piombo posizionato sopra la sorgente, così da evidenziare il picco di backscattering.
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
-Dai dati sperimentali si è ricavato $f(\theta)$ dividendo il numero di conteggi in coincidenza per il tempo di acquisizione.
-\subsection{Fit a 3 parametri}
+\subsection{Spettri}
+Dopo aver sottratto il fondo da ogni spettro, sono stati identificati i picchi corrispondenti alle energie note e nell'intorno di ciascun picco è stato eseguito un fit gaussiano, così da ricavare con maggiore precisione la posizione del picco stesso.
+Per il fit è stata utilizzata la funzione:
+\begin{equation}
+    f(x) = a \cdot \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right) + b 
+\end{equation}
+
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.9\linewidth]{Fit_1_Dati_3p.png}
-     \caption{Curva frequenza in funzione dell'angolo e fit a 3 parametri.}
-     \label{fig:1}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Fondo.png}
+         \label{fig:1a}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Sodio.png}
+         \label{fig:1b}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Bario.png}
+         \label{fig:1c}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Americio.png}
+         \label{fig:1d}
+     \end{subfigure}
 \end{figure}
 
-Dai dati raccolti è stato eseguito un fit a 3 parametri liberi con la funzione:
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Cesio.png}
+         \caption{Senza blocco di piombo.}
+         \label{fig:2a}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Spettro_Intero_Calibrato_Cesio-Pb.png}
+         \caption{Con blocco di piombo.}
+         \label{fig:2b}
+     \end{subfigure}
+\end{figure}
+
+
+\subsection{Calibrazione energetica}
+Una volta ricavate le posizione dei picchi si è effetuato un fit quadratico delle energie note in funzione dei canali corrispondenti, così da ottenere la curva di calibrazione energetica. La funzione utilizzata per il fit è stata:
 \begin{equation}
-    f(\theta) = f_v \cdot \cos^n(\theta) + b
+    E_{teor} = a + b \cdot E_{sper}(ch) + c \cdot E_{sper}^2(ch)
 \end{equation}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.8\textwidth]{Fit_finale_calibrazione.png}
+     \caption{Curva di calibrazione energetica.}
+     \label{fig:3}
+\end{figure}
 
 \begin{table}[H]
     \centering
     \begin{tabular}{
         l
-        S[table-format=1.3e2]  
-        S[table-format=1.3e2]
-        S[table-format=2.2]  
+        S[table-format=2.4e2]  
+        S[table-format=2.4e2]
     }
         \toprule
-        {Parametro} & {Valore} & {$\sigma$} & {Errore Relativo [\%]} \\
+        {Parametro} & {Valore} & {$\sigma$} \\
         \midrule
-        $f_v$ [\unit{Hz}] & 0.304 & 0.012 & 3.86 \\
-        $n$ & 2.21 & 0.26 & 11.78 \\
-        $b$ [\unit{Hz}] & 2.35e-2 & 0.81e-2 & 34.29 \\
+        $a$ [\unit{keV}] & 10.77 & 0.06 \\
+        $b$ [\unit{\frac{keV}{ch}}] & 0.4146 & 0.0005 \\
+        $c$ [\unit{\frac{keV}{ch^2}}] & 6.44e-04 & 5.61e-7 \\
         \bottomrule
     \end{tabular}
-    \label{tab:Fit 3p}
+    \label{tab:Calibrazione}
 \end{table}
 
-\subsection{Fit lineare}
+\subsection{Risoluzione del rivelatore}
+Infine si calcola la risoluzione energetica del rivelatore relativa a ciascun foto-picco tramite le relazioni:
+
+\begin{equation}
+    Res[\%] = \frac{FWHM}{E_{peak}}
+\end{equation}
+
+\begin{equation}
+    Res[\%] = p_0 + \frac{p_1}{\sqrt{E_{peak}}}
+\end{equation}
+
 \begin{figure}[H]
      \centering
-     \includegraphics[width=0.9\linewidth]{Fit_2_Dati_lin.png}
-     \caption{Curva frequenza in funzione di $\cos^2(\theta)$ e fit lineare.}
-     \label{fig:2}
+     \includegraphics[width=0.8\textwidth]{Fit_finale_risoluzione.png}
+     \caption{Risoluzione del rivelatore in funzione dell'energia.}
+     \label{fig:4}
 \end{figure}
-
-In questo caso invece è stato eseguito un fit lineare, valutando anche il coefficiente di determinazione $R^2$, tramite la funzione: 
-\begin{equation}
-    f(\cos^2(\theta)) = f_v \cdot \cos^2(\theta) + b
-\end{equation}
 
 \begin{table}[H]
     \centering
     \begin{tabular}{
         l
-        S[table-format=1.3e2]  
-        S[table-format=1.3e2]
-        S[table-format=2.2]  
+        c  
+        c
     }
         \toprule
-        {Parametro} & {Valore} & {$\sigma$} & {Errore Relativo [\%]} \\
+        {Picco} & {Valore Nominale} & {Valore Ottenuto} \\
         \midrule
-        $f_v$ [\unit{Hz}] & 0.305 & 0.012 & 3.87 \\
-        $b$ [\unit{Hz}] & 1.80e-2 & 0.54e-2 & 30.29 \\
-        $R^2$ & 0.956 &  &  \\
+        \texttt{Cs-137} & 3.5\% & $[3.67 \pm 0.96]$\% \\
         \bottomrule
     \end{tabular}
-    \label{tab:Fit lin}
-\end{table}
-
-\subsection{Accordanza con il flusso verticale previsto}
-L'angolo solido sotteso dal rivelatore $\Omega = 0.252$ \unit{srad} è stato ricavato tramite simulazione Monte Carlo. Da questo si è ricavato la frequenza prevista $f_v \simeq I_v \cdot A \cdot \Omega $, in cui $A = 0.0225$ \unit{m^2} è l'area di una lastra del rivelatore e $I_v \simeq 70$ \unit{m^{-2} s^{-1} srad^{-1}} è il flusso verticale previsto per unità di angolo solido a livello del mare.
-\begin{table}[H] 
-    \centering
-    \begin{tabular}{
-        l
-        S[table-format=1.3]  
-    }
-        \toprule
-        {Tipologia} & {$f_v$ [\unit{Hz}]}\\
-        \midrule
-        Teorico & 0.397 \\
-        3 parametri & 0.304 \\
-        Lineare & 0.305 \\
-        \bottomrule
-    \end{tabular}
-
-    \label{tab:Flusso verticale}
-\end{table}
-
-\subsection{Stima efficienza di una lastra}
-Infine per stimare l'efficienza di una singola lastra del rivelatore si è utilizzata la formula:
-\begin{equation}
-    \epsilon = \sqrt{\frac{f_v^{sper}}{f_v^{teor}}}
-\end{equation}
-
-Tuttavia si è anche cercato di dare una stima della parte di flusso verticale assorbito dall'edificio prima di raggiungere il rivelatore. Ipotizzando uno spessore complessivo dei piani superiori di circa 150 \unit{cm} di cemento e sfruttando i dati in \cite{Haino_2004} - \cite{ParticleDataGroup:2026aaa},
- si ricava l'energia minima $E_{min}$ dei muoni che arrivano fino alle lastre. Dunque si ottiene il flusso verticale assorbito $I_v^{abs}$ da cui si calcola la relativa frequenza $f_v^{abs}$, la quale viene infine sottratta al valore teorico.
-
-
-\begin{table}[H] 
-    \centering
-    \begin{tabular}{
-        l
-        c 
-    }
-        \toprule
-        {Dato} & {Valore}\\
-        \midrule
-        $E_{min}$ & 0.59 \unit{GeV} \\
-        $I_v^{abs}$ & 3.67 \unit{m^{-2} s^{-1} srad^{-1}} \\
-        $f_v^{abs}$ & 0.021 \unit{Hz} \\
-        Percentuale assorbita & $\sim5$ \% \\
-        \midrule
-        $\epsilon^{abs}$ & 0.90 \\
-        $\epsilon$ & 0.88 \\
-        \bottomrule
-    \end{tabular}
-
-    \label{tab:Efficienza}
+    \caption{Risoluzione al picco del \texttt{Cs-137}}
+    \label{tab:Risoluzione}
 \end{table}
 
 % -------------------------------------------------------------------
 
 \section{Conclusioni}
-Dai risultati ottenuti si può concludere che la legge $f(\theta) = f_v \cdot \cos^2(\theta) + b$ è verificata, con un buon coefficiente di determinazione $R^2$ per il fit lineare.
-La simulazione Monte Carlo è stata effettuata con C++ e ha permesso di stimare l'angolo solido sotteso dal rivelatore in modo più accurato.
-Il flusso verticale sperimentale è risultato inferiore a quello teorico, ma nel complesso si ottiene un'efficienza di $\sim90\%$, abbastanza ragionevole per il tipo di apparato utilizzato.
-Infine per quanto riguarda la stima sull'assorbimento da parte dell'edificio si osservi che si tratta di una stima molto approssimativa, infatti da \cite{ParticleDataGroup:2026aaa} sono stati considerati i dati relativi a "Shielding concrete" con densità e potere di frenamento sicuramente superiori al materiale utilizzato per la costruzione dei piani. 
-Inoltre, consultando anche \cite{shukla2018energyangulardistributionsatmospheric}, il valore $I_v$ fornito inizialmente potrebbe essere già riferito ai muoni con $"E>1$ \unit{GeV}" ed in quel caso la stima dell'assorbimento sarebbe superflua.   
-
-
-\printbibliography
+L'analisi degli spettri acquisiti evidenzia, oltre ai fotopicchi principali, ulteriori strutture tipiche dell'interazione radiazione-materia, quali lo spigolo di Compton (Compton edge), il picco di retrodiffusione (backscatter peak) e le emissioni legate ai raggi X caratteristici. In particolare, nello spettro del Cesio-137 acquisito con la schermatura in piombo, si osserva un netto incremento del picco di backscatter e la comparsa di un picco nell'intorno di $80$ \unit{keV}, riconducibile alla radiazione X emessa dal piombo.
+Nello spettro di fondo invece si distingue chiaramente un fotopicco isolato nell'intorno dei $1500$ \unit{keV}, probabilmente dovuto all'emissione gamma dovuta al decadimento del Potassio-40, radionuclide che rientra tra i principali responsabili della radiazione ambientale.
+Infine dopo la calibrazione energetica si osserva come il valore di risoluzione del rivelatore al fotopicco del Cesio-137 sia compatibile con il valore nominale.
 \end{document}

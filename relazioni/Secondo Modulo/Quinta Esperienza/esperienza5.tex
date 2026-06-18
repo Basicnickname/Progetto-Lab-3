@@ -39,8 +39,9 @@
     % -------------------------------------------------------------------
     \section{Obiettivo dell'esperienza}
     
-    L'obbiettivo di questa esperienza è determinare l’andamento angolare di valori $T_s$, $T_p$, $R_s$, $R_p$ a lunghezza d’onda prescelta.
-    Determinare inoltre il valore dell’ angolo di Brewster per ogni materiale.
+    L'obbiettivo di questa esperienza è determinare l’andamento angolare di valori $T_s$, $T_p$, $R_s$, $R_p$, per $SiO_2$ e Si a lunghezza d’onda prescelta.
+    Determinare inoltre il valore dell’ angolo di Brewster per i materiali ideali e trasparenti, o l'angolo di pseudo Brewster per materiali caratterizzati da assorbimento non nullo.
+    Determinare l'indice di rifrazione dei vari materiali,e valutare il grado di polarizzazione.
         
 
     % -------------------------------------------------------------------
@@ -75,7 +76,7 @@ Nel modello del fit bisogna stare attenti al Silicio, che richiede un indice di 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni.}
+\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni per $Si0_2$.}
 \label{tab:dati_fit_esatti}
 \smallskip
 \begin{tabular}{ll S[table-format=1.4e-1] S[table-format=1.4e-1] S[table-format=3.2]}
@@ -83,51 +84,65 @@ Nel modello del fit bisogna stare attenti al Silicio, che richiede un indice di 
 \textbf{Dataset} & \textbf{Parametro} & {\textbf{Valore Ottimale}} & {\textbf{Errore Standard}} & {\textbf{$\varepsilon_r$ (\%)}} \\
 \midrule
 \textbf{$T_p$}  
-    & $A$          & 0.99502  & 0.0058631 & 0.59 \\
-    & $\theta_0$  & 3.5058   & 0.28580   & 8.15 \\
-    & $n$          & 1.7195   & 0.031570  & 1.84 \\
+    & $A$          & 9.95e-1  & 5.86e-3 & 0.59 \\
+    & $\theta_0$  & 3.51   & 2.86e-1   & 8.15 \\
+    & $n$          & 1.72   & 3.16e-2  & 1.84 \\
 \midrule
 \textbf{$T_s$}  
-    & $A$          & 1.0125   & 0.021949  & 2.17 \\
-    & $\theta_0$  & 2.6567   & 0.83542   & 31.45 \\
-    & $n$          & 1.5540   & 0.063710  & 4.10 \\
+    & $A$          & 1.01   & 2.19e-2  & 2.17 \\
+    & $\theta_0$  & 2.66   & 8.35e-1   & 31.45 \\
+    & $n$          & 1.55   & 6.37e-2  & 4.10 \\
 \midrule
 \textbf{$R_p$}  
-    & $A$          & 0.98214  & 0.049298  & 5.02 \\
-    & $n$          & 1.5718   & 0.043591  & 2.77 \\
+    & $A$          & 9.82e-1  & 4.93e-2  & 5.02 \\
+    & $n$          & 1.57   & 4.36e-2  & 2.77 \\
 \midrule
 \textbf{$R_s$}  
-    & $A$          & 1.2798   & 0.073439  & 5.74 \\
-    & $n$          & 1.5175   & 0.036739  & 2.42 \\
+    & $A$          & 1.28   & 7.34e-2  & 5.74 \\
+    & $n$          & 1.52   & 3.67e-2  & 2.42 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni, per $Si$}
+\label{tab:dati_fit_esatti}
+\smallskip
+\begin{tabular}{ll S[table-format=1.4e-1] S[table-format=1.4e-1] S[table-format=3.2]}
+\toprule
+\textbf{Dataset} & \textbf{Parametro} & {\textbf{Valore Ottimale}} & {\textbf{Errore Standard}} & {\textbf{$\varepsilon_r$ (\%)}} \\
+
 \midrule
 \textbf{$R_p$ Si}  
-    & $A$          & 0.80869  & 0.31403   & 38.83 \\
-    & $\theta_0$  & 4.1839   & 4.4209    & 105.66 \\
-    & $n$          & 3.0863   & 1.0035    & 32.51 \\
-    & $k$          & 0.85073  & 0.31232   & 36.71 \\
+    & $A$          & 8.09e-1  & 3.14e-1   & 38.83 \\
+    & $\theta_0$  & 4.18   & 4.42    & 105.66 \\
+    & $n$          & 3.09   & 1.00    & 32.51 \\
+    & $k$          & 8.51e-1  & 3.12e-1   & 36.71 \\
 \midrule
 \textbf{$R_s$ Si}  
-    & $A$          & 1.3948   & 0.061950  & 4.44 \\
-    & $\theta_0$  & 24.513   & 0.52592   & 2.15 \\
-    & $n$          & 0.56853  & 0.017786  & 3.13 \\
-    & $k$          & 0.36223  & 0.016754  & 4.63 \\
+    & $A$          & 1.39  & 6.20e-1  & 4.44 \\
+    & $\theta_0$  & 24.51   & 5.26e-1   & 2.15 \\
+    & $n$          & 5.69e-1  & 1.78e-2  & 3.13 \\
+    & $k$          & 3.62e-1  & 1.68e-2  & 4.63 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.7\textwidth]{trasm.png}
+                \includegraphics[width=0.7\textwidth]{Combinato_Trasmittanza_Vetro_T_p_e_T_s.png}
                 \caption{Grafico $T_s$ e $T_p$}
             \end{figure}
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.7\textwidth]{rifl.png}
+                \includegraphics[width=0.7\textwidth]{Combinato_Riflettanza_Vetro_R_p_e_R_s.png}
                 \caption{Grafico $R_s$ e $R_p$}
             \end{figure}
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.7\textwidth]{si.png}
+                \includegraphics[width=0.7\textwidth]{Combinato_Riflettanza_Silicio_R_p_e_R_s.png}
                 \caption{Grafico $R_s$ e $R_p$ con silicio}
             \end{figure}
 
