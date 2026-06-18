@@ -1,0 +1,76 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Pacchetti Fondamentali ---
+\usepackage[utf8]{inputenc} % Codifica caratteri
+\usepackage[T1]{fontenc}    % Codifica font
+\usepackage[italian]{babel} % Lingua italiana
+\usepackage{geometry}       % Gestione margini
+\usepackage{csquotes}      % Raccomandato da biblatex con babel/polyglossia
+\usepackage{parskip}        % Gestione spazi tra paragrafi
+
+\geometry{a4paper, margin=2.5cm}
+
+% --- Pacchetti Matematica e Fisica ---
+\usepackage{amsmath, amssymb} % Simboli matematici
+\usepackage{siunitx}          % Gestione unità di misura e numeri (FONDAMENTALE)
+\sisetup{
+    output-decimal-marker = {.}, % Punto come separatore decimale
+    separate-uncertainty = true, % Scrive errori come (Valore +/- Errore)
+    per-mode = power,            % Usa / per le unità (m/s)
+    inter-unit-product = \ensuremath{\cdot} % Per scrivere le unità con il punto (N·m)
+}
+
+% --- Pacchetti Immagini e Tabelle ---
+\usepackage{graphicx} % Per inserire PNG/JPG
+\usepackage{float}    % Per forzare la posizione delle immagini (H)
+\usepackage{booktabs} % Per tabelle professionali (\toprule, \midrule)
+\usepackage{caption}  % Per personalizzare le didascalie
+\usepackage{subcaption}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage[font=small, labelfont=bf]{subcaption}
+
+% --- Dati Intestazione ---
+\title{\textbf{Risposta spettroscopica e dispersione elettromagnetica}}
+\author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -------------------------------------------------------------------
+
+\section{Obiettivo dell'esperienza}
+L'obiettivo dell'esperienza è studiare tecniche spettroscopiche mirate a conoscere la risposta elettromagnetica di materiali massivi su ampio intervallo spettrale, così da poter determinare la loro relazione di dispersione. In particolare si vuole:
+\begin{itemize}
+    \item Determinare lo spettro di Trasmittanza di vetro amorfo in $SiO_2$ e di Riflettanza di $Si$ cristallino.
+    \item Stimare la dispersione dell'indice di rifrazione per i due materiali nell'intervallo spettrale considerato.
+    \item Determinare gli spettri di Trasmittanza e Riflettanza per un materiale incognito.
+\end{itemize}
+
+% -------------------------------------------------------------------
+\section{Materiali e Metodi}
+
+\subsection{Dotazione sperimentale}
+\begin{itemize}
+    \item Sorgente a lampada alogena $QTH_{10}$.
+    \item Lente accoppiata alla lampada.
+    \item Tripletto di lenti per la focalizzazione.
+    \item Reticolo diffrattivo 1D a $1000$ \unit{linee/mm}.
+    \item Goniometro monocromatore a dispersione.
+    \item Fotodiodo in $Si$ polarizzato in inversa con carico $10/47$ \unit{kOhm}.
+    \item Laser di varie lunghezze d'onda: $635.9$\unit{nm}, $532$\unit{nm}, $449.1$\unit{nm}, $406.5$\unit{nm},
+    \item Multimetro
+    \item Campioni: vetro amorfo in $SiO_2$ spesso $1$\unit{mm}, $Si$ cristallino spesso $0.5$\unit{mm}, materiale incognito n°7.
+\end{itemize}
+
+\subsection{Procedura sperimentale}
+
+% -------------------------------------------------------------------
+\section{Dati sperimentali e Analisi}
+\subsection{Trasmittanza e Riflettanza}
+\subsection{Dispersione indice di rifrazione}
+\subsection{Materiale Incognito}
+% -------------------------------------------------------------------
+\section{Conclusioni}
+\end{document}
