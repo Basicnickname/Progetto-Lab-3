@@ -36,14 +36,12 @@
 
     % -------------------------------------------------------------------
     \section{Obiettivo dell'esperienza}
-        L'obiettivo dell'esperienza è quello di studiare, tramite il software SRIM, la dose ricevuta da alcuni decadimenti di cattura neutronica usati in ambito medico.
-
+        L'obiettivo dell'esperienza è simulare, tramite il software SRIM, alcuni decadimenti di cattura neutronica usati in ambito medico, così da poter studiare la dose assorbita.
     % -------------------------------------------------------------------
     \section{Materiali e Metodi}
 
         \subsection{Strumentazione utilizzata}
             L'unico strumento utilizzato è il software SRIM per simulare i vari casi studiati.
-
         \subsection{Procedura sperimentale}
             Si sono studiati 3 casi di cattura neutronica:
             \begin{itemize}
@@ -52,16 +50,17 @@
                 \item Nitrogen Neutron Capture: \ce{^{14}N + n -> ^{14}C + ^{1}H}
             \end{itemize}
             In tutti e tre i casi per calcolare la dose su SRIM si è supposto che la cattura neutronica fosse già avvenuta e si è calcolato solo il contributo dei prodotti di reazione.
-            Le cellule sono state modellate come cubi di lato 10 \unit{\micro\meter} costituiti da tessuto \textit{"Skin, human (W\&W type 1)"}, caricato dalle librerie di SRIM che ha una densità di 1.09 \unit{\gram \cdot \centi\meter^{-3}}.
+            Le cellule sono state modellate come cubi di lato 10 \unit{\micro\meter} costituiti da tessuto \textit{"Skin, human (W\&W type 1)"}, caricato dalle librerie di SRIM, con una densità di 1.09 \unit{\gram \cdot \centi\meter^{-3}}.
             \\
-            Tramite i dati simulati da SRIM per i singoli eventi, si è ricavata l'energia depositata nelle zone d'interesse per calcolare la dose assorbita ($\frac{E_{tot}}{m}$) dalla cellula sorgente e da una cellula limitrofa. 
-            Questo calcolo delle dosi è stato ripetuto analizzando tre diversi scenari per il decadimento:
+            Tramite i dati simulati da SRIM per i singoli eventi, si è ricavata l'energia depositata nelle zone d'interesse così da poter calcolare la dose assorbita ($\frac{E_{tot}}{m}$) dalla cellula sorgente e da una cellula limitrofa. 
+            Questo calcolo delle dosi è stato ripetuto analizzando tre diversi scenari variando la posizione in cui si assume sia avvenuto il decadimento:
             \begin{itemize}
-                \item Sulla superficie esterna della cellula sorgente ossia esattamente a metà di una faccia del cubo.
-                \item  Al centro della cellula sorgente.
+                \item Sulla superficie esterna della cellula sorgente.
+                \item Al centro della cellula sorgente.
                 \item In posizioni casuali all'interno della cellula sorgente, per modellare in modo più realistico come avvengono i decadimenti.
             \end{itemize}
-            I volumi e le masse utilizzate per il calcolo della dose nei vari casi sono riportati nella seguente tabella.
+
+            Nella seguente tabella sono riportati volumi e masse utilizzate per il calcolo della dose nei vari casi:
 
             \begin{table}[H]
                 \centering
@@ -83,410 +82,131 @@
             
     % -------------------------------------------------------------------
     \section{Grafici e Tabelle}
-        Nei seguenti paragrafi troviamo le tabelle con le dosi assorbite dalla cellula e da quelle limitrofe nei vari casi studiati.
+        Nei seguenti paragrafi sono riportate le tabelle con le dosi assorbite dalla cellula sorgente e da quella limitrofa nei vari casi studiati.
         \subsection{Decadimenti sulla superficie della cellula sorgente}
-            \begin{itemize}
-                \item \textbf{Boro 6\%}
-                \begin{table}[H]
+            \begin{figure}[H] 
                     \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{2.60e-1} & 0 \\
-                        $Litio$ & \num{1.44e-1} & 0 \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
+                    \includegraphics[width=0.45\textwidth]{dati/boro_6/alfa_boro_6/alfa_boro_6.png}                        
+                    \label{fig:alpha_boro_6}
+                    \caption{Esempio di simulazione delle traiettorie restituita da SRIM}
+            \end{figure}
+
+            \begin{figure}[H] 
                     \centering
-                    \begin{subfigure}{0.3\textwidth}  
+                    \begin{subfigure}{0.45\textwidth}  
                         \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/alfa_boro_6.png}                         
-                        \caption{$\alpha$ ($E_{\alpha}$ = 1.78 MeV)}
-                        \label{fig:alpha_boro_6}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/range_alfa_boro_6.png}                         
-                        \caption{Range $\alpha$}
+                        \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/range_alfa_boro_6.png}                        
                         \label{fig:alpha_boro_6_range}
                     \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
+                    \begin{subfigure}{0.45\textwidth}
                         \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/ionization_alfa_boro_6.png}                         
-                        \caption{Ionization $\alpha$}
+                        \includegraphics[width=\textwidth]{dati/boro_6/alfa_boro_6/ionization_alfa_boro_6.png}                        
                         \label{fig:alpha_boro_6_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/litio_boro_6/litio_boro_6.png}
-                        \caption{Litio ($E_{Li}$ = 1.01 MeV)}
-                        \label{fig:litio_boro_6}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/litio_boro_6/range_litio_boro_6.png}
-                        \caption{Range litio}
-                        \label{fig:litio_boro_6_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6/litio_boro_6/ionization_litio_boro_6.png}
-                        \caption{Ionization litio}
-                        \label{fig:litio_boro_6_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-                
-                \item \textbf{Boro 94\%}
-                \begin{table}[H]
-                    \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{2.14e-1} & 0 \\
-                        $Litio$ & \num{1.19e-1} & 0 \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94/alfa_boro_94/range_alfa_boro_94.png}                         
-                        \caption{Range $\alpha$}
-                        \label{fig:alpha_boro_94_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94/alfa_boro_94/ionization_alfa_boro_94.png}                         
-                        \caption{Ionization $\alpha$}
-                        \label{fig:alpha_boro_94_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94/litio_boro_94/range_litio_boro_94.png}
-                        \caption{Range litio}
-                        \label{fig:litio_boro_94_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94/litio_boro_94/ionization_litio_boro_94.png}
-                        \caption{Ionization litio}
-                        \label{fig:litio_boro_94_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-                
-                \item \textbf{Litio}
-                \begin{table}[H]
-                    \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{2.98e-1} & \num{1.5e-3} \\
-                        $Tritone$ & \num{4.41e-2} & \num{4.79e-2} \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio/alfa_litio/range_alfa_litio.png}                         
-                        \caption{Range $\alpha$}
-                        \label{fig:alpha_litio_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio/alfa_litio/ionization_alfa_litio.png}                         
-                        \caption{Ionization $\alpha$}
-                        \label{fig:alpha_litio_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio/tritone_litio/range_tritone_litio.png}
-                        \caption{Range tritone}
-                        \label{fig:litio_tritone_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio/tritone_litio/ionization_tritone_litio.png}
-                        \caption{Ionization tritone}
-                        \label{fig:litio_tritone_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
+                    \end{subfigure}
+                    \caption{Esempi di plot restituiti da SRIM per Range e Ionization}
+            \end{figure}    
 
-                \item \textbf{Azoto}
-                \begin{table}[H]
-                    \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $Protone$ & \num{8.43e-2} & \num{1.22e-3} \\
-                        $Carbonio$ & \num{3.24e-3} & 0 \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/protone_azoto/range_protone_azoto.png}                         
-                        \caption{Range protone}
-                        \label{fig:protone_azoto_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/protone_azoto/ionization_protone_azoto.png}                         
-                        \caption{Ionization protone}
-                        \label{fig:protone_azoto_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/carbonio_azoto/range_carbonio_azoto.png}
-                        \caption{Range carbonio}
-                        \label{fig:carbonio_azoto_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_non_montecarlo/carbonio_azoto/ionization_carbonio_azoto.png}
-                        \caption{Ionization carbonio}
-                        \label{fig:carbonio_azoto_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-            \end{itemize}
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{
+                    ll | c | c 
+                }
+                    \toprule
+                    & & Cellula sorgente & Cellula limitrofa \\
+                    \cmidrule{3-4}
+                    & & Dose [\unit{\gray}] & Dose [\unit{\gray}] \\
+                    \midrule
+                    \multirow{2}{*}{Boro 6\%} & $\alpha$ & \num{2.60e-1} & 0 \\
+                    & $Litio$ & \num{1.44e-1} & 0 \\
+                    \midrule
+                    \multirow{2}{*}{Boro 94\%} & $\alpha$ & \num{2.14e-1} & 0 \\
+                    & $Litio$ & \num{1.19e-1} & 0 \\
+                    \midrule
+                    \multirow{2}{*}{Litio} & $\alpha$ & \num{2.98e-1} & \num{1.5e-3} \\
+                    & $Tritone$ & \num{4.41e-2} & \num{4.79e-2} \\
+                    \midrule
+                    \multirow{2}{*}{Azoto} & $Protone$ & \num{8.43e-2} & \num{1.22e-3}\\
+                    & $Carbonio$ & \num{3.24e-3} & 0 \\
+                    \bottomrule
+                \end{tabular}%
+            \end{table}
                 
         \subsection{Decadimenti al centro della cellula sorgente}
             \begin{table}[H]
                 \centering
-                \resizebox{\textwidth}{!}{%
                 \begin{tabular}{
-                    ll | cc | cc |
+                    ll | cc | c 
                 }
                     \toprule
-                    & & \multicolumn{2}{|c|}{Cellula sorgente} & \multicolumn{2}{|c|}{Cellula limitrofa} \\
+                    & & \multicolumn{2}{|c|}{Cellula sorgente} & \multicolumn{1}{|c}{Cellula limitrofa} \\
                     \cmidrule{3-4}
-                    \cmidrule{5-6}
-                    & & Dose [\unit{\gray}] & Dose totale [\unit{\gray}] & Dose [\unit{\gray}] & Dose totale [\unit{\gray}] \\
+                    \cmidrule{5-5}
+                    & & Dose [\unit{\gray}] & Dose totale [\unit{\gray}] & Dose [\unit{\gray}] \\
                     \midrule
-                    \multirow{2}{*}{Boro 6\%} & $\alpha$ & \num{3.22e-1} & \multirow{2}{*}{\num{6.11e-1}} & \num{9.85e-2} & \multirow{2}{*}{\num{9.85e-2}} \\
-                    & $Litio$ & \num{2.88e-1} & & 0 & \\
+                    \multirow{2}{*}{Boro 6\%} & $\alpha$ & \num{3.22e-1} & \multirow{2}{*}{\num{6.11e-1}} & \num{9.85e-2} \\
+                    & $Litio$ & \num{2.88e-1} & & 0 \\
                     \midrule
-                    \multirow{2}{*}{Boro 94\%} & $\alpha$ & \num{3.38e-1} & \multirow{2}{*}{\num{5.84e-1}} & \num{4.17e-2} & \multirow{2}{*}{\num{4.17e-2}} \\
-                    & $Litio$ & \num{2.39e-1} & & 0 & \\
+                    \multirow{2}{*}{Boro 94\%} & $\alpha$ & \num{3.38e-1} & \multirow{2}{*}{\num{5.84e-1}} & \num{4.17e-2} \\
+                    & $Litio$ & \num{2.39e-1} & & 0 \\
                     \midrule
-                    \multirow{2}{*}{Litio} & $\alpha$ & \num{2.94e-1} & \multirow{2}{*}{\num{3.38e-1}} & \num{1.52e-1} & \multirow{2}{*}{\num{1.98e-1}} \\
-                    & $Tritone$ & \num{4.33e-2} & & \num{4.59e-2} & \\
+                    \multirow{2}{*}{Litio} & $\alpha$ & \num{2.94e-1} & \multirow{2}{*}{\num{3.38e-1}} & \num{1.52e-1} \\
+                    & $Tritone$ & \num{4.33e-2} & & \num{4.59e-2} \\
                     \midrule
-                    \multirow{2}{*}{Azoto} & $Protone$ & \num{6.44e-2} & \multirow{2}{*}{\num{7.09e-2}} & \num{5.33e-3} & \multirow{2}{*}{\num{5.33e-3}}\\
-                    & $Carbonio$ & \num{6.49e-3} & & 0 & \\
+                    \multirow{2}{*}{Azoto} & $Protone$ & \num{6.44e-2} & \multirow{2}{*}{\num{7.09e-2}} & \num{5.33e-3} \\
+                    & $Carbonio$ & \num{6.49e-3} & & 0 \\
                     \bottomrule
-                \end{tabular}%
-                }
+                \end{tabular}
             \end{table}
                 
         \subsection{Decadimenti casuali all'interno della cellula sorgente}
-            \begin{itemize}
-                \item \textbf{Boro 6\%}
-                \begin{table}[H]
+            \begin{figure}[H] 
                     \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{2.04e-1} & \num{1.28e-1} \\
-                        $Litio$ & \num{1.32e-1} & \num{7.27e-2} \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/alfa_boro_6_montecarlo.png}
-                        \caption{$\alpha$ ($E_{\alpha}$ = 1.78 MeV)}
-                        \label{fig:alpha_boro_6_montecarlo}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/range_alfa_boro_6_montecarlo.png}
-                        \caption{Range $\alpha$}
-                        \label{fig:alpha_boro_6_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/ionization_alfa_boro_6_montecarlo.png}
-                        \caption{Ionization $\alpha$}
-                        \label{fig:alpha_boro_6_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-                \begin{figure}[H]
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/litio_boro_6_montecarlo/litio_boro_6_montecarlo.png}
-                        \caption{Litio ($E_{Li}$ = 1.01 MeV)}
-                        \label{fig:litio_boro_6_montecarlo}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/litio_boro_6_montecarlo/range_litio_boro_6_montecarlo.png}
-                        \caption{Range litio}
-                        \label{fig:litio_boro_6_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.3\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/litio_boro_6_montecarlo/ionization_litio_boro_6_montecarlo.png}
-                        \caption{Ionization litio}
-                        \label{fig:litio_boro_6_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
+                    \includegraphics[width=0.45\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/alfa_boro_6_montecarlo.png}                        
+                    \caption{Esempio di simulazione delle traiettorie restituita da SRIM con simulazione Monte Carlo}
+            \end{figure}
 
-                \item \textbf{Boro 94\%}
-                \begin{table}[H]
+            \begin{figure}[H] 
                     \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{1.78e-1} & \num{1.08e-1} \\
-                        $Litio$ & \num{1.14e-1} & \num{5.83e-2} \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
+                    \begin{subfigure}{0.45\textwidth}  
                         \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94_montecarlo/alfa_boro_94_montecarlo/range_alfa_boro_94_montecarlo.png}
-                        \caption{Range $\alpha$}
-                        \label{fig:alpha_boro_94_montecarlo_range}
+                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/range_alfa_boro_6_montecarlo.png}                        
                     \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
+                    \begin{subfigure}{0.45\textwidth}
                         \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94_montecarlo/alfa_boro_94_montecarlo/ionization_alfa_boro_94_montecarlo.png}
-                        \caption{Ionization $\alpha$}
-                        \label{fig:alpha_boro_94_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94_montecarlo/litio_boro_94_montecarlo/range_litio_boro_94_montecarlo.png}
-                        \caption{Range litio}
-                        \label{fig:litio_boro_94_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/boro_94_montecarlo/litio_boro_94_montecarlo/ionization_litio_boro_94_montecarlo.png}
-                        \caption{Ionization litio}
-                        \label{fig:litio_boro_94_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-
-                \item \textbf{Litio}
-                \begin{table}[H]
-                    \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $\alpha$ & \num{2.22e-1} & \num{1.49e-1} \\
-                        $Tritone$ & \num{9.29e-2} & \num{7.86e-2} \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio_montecarlo/alfa_litio_montecarlo/range_alfa_litio_montecarlo.png}
-                        \caption{Range $\alpha$}
-                        \label{fig:alpha_litio_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio_montecarlo/alfa_litio_montecarlo/ionization_alfa_litio_montecarlo.png}
-                        \caption{Ionization $\alpha$}
-                        \label{fig:alpha_litio_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio_montecarlo/tritone_litio_montecarlo/range_tritone_litio_montecarlo.png}
-                        \caption{Range tritone}
-                        \label{fig:tritone_litio_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/litio_montecarlo/tritone_litio_montecarlo/ionization_tritone_litio_montecarlo.png}
-                        \caption{Ionization tritone}
-                        \label{fig:tritone_litio_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-
-                \item \textbf{Azoto}
-                \begin{table}[H]
-                    \centering
-                    \begin{tabular}{
-                        l | c | c |
-                    }
-                        \toprule
-                        & Dose cellula sorgente [\unit{\gray}] & Dose cellula limitrofa [\unit{\gray}] \\
-                        \midrule
-                        $Protone$ & \num{6.09e-2} & \num{4.10e-2} \\
-                        $Carbonio$ & \num{3.28e-3} & \num{1.60e-3} \\
-                        \bottomrule
-                    \end{tabular}
-                \end{table}
-                \begin{figure}[H]
-                    \centering
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_montecarlo/protone_azoto_montecarlo/range_protone_azoto_montecarlo.png}
-                        \caption{Range protone}
-                        \label{fig:protone_azoto_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_montecarlo/protone_azoto_montecarlo/ionization_protone_azoto_montecarlo.png}
-                        \caption{Ionization protone}
-                        \label{fig:protone_azoto_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}  
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_montecarlo/carbonio_azoto_montecarlo/range_carbonio_azoto_montecarlo.png}
-                        \caption{Range carbonio}
-                        \label{fig:carbonio_azoto_montecarlo_range}
-                    \end{subfigure}\hfill
-                    \begin{subfigure}{0.25\textwidth}
-                        \centering
-                        \includegraphics[width=\textwidth]{dati/azoto_montecarlo/carbonio_azoto_montecarlo/ionization_carbonio_azoto_montecarlo.png}
-                        \caption{Ionization carbonio}
-                        \label{fig:carbonio_azoto_montecarlo_ionization}
-                    \end{subfigure}\hfill
-                \end{figure}
-            \end{itemize}
+                        \includegraphics[width=\textwidth]{dati/boro_6_montecarlo/alfa_boro_6_montecarlo/ionization_alfa_boro_6_montecarlo.png}                        
+                    \end{subfigure}
+                    \caption{Esempi di plot restituiti da SRIM per Range e Ionization con simulazione Monte Carlo}
+            \end{figure}
+            
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{
+                    ll | c | c 
+                }
+                    \toprule
+                    & & Cellula sorgente & Cellula limitrofa \\
+                    \cmidrule{3-4}
+                    & & Dose [\unit{\gray}] & Dose [\unit{\gray}] \\
+                    \midrule
+                    \multirow{2}{*}{Boro 6\%} & $\alpha$ & \num{2.04e-1} & \num{1.28e-1} \\
+                    & $Litio$ & \num{1.32e-1} & \num{7.27e-2} \\
+                    \midrule
+                    \multirow{2}{*}{Boro 94\%} & $\alpha$ & \num{1.78e-1} & \num{1.08e-1} \\
+                    & $Litio$ & \num{1.14e-1} & \num{5.83e-2} \\
+                    \midrule
+                    \multirow{2}{*}{Litio} & $\alpha$ & \num{2.22e-1} & \num{1.49e-1} \\
+                    & $Tritone$ & \num{9.29e-2} & \num{7.86e-2} \\
+                    \midrule
+                    \multirow{2}{*}{Azoto} & $Protone$ & \num{6.09e-2} & \num{4.10e-2}\\
+                    & $Carbonio$ & \num{3.28e-3} & \num{1.60e-3} \\
+                    \bottomrule
+                \end{tabular}
+            \end{table}
     % -------------------------------------------------------------------
     \section{Conclusioni}
-    Da questi dati si può osservare che c'è una dipendenza del deposito di energia rispetto a dove avvengono i decadimenti. 
-    Se il decadimento avviene al centro della cellula o sulla sua superficie, i frammenti prodotti più pesanti (come gli ioni di litio e carbonio) depositano quasi interamente la loro energia all'interno del volume della cellula sorgente, rilasciando una dose nulla o trascurabile alla cellula limitrofa. 
-    Il modello con decadimenti casuali, generati con simulazione Montecarlo,  mostra invece una maggior dispersione dell'energia, con un conseguente aumento della dose assorbita dalle cellule limitrofe rispetto ai casi precedenti.
-    
+    Per simulare il decadimento in posizioni casuali all'interno della cellula sorgente si è realizzata una simulazione Monte Carlo con generazione di variabili casuali tramite \texttt{C++}; tali variabili sono poi state normalizzate e inserite manualmente in SRIM come coordinate di riferimento per ogni nucleo. 
+    Dai dati ottenuti si può osservare chiaramente la dipendenza del deposito di energia rispetto alla posizione in cui avvengono i decadimenti e al tipo di nucleo prodotto. 
+    Se il decadimento avviene al centro della cellula o sulla sua superficie, i frammenti prodotti più pesanti (come gli ioni di litio e carbonio) depositano quasi interamente la loro energia all'interno del volume della cellula sorgente, rilasciando una dose nulla o trascurabile alla cellula limitrofa. Al contrario nuclei più leggeri, quali tritone e protone, dimostrano maggior potere penetrante e riescono a rilasciare dose anche alla cellula limitrofa.
+    Il modello con simulazione Montecarlo mostra invece, come atteso, una maggior dispersione dell'energia con conseguente aumento della dose assorbita dalle cellule limitrofe rispetto ai casi precedenti.
+    Infine confrontandosi con i valori forniti si osserva un buon accordo dei dati sperimentali.
 \end{document}
