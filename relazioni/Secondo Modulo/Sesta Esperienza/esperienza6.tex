@@ -58,17 +58,55 @@ L'obiettivo dell'esperienza è studiare tecniche spettroscopiche mirate a conosc
     \item Tripletto di lenti per la focalizzazione.
     \item Reticolo diffrattivo 1D a $1000$ \unit{linee/mm}.
     \item Goniometro monocromatore a dispersione.
-    \item Fotodiodo in $Si$ polarizzato in inversa con carico $10/47$ \unit{kOhm}.
+    \item Fotodiodo in $Si$ polarizzato in inversa con carico $10/47$ \unit{k\Omega}.
     \item Laser di varie lunghezze d'onda: $635.9$\unit{nm}, $532$\unit{nm}, $449.1$\unit{nm}, $406.5$\unit{nm},
     \item Multimetro
     \item Campioni: vetro amorfo in $SiO_2$ spesso $1$\unit{mm}, $Si$ cristallino spesso $0.5$\unit{mm}, materiale incognito n°7.
 \end{itemize}
 
 \subsection{Procedura sperimentale}
+\begin{enumerate}
+    \item \textbf{Allineamento e Calibrazione}: L'intero apparato è stato allineato utilizzando le sorgenti laser, massimizzando l'intensità del segnale rivelato dal fotodiodo con il carico di $10$ \unit{k\Omega} in assenza del reticolo di diffrazione. Successivamente, a seguito dell'inserimento del reticolo nel sistema, si è verificata la calibrazione accertandosi che le lunghezze d'onda ricavate dalle letture del goniometro coincidessero con i valori nominali dei laser.
+    \item \textbf{Misure di Trasmittanza}: Nel setup è stata inserita la lampada alogena con la relativa lente di accoppiamento e, mantenendo la resistenza da $10$ \unit{k\Omega}, si è acquisito il primo spettro di baseline. In seguito il campione di vetro amorfo è stato interposto tra sorgente e reticolo di diffrazione per misurarne lo spettro di trasmittanza, normalizzato rispetto alla baseline ricavata in precedenza. Infine la medesima procedura è stata effettuata sul campione incognito.
+    \item \textbf{Misure di Riflettanza}: La resistenza di carico nel fotodiodo è stata sostituita con una da $47$ \unit{k\Omega}, così da amplificare il segnale rivelato, procedendo quindi alla misurazione di un secondo spettro di baseline. Dopodiché il sistema è stato portato in configurazione di riflessione per acquisisre gli spettri di Riflettanza del campione di silicio e, in seguito, del campione incognito.     
+\end{enumerate}
 
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{configurazione_trasmissione.png}
+         \caption{Confiugurazione di trasmissione.}
+         \label{fig:1a}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{configurazione_riflessione.png}
+         \caption{Configurazione di riflessione.}
+         \label{fig:1b}
+     \end{subfigure}
+\end{figure}
 % -------------------------------------------------------------------
 \section{Dati sperimentali e Analisi}
-\subsection{Trasmittanza e Riflettanza}
+\subsection{Spettri}
+\subsubsection{Baseline}
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Dati_Baseline 10 kΩ.png}
+         \label{fig:2a}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Dati_Baseline 47 kΩ.png}
+         \label{fig:2b}
+     \end{subfigure}
+\end{figure}
+
+\subsubsection{Vetro amorfo}
+\subsubsection{Silicio}
 \subsection{Dispersione indice di rifrazione}
 \subsection{Materiale Incognito}
 % -------------------------------------------------------------------
