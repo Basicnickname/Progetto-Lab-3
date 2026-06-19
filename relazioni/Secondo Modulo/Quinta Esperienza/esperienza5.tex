@@ -28,7 +28,7 @@
 \usepackage{subcaption}
 
 % --- Dati Intestazione ---
-\title{\textbf{Relazione 5}}
+\title{\textbf{Risposta dielettrica in radiazione polarizzata a singola lunghezza d'onda}}
 \author{Filippo Audisio, Cataldo Insalaco, Telemaco Pezzoni}
 \date{\today}
 
@@ -39,121 +39,122 @@
     % -------------------------------------------------------------------
     \section{Obiettivo dell'esperienza}
     
-    L'obbiettivo di questa esperienza è determinare l’andamento angolare di valori $T_s$, $T_p$, $R_s$, $R_p$, per $SiO_2$ e Si a lunghezza d’onda prescelta.
-    Determinare inoltre il valore dell’ angolo di Brewster per i materiali ideali e trasparenti, o l'angolo di pseudo Brewster per materiali caratterizzati da assorbimento non nullo.
-    Determinare l'indice di rifrazione dei vari materiali,e valutare il grado di polarizzazione.
-        
-
+    L'obbiettivo di questa esperienza consiste nella misura, per materiali di tipologie differenti, della risposta dielettrica in riflessione e trasmissione a lunghezza d'onda prescelta con luce polarizzata. Nello specifico si vuole:
+    \begin{itemize}
+        \item Determinare l'andamento angolare di $T_s$ e $T_p$ per $SiO_2$, $R_s$ e $R_p$ per $SiO_2$ e $Si$; poi trovare il valore dell'angolo di Brewster per entrambi i materiali
+        \item Stimare il valore dell'indice di rifrazione per entrambi i materiali ed il grado di polarizzazione in $R$
+    \end{itemize}
     % -------------------------------------------------------------------
     \section{Materiali e Metodi}
 
-      \begin{itemize}
-    \item  Sorgente a banda spettrale limitata nel visibile , LED a $\lambda$ picco predeterminate, 1kHz in onda quadra.
-    \item  Lente accoppiate a LED, tripletto di lenti Thorlabs per focalizzazione.
-    \item  polarizzatore lineare Thorlabs LPVISE2X2, banda 400-700 nm
-    \item goniometro $\theta$ – 2$\theta$ solidale al banco, differenti portacampioni.
-    \item Rivelatore fotodiodo in Si polarizzato in inversa, carico 10 kOhm.
-     \item tester digitale
- \end{itemize}
+    \begin{itemize}
+    \item LED verde, alimentato in onda quadra a $1$\unit{kHz}
+    \item Lente accoppiata al LED
+    \item Tripletto di lenti per focalizzazione.
+    \item Polarizzatore lineare Thorlabs LPVISE2X2, banda $400-700$\unit{nm}
+    \item Goniometro $\theta$-$2\theta$ solidale al banco di lavoro
+    \item Portacampioni.
+    \item Fotodiodo in Si polarizzato in inversa, con carico di $10/47$ \unit{k\Omega}
+    \item Multimetro
+    \item Campioni: vetro amorfo in $SiO_2$ spesso $1$\unit{mm}, $Si$ cristallino spesso $0.5$\unit{mm}
+    \item Generatore di funzioni
+    \end{itemize}
  
- \subsection{Procedura sperimentale}
- Regolare alimentazione LED:  circa 6 (verde) – 5(giallo) V con 20 mA.
-  Bisogna allineare in aria la sorgente (LED), il tripletto di lenti Thorlabs per la focalizzazione e il rivelatore.
-   È necessario regolare con precisione l'altezza del fascio, la focalizzazione e le distanze tra i vari componenti.
-   Solo dopo un perfetto allineamento si può misurare correttamente l'intensità iniziale $I_0$, $I_0s$, $I_0p$.
-   Una volta misurate, per le misure in trasmissione, si procede a ruotare il campione di 5° alla volta, annotando le correnti corrispondenti.
-   Sarà fondamentale la presenza del polarizzatore  per selezionare lo stato di polarizzazione della radiazione che colpisce il materiale.
-. Ruotandolo, puoi decidere se far incidere luce con polarizzazione s o p .
-   Per le misure in riflessione, si allinea il rivelatore all'angolo 2$\theta$ (tipicamente partendo da piccoli angoli come 10-15°) e si agisce sul posizionamento del campione a circa $\theta$, e poi spostato in un intorno, per massimizzare il segnale riflesso.
-   Ruotando di volta in volta rivelatore e campione, si prende poi nota delle correnti corrispondenti ai vari angoli.
-Con lo stesso set-up della riflessione si ripetono infine le misue usando come campione il Silicio.
+\subsection{Procedura sperimentale}
+Per prima cosa si alimenta il LED verde collegandolo al generatore di funzioni con un'onda quadra a $1$\unit{kHz}. Dopodiché si passa all'allineamento del sistema, variando la posizione delle varie componenti fino a massimizzare il segnale rivelato in aria, per poi inserire il polarizzatore a $0$\unit{deg} $90$\unit{deg} così da misurare le intensità iniziali $I_0^s$ e $I_0^p$.
+Una volta inserito il campione di vetro si effettuano le misure in trasmisisone, ruotando progressivamente di $5$\unit{deg} il campione e normalizzando i valori rivelati all'intensità misurata inizialmente; il procedimento viene ripetuto per polarizzazione s e p.
+In seguito si passa in configurazione di riflessione, allineando con il braccio più lungo il rivelatore all'angolo 2$\theta$ e si agisce sul posizionamento del campione ruotandolo in un intorno di $\theta$ fino a massimizzare il segnale riflesso; anche in questo caso la misura viene ripetuta per entrambe le tipologie di polarizzazione.
+Infine nella stessa configurazione si acquisiscono le misure in riflessione del campione di $Si$.
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{configurazione_trasmissione.png}
+         \subcaption{Configurazione di trasmissione.}
+         \label{fig:1a}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{configurazione_riflessione.png}
+         \subcaption{Configurazione di riflessione.}
+         \label{fig:1b}
+     \end{subfigure}
+\end{figure}
 
 \section{Dati sperimentali e Analisi}
-
-Dai dati misuratisi è poi svolto un fit su colab in cui sono stati ricavati i valori di A, n, $\theta_0$.
-Nel modello del fit bisogna stare attenti al Silicio, che richiede un indice di rifrazione complesso, a differenza dei mezzi trasparenti, il $\tilde{n} = n + ik$.
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni per $Si0_2$.}
-\label{tab:dati_fit_esatti}
-\smallskip
-\begin{tabular}{ll S[table-format=1.4e-1] S[table-format=1.4e-1] S[table-format=3.2]}
-\toprule
-\textbf{Dataset} & \textbf{Parametro} & {\textbf{Valore Ottimale}} & {\textbf{Errore Standard}} & {\textbf{$\varepsilon_r$ (\%)}} \\
-\midrule
-\textbf{$T_p$}  
-    & $A$          & 9.95e-1  & 5.86e-3 & 0.59 \\
-    & $\theta_0$  & 3.51   & 2.86e-1   & 8.15 \\
-    & $n$          & 1.72   & 3.16e-2  & 1.84 \\
-\midrule
-\textbf{$T_s$}  
-    & $A$          & 1.01   & 2.19e-2  & 2.17 \\
-    & $\theta_0$  & 2.66   & 8.35e-1   & 31.45 \\
-    & $n$          & 1.55   & 6.37e-2  & 4.10 \\
-\midrule
-\textbf{$R_p$}  
-    & $A$          & 9.82e-1  & 4.93e-2  & 5.02 \\
-    & $n$          & 1.57   & 4.36e-2  & 2.77 \\
-\midrule
-\textbf{$R_s$}  
-    & $A$          & 1.28   & 7.34e-2  & 5.74 \\
-    & $n$          & 1.52   & 3.67e-2  & 2.42 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{Valori ottimali di fit, errori standard assoluti e corrispondenti errori relativi percentuali ($\varepsilon_r$) estratti dai risultati delle ottimizzazioni, per $Si$}
-\label{tab:dati_fit_esatti}
-\smallskip
-\begin{tabular}{ll S[table-format=1.4e-1] S[table-format=1.4e-1] S[table-format=3.2]}
-\toprule
-\textbf{Dataset} & \textbf{Parametro} & {\textbf{Valore Ottimale}} & {\textbf{Errore Standard}} & {\textbf{$\varepsilon_r$ (\%)}} \\
-
-\midrule
-\textbf{$R_p$ Si}  
-    & $A$          & 8.09e-1  & 3.14e-1   & 38.83 \\
-    & $\theta_0$  & 4.18   & 4.42    & 105.66 \\
-    & $n$          & 3.09   & 1.00    & 32.51 \\
-    & $k$          & 8.51e-1  & 3.12e-1   & 36.71 \\
-\midrule
-\textbf{$R_s$ Si}  
-    & $A$          & 1.39  & 6.20e-1  & 4.44 \\
-    & $\theta_0$  & 24.51   & 5.26e-1   & 2.15 \\
-    & $n$          & 5.69e-1  & 1.78e-2  & 3.13 \\
-    & $k$          & 3.62e-1  & 1.68e-2  & 4.63 \\
-\bottomrule
-\end{tabular}
-\end{table}
+\subsection{Distribuzione angolare}
+Sugli dati acquisiti è stato eseguito un fit sfruttando le formule dei coefficienti di Fresnel.
 
 \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.7\textwidth]{Combinato_Trasmittanza_Vetro_T_p_e_T_s.png}
-                \caption{Grafico $T_s$ e $T_p$}
-            \end{figure}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.7\textwidth]{Combinato_Riflettanza_Vetro_R_p_e_R_s.png}
-                \caption{Grafico $R_s$ e $R_p$}
-            \end{figure}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.7\textwidth]{Combinato_Riflettanza_Silicio_R_p_e_R_s.png}
-                \caption{Grafico $R_s$ e $R_p$ con silicio}
-            \end{figure}
+    \includegraphics[width=\textwidth]{Combinato_Vetro_T_p_e_T_s.png}
+    \caption{Trasmittività Vetro in polarizzazione $\pi$ e $\sigma$}
+\end{figure}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Combinato_Vetro_R_p_e_R_s.png}
+    \caption{Riflettività Vetro in polarizzazione $\pi$ e $\sigma$}
+\end{figure}
 
-            \section{Conclusioni}
-            I fit effettuati sui dati di trasmissione, hanno stimato un indice di rifrazione pari a $n \approx 1.719 \pm 0.031$ (polarizzazione parallela) e $n \approx 1.554 \pm 0.063$ (polarizzazione perpendicolare). 
-            i due valori siano statisticamente compatibili entro le incertezze, la discrepanza quantitativa suggerisce la presenza di lievi effetti sistematici legati alla stabilità del LED o alla calibrazione angolare del goniometro.
-            Nei dati di riflessione ($R_p$), la netta discesa del segnale verso un minimo prossimo allo zero in corrispondenza dell'angolo di Brewster ($\theta_B \approx 56^\circ$) ha fornito una prova della polarizzazione totale per riflessione.
-            Per il silicio dall'analisi della polarizzazione parallela ( $R_p$ ), si nota che il minimo della curva di riflessione non si annulla mai completamente, e questo comportamento convalida la necessità di ricorrere a un indice di rifrazione complesso $\tilde{n} = n + ik$, con n e k ricavati dal fit.
-            
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Combinato_Silicio_R_p_e_R_s.png}
+    \caption{Riflettività Silicio in polarizzazione $\pi$ e $\sigma$}
+\end{figure}
 
-            
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l
+        l
+    }
+        \toprule
+        Campione & $\theta_B$ \\
+        \midrule
+        $SiO_2$ & $\sim 57$\unit{\degree} \\
+        $Si$ & $\sim 76$\unit{\degree} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Angoli di Brewster ricavati dalle distribuzioni angolari}
+\end{table}
 
+\subsection{Indice di rifrazione e grado di polarizzazione}
+Per ciascun materiale il grado di polarizzazione è stato calcolato sfruttando la formula:
+\begin{equation}
+    P = \frac{R_s-R_p}{R_s+R_p}
+\end{equation}
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Dati_P vetro.png}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Dati_P silicio.png}
+     \end{subfigure}
+\end{figure}
+
+Per quanto riguarda gli indici di rifrazione invece, sono stati restituiti come parametri dalla procedura di best-fit eseguita sulle distribuzioni angolari:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l
+        l
+    }
+        \toprule
+        Campione & $n_{(525nm)}$ \\
+        \midrule
+        $SiO_2$ & $1.54\pm0.05$ \\
+        $Si$ & $3.08\pm1.01$\\
+        \bottomrule
+    \end{tabular}
+    \caption{Indici di rifrazioni ricavati tramite fit}
+\end{table}
+
+\section{Conclusioni}
+Le distribuzioni angolari misurate seguono l'andamento teorico previsto. Per entrambi i materiali è nettamente visibile l'effetto dell'angolo di Brewster, il quale evidenzia la differente risposta ottica tra un mezzo trasmissivo, come $SiO_2$, ed uno riflettente/assorbente, come $Si$.
+La misura di $\theta_B$ risulta in buon accordo con il valore atteso; inoltre, sfruttando la relazione $tan(\theta_B) = n(\lambda)$ si conferma la coerenza tra la stima qualitativa e i risultati ottenuti tramite la procedura di best-fit.
+Per quanto concerne il grado di polarizzazione si osserva come il picco coincida con l'angolo di Brewster. Tuttavia, nel caso del silicio si registrano inizialmente valori negativi: ciò è verosimilmente imputabile alla difficoltà sperimentale di mantenere il campione perfettamente ortogonale rispetto al banco di lavoro.
+Infine l'elevato errore relativo nella stima di $n(\lambda)$ per il silicio è probabilmente da attribuirsi alla difficoltà di eseguire il fit in presenza di una componente immaginaria dell'indice di rifrazione non nulla.
 \end{document}
