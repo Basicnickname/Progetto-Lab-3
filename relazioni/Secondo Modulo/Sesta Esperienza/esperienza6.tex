@@ -44,7 +44,7 @@
 L'obiettivo dell'esperienza è studiare tecniche spettroscopiche mirate a conoscere la risposta elettromagnetica di materiali massivi su ampio intervallo spettrale, così da poter determinare la loro relazione di dispersione. In particolare si vuole:
 \begin{itemize}
     \item Determinare lo spettro di Trasmittanza di vetro amorfo in $SiO_2$ e di Riflettanza di $Si$ cristallino.
-    \item Stimare la dispersione dell'indice di rifrazione per i due materiali nell'intervallo spettrale considerato.
+    \item Stimare la dispersione dell'indice di rifrazione per il silicio cristallino.
     \item Determinare gli spettri di Trasmittanza e Riflettanza per un materiale incognito.
 \end{itemize}
 
@@ -76,13 +76,13 @@ L'obiettivo dell'esperienza è studiare tecniche spettroscopiche mirate a conosc
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{configurazione_trasmissione.png}
-         \caption{Confiugurazione di trasmissione.}
+         \subcaption{Confiugurazione di trasmissione.}
          \label{fig:1a}
      \end{subfigure}
      \begin{subfigure}[b]{0.45\textwidth}
          \centering
          \includegraphics[width=\textwidth]{configurazione_riflessione.png}
-         \caption{Configurazione di riflessione.}
+         \subcaption{Configurazione di riflessione.}
          \label{fig:1b}
      \end{subfigure}
 \end{figure}
@@ -106,9 +106,66 @@ L'obiettivo dell'esperienza è studiare tecniche spettroscopiche mirate a conosc
 \end{figure}
 
 \subsubsection{Vetro amorfo}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Confronto_T vetro.png}
+    \caption{Spettro di trasmittanza del vetro amorfo confrontato con il riferimento.}
+\end{figure}
+
 \subsubsection{Silicio}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Confronto_R silicio.png}
+    \caption{Spettro di riflettanza del silicio confrontato con il riferimento.}
+\end{figure}
+
 \subsection{Dispersione indice di rifrazione}
+Dai dati di riflettanza del silico cristallino si ricava l'indice di rifrazione corrispondente a ciascuna lunghezza d'onda sfruttando la relazione:
+\begin{equation}
+    n = \frac{1+\sqrt{R}}{1-\sqrt{R}}
+\end{equation}
+Dopodiché i valori ottenuti sono stati fittati con il modello di Cauchy:
+\begin{equation}
+    n(\lambda) = A + \frac{B}{\lambda^2} + \frac{C}{\lambda^4}
+\end{equation}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{Fit_Cauchy_n.png}
+    \caption{Dispersione dell'indice di rifrazione del Silicio con fit di Cauchy.}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        l
+        S[table-format=-2.4e2]  
+        S[table-format=2.4e2]
+    }
+        \toprule
+        {Parametro} & {Valore} & {$\sigma$} \\
+        \midrule
+        $A$ & 3.06 & 0.05 \\
+        $B$ [\unit{\mu m^2}] & -1.46e-1 & 0.31e-1 \\
+        $C$ [\unit{\mu m^4}] & 4.68e-2 & 0.39e-2 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:Calibrazione}
+\end{table}
+
 \subsection{Materiale Incognito}
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Confronto_T campione.png}
+         \subcaption{Spettro di trasmittanza campione n°7}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{Confronto_R campione.png}
+         \subcaption{Spettro di riflettanza campione n°7}
+     \end{subfigure}
+\end{figure}
 % -------------------------------------------------------------------
 \section{Conclusioni}
+Gli spettri acquisiti per il vetro amorfo ed il silicio cristallino mostrano un buon accordo con i dati di riferimento ed il comportamento teorico atteso. Tuttavia, nel caso del silicio si osserva un offset sistematico rispetto allo spettro di riferimento. Tale scostamento è probabilmente dovuto ad un lieve disallineamento nell'apparato a causa dell'inclinazione della lastra rispetto al piano del supporto, cosa che ha comportato una parziale attenuazione dell'intensità del segnale.
+Invece analizzando la curva di dispersione dell'indice di rifrazione, si osserva come l'andamento sia accuratamente descritto dal modello di Cauchy.
+Infine, le misurazioni sul campione incognito mostrano profili coerenti con le curvature di riferimento, evidenziando soprattutto il medesimo effetto filtrante. Anche in questo caso però si rileva un offset nella riflettanza, riconducibile con molta probabilità alla stessa difficoltà di posizionamento del campione nel suo supporto.
 \end{document}
