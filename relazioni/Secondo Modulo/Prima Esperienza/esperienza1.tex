@@ -34,39 +34,36 @@
 
     % -------------------------------------------------------------------
     \section{Obiettivo dell'esperienza}
-        L'obiettivo di questa esperienza è inizialmente quello di studiare come le diverse particelle depositano energia nei tessuti.
-        Successivamente si applica lo studio a un caso clinico.
-
+        L'obiettivo di questa esperienza è studiare come le diverse particelle depositano energia nei tessuti, simulando anche un caso clinico.
     % -------------------------------------------------------------------
     \section{Materiali e Metodi}
 
         \subsection{Strumentazione utilizzata}
-            L'unica strumentazione usata è il software MatRad per simulare e studiare i vari eventi.
+            L'unica strumentazione utilizzata è il software MatRad per simulare e studiare i vari eventi.
 
         \subsection{Procedura sperimentale}
-            Inizialmente, usando come corpo un manichino composto solo da un corpo al cui interno è presente il target e l'organo a rischio.
+            Inizialmente si usa il modello TG119, un manichino composto solo da un corpo al cui interno è presente il target e l'organo a rischio.
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.33\textwidth]{images/TG119.png}
             \end{figure}
-            Abbiamo quindi simulato diverse particelle incidenti fotoni, protoni e ioni carbonio e studiato come queste depositano energia nel manichino.
-            Successivamente abbiamo studiato l'effetto delle particelle cambiando il numero di fasci incidenti impostandoli prima equistanziati (su 360°) e poi non equistanziati.
-            In seguito abbiamo agito sulla risoluzione in larghezza del fascio incidente: nel caso dei 4 fasci di protoni abbiamo modificato la bixel width, impostandola dai 5 mm usati in precedentza a 15 mm.
-            Infine nel caso di 3 fasci di protoni abbiamo invertito l'organo a rischio con il target e osservato la risposta di matrad.
-            Per la seconda parte si è studiato un caso clinico: si è caricato il file Alderson che raffigura un tumore del testa collo. 
+            Sono state quindi simulate diverse particelle incidenti: fotoni, protoni e ioni carbonio; osservando come esse depositino energia nel manichino.
+            L'effetto è stato studiato variando il numero di fasci incidenti: impostandoli prima equistanziati (su 360°) e poi non equistanziati.
+            In seguito si è modificata la risoluzione in larghezza del fascio incidente: cambiando la bixel width nel caso dei 4 fasci di protoni, impostandola dai 5 mm usati in precedenza a 15 mm.
+            Infine nel caso di 3 fasci di protoni è stato invertito l'organo a rischio con il target per verificare come variasse la simulazione.
+            
+            Per la seconda parte si è invece affrontato un caso clinico: ossia il modello Alderson, il quale rappresenta un tumore del testa collo. 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.33\textwidth]{images/Alderson.png}
             \end{figure}
-            Si è studiato un piano di cura per fotoni, protoni e ioni carbonio, facendo costruire a MatRad le curve di isodose e il profilo dei fasci.
-            Infine abbiamo studiato il caso in cui ci fosse un malposizionamento del paziente: abbiamo inserito a mano delle coordinate diverse per l'isocentro e abbiamo confrontato i dati ottenuti con quelli ricavati precedentemente.
+            Si è studiato un piano di trattamento con fotoni, protoni e ioni carbonio, facendo costruire a MatRad le curve di isodose e il profilo dei fasci.
+            Infine si è studiato un possibile malposizionamento del paziente: inserendo manualmente coordinate diverse per l'isocentro e confrontando i dati ottenuti con quelli ricavati precedentemente.
 
     % -------------------------------------------------------------------
     \section{Dati sperimentali}
-        \subsection{Un fascio di particelle}
-            \begin{itemize}
-                \item \textbf{Fotoni}
-                % Fotoni 1
+        \subsection{1 fascio}
+            \subsubsection{Fotoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/photons/photons_1_intensity.png}
@@ -96,8 +93,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
-                    \label{tab:dati_prima_misura_fotoni}
                     \begin{tabular}{
                         l | c | c | c | c | c |
                     }
@@ -109,9 +104,11 @@
                     Body & 0.1345 & 0.3941 & 2.4321 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                    \label{tab:dati_prima_misura_fotoni}
                 \end{table}
 
-                \item \textbf{Protoni}
+            \subsubsection{Protoni}
                 % Protoni 1
                 \begin{figure}[H]
                     \centering
@@ -141,9 +138,7 @@
                     \label{fig:protoni_1_DVH_graph}
                 \end{figure}
                 \begin{table}[H]
-                    \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
-                    \label{tab:dati_prima_misura_protoni}
+                    \centering                    
                     \begin{tabular}{
                         l | c | c | c | c | c |
                     }
@@ -155,9 +150,11 @@
                     Body & 0.0699 & 0.2823 & 1.7222 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                    \label{tab:dati_prima_misura_protoni}
                 \end{table}
 
-                \item \textbf{Ioni carbonio}
+            \subsubsection{Ioni carbonio}
                 % Carbonio 1
                 \begin{figure}[H]
                     \centering
@@ -188,7 +185,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_prima_misura_carbonio}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -201,14 +197,283 @@
                     Body & 0.0540 & 0.2399 & 1.6824 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
-                \end{table}
-            \end{itemize}
-            
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}            
 
-        \subsection{Quattro fasci di particelle equistanziati}
-            \begin{itemize}
-                \item \textbf{Fotoni}
-                 % Fotoni 4
+        \subsection{3 fasci equistanziati}
+            \subsubsection{Fotoni}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/photons/photons_3_eq_intensity.png}
+                    \caption{Intensità fasci fotoni}
+                    \label{fig:sub_fotoni_3}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/photons/photons_3_eq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_fotoni_3_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/photons/photons_3_eq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_fotoni_3_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili dei 3 fasci di fotoni}
+                    \label{fig:fotoni_3_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/photons/photons_3_eq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:fotoni_3_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_seconda_misura_fotoni}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.8125 & 0.2108 & 1.0809 & 0.1559 & 0.1959 \\
+                    Outer target & 1.6336 & 0.1081 & 1.8678 & 1.1082 & 1.3748 \\
+                    Body & 0.1752 & 0.3610 & 1.8678 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}
+
+            \subsubsection{Protoni}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/protons/protons_3_eq_intensity.png}
+                    \caption{Intensità fasci protoni}
+                    \label{fig:sub_protoni_3}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/protons/protons_3_eq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_protoni_3_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/protons/protons_3_eq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_protoni_3_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili dei 3 fasci di protoni}
+                    \label{fig:protoni_3_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/protons/protons_3_eq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:protoni_3_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_seconda_misura_protoni}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.5870 & 0.1782 & 1.1021 & 0.0866 & 0.1855 \\
+                    Outer target & 1.6439 & 0.0473 & 1.7074 & 1.3896 & 1.5096 \\
+                    Body & 0.0978 & 0.2739 & 1.7074 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}
+
+            \subsubsection{Ioni carbonio}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/carbon/carbon_3_eq_intensity.png}
+                    \caption{Intensità ioni carbonio}
+                    \label{fig:sub_carbonio_3}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/carbon/carbon_3_eq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_carbonio_3_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/carbon/carbon_3_eq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_carbonio_3_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili dei 3 fasci di ioni carbonio}
+                    \label{fig:carbonio_3_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/carbon/carbon_3_eq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:carbon_3_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_seconda_misura_carbonio}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.4739 & 0.1862 & 1.0310 & 0.0106 & 0.0192 \\
+                    Outer target & 1.6178 & 0.0931 & 1.6709 & 1.0026 & 1.3515 \\
+                    Body & 0.0680 & 0.2275 & 1.6709 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}
+
+        \subsection{3 fasci non equistanziati}
+            \subsubsection{Fotoni}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/photons/photons_3_noeq_intensity.png}
+                    \caption{Fotoni}
+                    \label{fig:sub_fotoni_3_no}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/photons/photons_3_noeq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_fotoni_3_no_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/photons/photons_3_noeq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_fotoni_3_no_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili del fascio di fotoni}
+                    \label{fig:fotoni_3_no_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/photons/photons_3_noeq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:fotoni_3_no_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_terza_misura_fotoni}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.7662 & 0.1934 & 1.0888 & 0.1399 & 0.2233 \\
+                    Outer target & 1.6319 & 0.0992 & 2.1217 & 1.0596 & 1.3570 \\
+                    Body & 0.1333 & 0.3409 & 2.6132 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}
+
+            \subsubsection{Protoni}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/protons/protons_3_noeq_intensity.png}
+                    \caption{Protoni}
+                    \label{fig:sub_protoni_3_no}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/protons/protons_3_noeq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_protoni_3_no_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/protons/protons_3_noeq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_protoni_3_no_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili del fascio di protoni}
+                    \label{fig:protoni_3_no_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/protons/protons_3_noeq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:protoni_3_no_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_terza_misura_protoni}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.5321 & 0.2052 & 1.0866 & 0.0389 & 0.1428 \\
+                    Outer target & 1.6488 & 0.0399 & 1.7192 & 1.4143 & 1.5162 \\
+                    Body & 0.0825 & 0.2769 & 1.7192 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}
+
+            \subsubsection{Ioni carbonio}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/carbon/carbon_3_noeq_intensity.png}
+                    \caption{Ioni carbonio}
+                    \label{fig:carbonio_3_no}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/carbon/carbon_3_noeq_depth.png}
+                        \caption{Profilo depth}
+                        \label{fig:sub_carbonio_3_no_profile_depth}
+                    \end{subfigure}\hfill
+                    \begin{subfigure}{0.5\textwidth}
+                        \includegraphics[width=\textwidth]{images/carbon/carbon_3_noeq_lateral.png}
+                        \caption{Profilo lateral}
+                        \label{fig:sub_carbonio_3_no_profile_lateral}
+                    \end{subfigure}\hfill
+                    \caption{Profili del fascio di ioni carbonio}
+                    \label{fig:carbonio_3_no_profiles}
+                \end{figure}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/carbon/carbon_3_noeq_DVH_graph.png}
+                    \caption{Grafico DVH}
+                    \label{fig:carbon_3_no_DVH_graph}
+                \end{figure}
+                \begin{table}[H]
+                    \centering
+                    \label{tab:dati_terza_misura_carbonio}
+                    \begin{tabular}{
+                        l | c | c | c | c | c |
+                    }
+                    \toprule
+                    & Mean & Std & Max & Min & D$_{98}$ \\
+                    \midrule
+                    Core & 0.3058 & 0.1933 & 1.0074 & 0.0048 & 0.0208 \\
+                    Outer target & 1.6241 & 0.0829 & 1.6765 & 1.1136 & 1.3803 \\
+                    Body & 0.0570 & 0.2281 & 1.6765 & 0 & 0 \\
+                    \bottomrule
+                    \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
+                \end{table}     
+
+        \subsection{4 fasci equistanziati}
+            \subsubsection{Fotoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/photons/photons_4_eq_intensity.png}
@@ -238,7 +503,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_seconda_misura_fotoni}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -251,10 +515,10 @@
                     Body & 0.1484 & 0.3877 & 2.7772 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}
 
-                \item \textbf{Protoni}
-                % Protoni
+            \subsubsection{Protoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/protons/protons_4_eq_intensity.png}
@@ -284,7 +548,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_seconda_misura_protoni}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -297,10 +560,10 @@
                     Body & 0.0945 & 0.2613 & 1.7064 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}
 
-                \item \textbf{Ioni carbonio}
-                % Carbonio 4
+            \subsubsection{Ioni carbonio}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/carbon/carbon_4_eq_intensity.png}
@@ -330,7 +593,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_seconda_misura_carbonio}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -343,13 +605,11 @@
                     Body & 0.0667 & 0.2251 & 1.6707 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}
-            \end{itemize}
            
-        \subsection{Quattro fasci di particelle non equistanziati}
-            \begin{itemize}
-                \item \textbf{Fotoni}
-                % Fotoni 4 no
+        \subsection{4 fasci non equistanziati}
+            \subsubsection{Fotoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/photons/photons_4_noeq_intensity.png}
@@ -379,7 +639,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_terza_misura_fotoni}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -392,10 +651,10 @@
                     Body & 0.1314 & 0.3462 & 2.3044 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}
 
-                \item \textbf{Protoni}
-                % Protoni 4 no
+            \subsubsection{Protoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/protons/protons_4_noeq_intensity.png}
@@ -425,7 +684,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_terza_misura_protoni}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -438,10 +696,10 @@
                     Body & 0.0800 & 0.2732 & 1.7160 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}
 
-                \item \textbf{Ioni carbonio}
-                % Carbonio 4 no
+            \subsubsection{Ioni carbonio}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/carbon/carbon_4_noeq_intensity.png}
@@ -471,7 +729,6 @@
                 \end{figure}
                 \begin{table}[H]
                     \centering
-                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \label{tab:dati_terza_misura_carbonio}
                     \begin{tabular}{
                         l | c | c | c | c | c |
@@ -484,10 +741,10 @@
                     Body & 0.0571 & 0.2278 & 1.6749 & 0 & 0 \\
                     \bottomrule
                     \end{tabular}
+                    \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \end{table}     
-            \end{itemize}
             
-        \subsection{Confronto quattro fasci di protoni con diversa bixel width}
+        \subsection{4 fasci equistanziati di protoni con diversa bixel width}
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.6\textwidth]{images/protons/protons_4_eq_15bixel_intensity.png}
@@ -518,7 +775,6 @@
             \end{figure}
             \begin{table}[H]
                 \centering
-                \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \label{tab:dati_quarta_misura}
                 \begin{tabular}{
                     l | c | c | c | c | c |
@@ -531,9 +787,10 @@
                     Body & 0.0788 & 0.2609 & 2.0113 & 0 & 0 \\
                     \bottomrule
                 \end{tabular}
+                \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
             \end{table}
 
-        \subsection{Confronto tre fasci di protoni con scambio OAR-target}
+        \subsection{3 fasci di protoni non equistanziati con scambio OAR-target}
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.6\textwidth]{images/protons/protons_3_noeq_inverted_intensity.png}
@@ -564,7 +821,6 @@
             \end{figure}
             \begin{table}[H]
                 \centering
-                \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                 \label{tab:dati_quinta_misura}
                 \begin{tabular}{
                     l | c | c | c | c | c |
@@ -577,13 +833,11 @@
                     Body & 0.0659 & 0.2635 & 4.6558 & 0 & 0 \\
                     \bottomrule
                 \end{tabular}
+                \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
             \end{table}
 
-
         \subsection{Caso clinico}
-            \begin{itemize}
-                \item \textbf{Fotoni}
-                % Fotoni best
+            \subsubsection{Fotoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/photons/photons_best_intensity.png}
@@ -613,7 +867,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_caso_clinico_fotoni}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -637,10 +890,10 @@
                             PVT & 1.9212 & 0.1942 & 2.1613 & 0.7805 & 1.1955 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}
 
-                \item \textbf{Protoni}
-                % Protoni best
+            \subsubsection{Protoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/protons/protons_best_intensity.png}
@@ -670,7 +923,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_caso_clinico_protoni}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -694,10 +946,10 @@
                             PVT & 1.9388 & 0.1401 & 2.1310 & 1.0040 & 1.4717 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}
 
-                \item \textbf{Ioni carbonio}
-                % Carbonio 4 no
+            \subsubsection{Ioni carbonio}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/carbon/carbon_best_intensity.png}
@@ -727,7 +979,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_caso_clinico_carbon}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -751,14 +1002,11 @@
                             PVT & 1.9161 & 0.1741 & 2.0792 & 0.6965 & 1.3260 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}    
-            \end{itemize}
-
 
         \subsection{Caso clinico con malposizionamento paziente}
-                \begin{itemize}
-                \item \textbf{Fotoni}
-                % Fotoni worst
+            \subsubsection{Fotoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/photons/photons_worst_intensity.png}
@@ -788,7 +1036,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_malposizionamento_fotoni}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -812,10 +1059,10 @@
                             PVT & 1.6196 & 0.4000 & 2.2944 & 0.3933 & 0.7143 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}
 
-                \item \textbf{Protoni}
-                % Protoni worst
+            \subsubsection{Protoni}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/protons/protons_worst_intensity.png}
@@ -845,7 +1092,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_malposizionamento_protoni}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -869,10 +1115,10 @@
                             PVT & 1.7917 & 0.2135 & 2.2591 & 0.6916 & 1.1898 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}
 
-                \item \textbf{Ioni carbonio}
-                % Carbonio worst
+            \subsubsection{Ioni carbonio}
                 \begin{figure}[H]
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/carbon/carbon_worst_intensity.png}
@@ -902,7 +1148,6 @@
                 \end{figure}
                 \begin{table}[H]
                         \centering
-                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                         \label{tab:dati_malposizionamento_carbon}
                         \begin{tabular}{
                             l | c | c | c | c | c |
@@ -926,24 +1171,23 @@
                             PVT & 1.7105 & 0.2511 & 2.4362 & 0.4835 & 1.0684 \\
                             \bottomrule
                         \end{tabular}
+                        \caption{Dati ottenuti dalle curve di isodose (unità di misura della tabella [\unit{\gray}])}
                     \end{table}    
-            \end{itemize}
 
     % -------------------------------------------------------------------
     \section{Conclusioni}
-        Si osserva che c'è una differenza nel deposito di energia tra fotoni e protoni e ioni carbonio. 
+        Si osserva la differenza nel deposito di energia tra fotoni, protoni e ioni carbonio. 
         I fotoni, quando entrano nei tessuti, depositano energia con una decrescita esponenziale.
         I protoni e gli ioni carbonio invece depositano energia in maniera più mirata.
         Questo è dovuto ai diversi metodi di interazione delle particelle con la materia: i fotoni interagiscono solo tramite effetto compton, effetto fotoelettrico e creazione di coppie, mentre protoni e ioni carbonio depositano energia seguendo la formula di Bethe-Block.
         Una differenza tra protoni e ioni carbonio è il fatto che gli ioni carbonio una volta che depositano buona parte della loro energia si dividono nelle loro componenti elementari che continuano a ionizzare i tessuti.
-        Aumentando il numero di fasci si riesce a fare in modo che i fasci liberino energia maggiormente nel target e meno nell'organo a rischio.
-        Inoltre si può osservare come il caso con i fasci non equistanziati sia leggermente migliore rispetto a quello non equistanziato, perchè i fasci non attraversano direttamente l'organo a rischio, ma sono tutti concentrati in direzione del target.
-        % Aggiungere parte bixel width
-        Scambiando organo a rischio e target si osserva come matrad ottimizzi i fasci in modo da depositare energia sul nuovo target.
+        Aumentando il numero di fasci si riesce a fare in modo che i fasci liberino energia più nel target e meno nell'organo a rischio.
+        Inoltre si può osservare come il caso con i fasci non equistanziati sia leggermente migliore rispetto a quello non equistanziato, poiché i fasci non sono costretti ad attraversare direttamente l'organo a rischio, ma sono tutti concentrati in direzione del target.
+        Scambiando organo a rischio e target si osserva, come previsto, che MatRad ottimizza i fasci in modo da depositare energia sul nuovo target.
         \\
-        Nel caso clinico si osserva quello studiato precedentemente. 
-        I fotoni depositano energia in maniera meno mirata e quindi gli organi circostanti assorbono una certa dose di radiazione per quasi tutta la totalità del loro volume.
-        I protoni e gli ioni carbonio depositano energia in maniera più mirata sulla massa tumorale e meno dose viene assorbita dagli altri organi.
+        Nel caso clinico, grazie a quanto studiato precedentemente, si sono scelte le configurazioni più efficaci per colpire il target preservando nel contempo gli organi più delicati.
+        Siccome i fotoni depositano energia in maniera meno mirata pertanto, gli organi circostanti assorbono necessariamente una certa dose di radiazione per quasi tutta la totalità del loro volume.
+        Invece protoni e ioni carbonio, riuscendo a depositare energia in maniera più mirata sulla massa tumorale, consentono un minor assorhimento di dose da parte degli altri organi.
         Nel caso di un malposizionamento del paziente si osserva come in tutti e tre i casi aumenti la dose di radiazione assorbita dagli organi a rischio e diminuisca quella depositata sul tumore.
 
 \end{document}
